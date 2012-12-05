@@ -55,7 +55,8 @@ namespace YR2K {
         QAction*        m_pAboutAct;
         QAction*        m_pQuitAct;
 
-        ToutlinerTreeView*  m_pOutlinerTreeView;
+        QDockWidget*                m_pDockWindow;
+        ToutlinerTreeView*          m_pOutlinerTreeView;
     };
 
 }

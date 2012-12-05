@@ -17,7 +17,8 @@
 #include <QtGui/QListWidget>
 #include <QtGui/QTreeView>
 #include <QtGui/QStackedWidget>
-
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QSplitter>
 #include <QtCore/QDate>
 #include <QtCore/QTextStream>
 
@@ -36,19 +37,18 @@ namespace YR2K {
 
     TentertainmentManagement::TentertainmentManagement()
         : m_pOutlinerTreeView(NULL)
+        , m_pDockWindow(NULL)
     {
-        createTreeView();
         createActions();
         createMenus();
         createToolBars();
         createStatusBar();
-        createDockWindows();
         createStackedWidget();
-
+        createDockWindows();
         setWindowTitle(tr("Entertainment Management"));
-    
 
-        setUnifiedTitleAndToolBarOnMac(true);
+
+
     }
 
     void TentertainmentManagement::print()
@@ -166,10 +166,16 @@ namespace YR2K {
 
     void TentertainmentManagement::createDockWindows()
     {
-        QDockWidget *dock = new QDockWidget(tr("Outliner"), this);
-        dock->setWidget(m_pOutlinerTreeView);
-        addDockWidget(Qt::LeftDockWidgetArea, dock);
-        m_pViewMenu->addAction(dock->toggleViewAction());
+        if (!m_pDockWindow)
+        {
+            m_pDockWindow = new QDockWidget(tr("Outliner"), this);
+        }
+
+        createTreeView();
+
+        m_pDockWindow->setWidget(m_pOutlinerTreeView);
+        addDockWidget(Qt::LeftDockWidgetArea, m_pDockWindow);
+        m_pViewMenu->addAction(m_pDockWindow->toggleViewAction());
 
     }
 
@@ -190,8 +196,9 @@ namespace YR2K {
 
     void TentertainmentManagement::createTreeView()
     {
+        Q_ASSERT(m_pDockWindow);
         m_pOutlinerTreeView = new ToutlinerTreeView(this);
-//         m_pOutlinerTreeView->setAlignment(Qt::AlignCenter); 
     }
+
 
 }
