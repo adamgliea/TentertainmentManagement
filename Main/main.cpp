@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     int w = 0;
     int h = 0;
 
-    window.showMaximized();
-    h = window.height();
-    w = window.width();
+//    window.showMaximized();
+    window.show();
+
 
 //     YR2K::ToutlinerTreeView node;
 //     node.show();
