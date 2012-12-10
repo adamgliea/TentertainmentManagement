@@ -17,7 +17,8 @@
 #include <QtGui/QListWidget>
 #include <QtGui/QTreeView>
 #include <QtGui/QStackedWidget>
-
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QSplitter>
 #include <QtCore/QDate>
 #include <QtCore/QTextStream>
 
@@ -34,23 +35,29 @@
 
 namespace YR2K {
 
+    static const int WINDOW_SIZE_WIDTH = 1280;
+    static const int WINDOW_SIZE_HEIGHT = 720;
+
+    //---------------------------------------------------------------------
     TentertainmentManagement::TentertainmentManagement()
         : m_pOutlinerTreeView(NULL)
+        , m_pDockWindow(NULL)
+        , m_pStackedWidget(NULL)
+        , m_pSplitterWindow(NULL)
     {
-        createTreeView();
+        resize(WINDOW_SIZE_WIDTH, WINDOW_SIZE_HEIGHT);
+
         createActions();
         createMenus();
-        createToolBars();
         createStatusBar();
-        createDockWindows();
         createStackedWidget();
-
         setWindowTitle(tr("Entertainment Management"));
-    
+        createTreeView();
+        createSplitWindows();
 
-        setUnifiedTitleAndToolBarOnMac(true);
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::print()
     {
     #ifndef QT_NO_PRINTDIALOG
@@ -65,6 +72,7 @@ namespace YR2K {
     #endif
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::save()
     {
         QString fileName = QFileDialog::getSaveFileName(this,
@@ -90,10 +98,12 @@ namespace YR2K {
         statusBar()->showMessage(tr("Saved '%1'").arg(fileName), 2000);
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::undo()
     {
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::about()
     {
         QMessageBox::about(this, tr("About Enterainment Management"),
@@ -103,6 +113,7 @@ namespace YR2K {
             "address, and click standard paragraphs to add them."));
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::createActions()
     {
         m_pSaveAct = new QAction(QIcon(":/images/save.png"), tr("&Save..."), this);
@@ -130,6 +141,7 @@ namespace YR2K {
         connect(m_pAboutAct, SIGNAL(triggered()), this, SLOT(about()));
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::createMenus()
     {
         m_pFileMenu = menuBar()->addMenu(tr("&File"));
@@ -149,30 +161,14 @@ namespace YR2K {
         m_pHelpMenu->addAction(m_pAboutAct);
     }
 
-    void TentertainmentManagement::createToolBars()
-    {
-        m_pFileToolBar = addToolBar(tr("File"));
-        m_pFileToolBar->addAction(m_pSaveAct);
-        m_pFileToolBar->addAction(m_pPrintAct);
 
-        m_pEditToolBar = addToolBar(tr("Edit"));
-        m_pEditToolBar->addAction(m_pUndoAct);
-    }
-
+    //---------------------------------------------------------------------
     void TentertainmentManagement::createStatusBar()
     {
         statusBar()->showMessage(tr("Ready"));
     }
 
-    void TentertainmentManagement::createDockWindows()
-    {
-        QDockWidget *dock = new QDockWidget(tr("Outliner"), this);
-        dock->setWidget(m_pOutlinerTreeView);
-        addDockWidget(Qt::LeftDockWidgetArea, dock);
-        m_pViewMenu->addAction(dock->toggleViewAction());
-
-    }
-
+    //---------------------------------------------------------------------
     void TentertainmentManagement::createStackedWidget()
     {
         m_pStackedWidget = new QStackedWidget(this);
@@ -185,13 +181,28 @@ namespace YR2K {
         m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_DIFFERENCE, new TmachineGroupDifferenceReportPanel());
         m_pStackedWidget->insertWidget(PANEL_WARNING_SYSTEM, new TwarningSystemPanel());
 
-        setCentralWidget(m_pStackedWidget);
     }
 
+    //---------------------------------------------------------------------
     void TentertainmentManagement::createTreeView()
     {
         m_pOutlinerTreeView = new ToutlinerTreeView(this);
-//         m_pOutlinerTreeView->setAlignment(Qt::AlignCenter); 
     }
+
+    //---------------------------------------------------------------------
+    void TentertainmentManagement::createSplitWindows()
+    {
+        m_pSplitterWindow = new QSplitter(this);
+        setCentralWidget(m_pSplitterWindow);
+
+        m_pSplitterWindow->addWidget(m_pOutlinerTreeView);
+        m_pSplitterWindow->addWidget(m_pStackedWidget);
+        QList<int> sizes;
+        int treeViewWidth = WINDOW_SIZE_WIDTH / 5;
+        int stackedWidgetWidth = WINDOW_SIZE_WIDTH / 5 * 4;
+        sizes << treeViewWidth << stackedWidgetWidth;
+        m_pSplitterWindow->setSizes(sizes);
+    }
+
 
 }

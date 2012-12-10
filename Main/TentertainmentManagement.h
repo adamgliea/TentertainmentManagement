@@ -10,6 +10,8 @@ class QMenu;
 class QTextEdit;
 class QStackedWidget;
 class QTreeView;
+class QSplitter;
+
 QT_END_NAMESPACE
 
 namespace YR2K {
@@ -32,9 +34,8 @@ namespace YR2K {
     private:
         void createActions();
         void createMenus();
-        void createToolBars();
         void createStatusBar();
-        void createDockWindows();
+        void createSplitWindows();
         void createStackedWidget();
         void createTreeView();
 
@@ -46,8 +47,6 @@ namespace YR2K {
         QMenu*          m_pEditMenu;
         QMenu*          m_pViewMenu;
         QMenu*          m_pHelpMenu;
-        QToolBar*       m_pFileToolBar;
-        QToolBar*       m_pEditToolBar;
 
         QAction*        m_pSaveAct;
         QAction*        m_pPrintAct;
@@ -55,7 +54,9 @@ namespace YR2K {
         QAction*        m_pAboutAct;
         QAction*        m_pQuitAct;
 
-        ToutlinerTreeView*  m_pOutlinerTreeView;
+        QDockWidget*                m_pDockWindow;
+        ToutlinerTreeView*          m_pOutlinerTreeView;
+        QSplitter*      m_pSplitterWindow;
     };
 
 }

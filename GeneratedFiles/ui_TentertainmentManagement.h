@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TentertainmentManagement.ui'
 **
-** Created: Wed Dec 5 12:56:41 2012
+** Created: Wed Dec 5 16:00:13 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
