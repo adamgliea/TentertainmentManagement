@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>773</width>
+    <height>374</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>771</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <column>
+       <property name="text">
+        <string>序号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>机台名称</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>分值</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>今日低表</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>昨日低表</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>净上币</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>金额</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

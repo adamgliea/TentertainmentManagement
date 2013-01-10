@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>660</width>
+    <height>313</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>661</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0" colspan="3">
+     <widget class="QTableWidget" name="m_summaryReportTableWidget">
+      <column>
+       <property name="text">
+        <string>序号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>资产大类</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>编号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>金额</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="m_machineSummaryReportLabel">
+      <property name="text">
+       <string>总机组报表</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QDateEdit" name="m_summaryDateEdit"/>
+    </item>
+    <item row="0" column="1">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

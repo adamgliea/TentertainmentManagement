@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>876</width>
+    <height>392</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>881</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTableWidget" name="m_inventoryReportTableWidget">
+      <column>
+       <property name="text">
+        <string>序号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>机台名称</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>加币信息</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>总加币</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>清币信息</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>投币盈利</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

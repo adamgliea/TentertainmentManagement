@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>739</width>
+    <height>99</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>741</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>120</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>机组编号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>出场厂家</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>厂家电话</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>存放地点</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>营业状况</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>备注</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

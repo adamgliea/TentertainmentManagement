@@ -78,6 +78,69 @@
     <ClInclude Include="GeneratedFiles\ui_TentertainmentManagement.h">
       <Filter>Main</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TassetSetupViewItemAddWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TassetSetupViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TcalendarWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TinventoryReportViewItemAddCoinDetailTree.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TinventoryReportViewItemAddCoinWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TinventoryReportViewItemClearCoinDetailTree.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TinventoryReportViewItemClearCoinWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TinventoryReportViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineDetailSetupViewItemAddWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineDetailSetupViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineFuncSetupViewItemAdd.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineFuncSetupViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupDifferenceReportViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportEntertainmentViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportGiftViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportLotteryViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportViewItemSummaryTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportViewItemSummaryWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TsearchWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TwarningSystemViewItemContinuousLoseDetailTree.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TwarningSystemViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Main\TentertainmentManagement.h">
@@ -88,6 +151,69 @@
     </CustomBuild>
     <CustomBuild Include="TentertainmentManagement.ui">
       <Filter>GeneratedFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TassetSetupViewItemAddWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TassetSetupViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TcalendarWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TinventoryReportViewItemAddCoinDetailTree.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TinventoryReportViewItemAddCoinWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TinventoryReportViewItemClearCoinDetailTree.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TinventoryReportViewItemClearCoinWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TinventoryReportViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineDetailSetupViewItemAddWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineDetailSetupViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineFuncSetupViewItemAdd.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineFuncSetupViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupDifferenceReportViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupReportEntertainmentViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupReportGiftViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupReportLotteryViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupReportViewItemSummaryTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupReportViewItemSummaryWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TsearchWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TwarningSystemViewItemContinuousLoseDetailTree.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TwarningSystemViewItemTable.ui">
+      <Filter>UiFiles</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +231,14 @@
     </Filter>
     <Filter Include="Panel">
       <UniqueIdentifier>{b762cfa9-8293-4791-9c3e-1bb2085f0685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UiFiles">
+      <UniqueIdentifier>{90ec7b49-dc36-43f2-97d0-ba10ab3a125f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <ParseFiles>true</ParseFiles>
     </Filter>
   </ItemGroup>
 </Project>

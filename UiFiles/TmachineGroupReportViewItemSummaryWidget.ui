@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>197</width>
+    <height>161</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>189</width>
+     <height>152</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="m_cabinetLabel">
+      <property name="text">
+       <string>柜体类：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="m_cabinetLineEdit"/>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QLabel" name="m_lotteryLabel">
+      <property name="text">
+       <string>彩票类：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="m_lotteryLineEdit"/>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="m_simulateLabel">
+      <property name="text">
+       <string>模拟类：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="m_simulateLineEdit"/>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="m_coindozerLabel">
+      <property name="text">
+       <string>推币类：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="m_coindozerLineEdit"/>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>博彩类：</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLineEdit" name="lineEdit_4"/>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="m_wagerLineEdit"/>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QLabel" name="m_wagerLabel">
+      <property name="text">
+       <string>合计：</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget_2</zorder>
+  <zorder>layoutWidget_3</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

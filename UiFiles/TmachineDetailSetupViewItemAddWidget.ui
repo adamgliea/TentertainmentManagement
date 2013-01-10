@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>866</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QDialogButtonBox" name="m_addConfirmButtonBox">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>610</y>
+     <width>156</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="m_machineDetailsetupGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>851</width>
+     <height>581</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>机台明细添加</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="m_machineNumberLayout">
+     <item>
+      <widget class="QLabel" name="m_machineNumberLabel">
+       <property name="text">
+        <string>机组编号：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="m_machineNumberLineEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>791</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="m_depositaryLayout">
+     <item>
+      <widget class="QLabel" name="m_depositaryLabel">
+       <property name="text">
+        <string>出场厂家：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="m_depositaryLineEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>231</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="m_phoneLayout">
+     <item>
+      <widget class="QLabel" name="m_phoneLabel">
+       <property name="text">
+        <string>厂家电话：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="m_phoneLineEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>791</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="m_manufacturerLayout">
+     <item>
+      <widget class="QLabel" name="m_manufacturerLabel">
+       <property name="text">
+        <string>存放地点：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="m_manufacturerTextEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>137</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="m_businessStatusLayout">
+     <item>
+      <widget class="QLabel" name="m_businessStatusLabel">
+       <property name="text">
+        <string>营业状况：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="m_businessStatusComboBox"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>380</y>
+      <width>791</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="m_remarkLayout">
+     <item>
+      <widget class="QLabel" name="m_remarkLabel">
+       <property name="text">
+        <string>备注：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="m_remarkTextEdit"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
