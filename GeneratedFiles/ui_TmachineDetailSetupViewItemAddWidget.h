@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineDetailSetupViewItemAddWidget.ui'
 **
-** Created: Thu Jan 10 13:52:52 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -27,7 +27,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TmachineDetailSetupViewItemAddWidget
 {
 public:
     QDialogButtonBox *m_addConfirmButtonBox;
@@ -57,16 +57,16 @@ public:
     QLabel *m_remarkLabel;
     QTextEdit *m_remarkTextEdit;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TmachineDetailSetupViewItemAddWidget)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(866, 642);
-        m_addConfirmButtonBox = new QDialogButtonBox(Form);
+        if (TmachineDetailSetupViewItemAddWidget->objectName().isEmpty())
+            TmachineDetailSetupViewItemAddWidget->setObjectName(QString::fromUtf8("TmachineDetailSetupViewItemAddWidget"));
+        TmachineDetailSetupViewItemAddWidget->resize(866, 642);
+        m_addConfirmButtonBox = new QDialogButtonBox(TmachineDetailSetupViewItemAddWidget);
         m_addConfirmButtonBox->setObjectName(QString::fromUtf8("m_addConfirmButtonBox"));
         m_addConfirmButtonBox->setGeometry(QRect(700, 610, 156, 23));
         m_addConfirmButtonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        m_machineDetailsetupGroupBox = new QGroupBox(Form);
+        m_machineDetailsetupGroupBox = new QGroupBox(TmachineDetailSetupViewItemAddWidget);
         m_machineDetailsetupGroupBox->setObjectName(QString::fromUtf8("m_machineDetailsetupGroupBox"));
         m_machineDetailsetupGroupBox->setGeometry(QRect(0, 0, 851, 581));
         layoutWidget = new QWidget(m_machineDetailsetupGroupBox);
@@ -166,27 +166,27 @@ public:
         m_remarkLayout->addWidget(m_remarkTextEdit);
 
 
-        retranslateUi(Form);
+        retranslateUi(TmachineDetailSetupViewItemAddWidget);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TmachineDetailSetupViewItemAddWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TmachineDetailSetupViewItemAddWidget)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
-        m_machineDetailsetupGroupBox->setTitle(QApplication::translate("Form", "\346\234\272\345\217\260\346\230\216\347\273\206\346\267\273\345\212\240", 0, QApplication::UnicodeUTF8));
-        m_machineNumberLabel->setText(QApplication::translate("Form", "\346\234\272\347\273\204\347\274\226\345\217\267\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_depositaryLabel->setText(QApplication::translate("Form", "\345\207\272\345\234\272\345\216\202\345\256\266\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_phoneLabel->setText(QApplication::translate("Form", "\345\216\202\345\256\266\347\224\265\350\257\235\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_manufacturerLabel->setText(QApplication::translate("Form", "\345\255\230\346\224\276\345\234\260\347\202\271\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_businessStatusLabel->setText(QApplication::translate("Form", "\350\220\245\344\270\232\347\212\266\345\206\265\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_remarkLabel->setText(QApplication::translate("Form", "\345\244\207\346\263\250\357\274\232", 0, QApplication::UnicodeUTF8));
+        TmachineDetailSetupViewItemAddWidget->setWindowTitle(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "Form", 0, QApplication::UnicodeUTF8));
+        m_machineDetailsetupGroupBox->setTitle(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\346\234\272\345\217\260\346\230\216\347\273\206\346\267\273\345\212\240", 0, QApplication::UnicodeUTF8));
+        m_machineNumberLabel->setText(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\346\234\272\347\273\204\347\274\226\345\217\267\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_depositaryLabel->setText(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\345\207\272\345\234\272\345\216\202\345\256\266\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_phoneLabel->setText(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\345\216\202\345\256\266\347\224\265\350\257\235\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_manufacturerLabel->setText(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\345\255\230\346\224\276\345\234\260\347\202\271\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_businessStatusLabel->setText(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\350\220\245\344\270\232\347\212\266\345\206\265\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_remarkLabel->setText(QApplication::translate("TmachineDetailSetupViewItemAddWidget", "\345\244\207\346\263\250\357\274\232", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TmachineDetailSetupViewItemAddWidget: public Ui_TmachineDetailSetupViewItemAddWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineFuncSetupViewItemAdd.ui'
 **
-** Created: Thu Jan 10 13:52:52 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -27,7 +27,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TmachineFuncSetupViewItemAdd
 {
 public:
     QWidget *horizontalLayoutWidget;
@@ -50,36 +50,36 @@ public:
     QLabel *m_clearCoinTimeLabel;
     QLineEdit *m_betTimeInDaysLineEdit;
     QLabel *m_betTimeInDaysLabel;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QLabel *m_machineNumberNamelabel;
     QLineEdit *m_machineNumberNamelineEdit;
     QLabel *m_functionLabel;
     QLineEdit *m_functionLineEdit;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_4;
     QLabel *m_coinCategorySetupLabel;
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *m_coinCategorySetupLineEdit;
     QLabel *label_11;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_5;
     QLabel *m_pointSetupLabel;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *m_pointSetupLineEdit;
     QLabel *label_12;
-    QWidget *widget3;
+    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout;
     QLabel *m_remarkLabel;
     QTextEdit *m_remarkTextEdit;
     QDialogButtonBox *m_buttonBox;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TmachineFuncSetupViewItemAdd)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(818, 713);
-        horizontalLayoutWidget = new QWidget(Form);
+        if (TmachineFuncSetupViewItemAdd->objectName().isEmpty())
+            TmachineFuncSetupViewItemAdd->setObjectName(QString::fromUtf8("TmachineFuncSetupViewItemAdd"));
+        TmachineFuncSetupViewItemAdd->resize(818, 713);
+        horizontalLayoutWidget = new QWidget(TmachineFuncSetupViewItemAdd);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(20, 30, 771, 51));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
@@ -90,7 +90,7 @@ public:
 
         horizontalLayout->addWidget(m_categoryLabel);
 
-        m_machineSetupGroupBox = new QGroupBox(Form);
+        m_machineSetupGroupBox = new QGroupBox(TmachineFuncSetupViewItemAdd);
         m_machineSetupGroupBox->setObjectName(QString::fromUtf8("m_machineSetupGroupBox"));
         m_machineSetupGroupBox->setGeometry(QRect(10, 110, 781, 511));
         m_mainPossiblityLabel = new QLabel(m_machineSetupGroupBox);
@@ -141,51 +141,51 @@ public:
         m_betTimeInDaysLabel = new QLabel(m_machineSetupGroupBox);
         m_betTimeInDaysLabel->setObjectName(QString::fromUtf8("m_betTimeInDaysLabel"));
         m_betTimeInDaysLabel->setGeometry(QRect(31, 249, 60, 16));
-        widget = new QWidget(m_machineSetupGroupBox);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(30, 40, 225, 48));
-        gridLayout = new QGridLayout(widget);
+        layoutWidget = new QWidget(m_machineSetupGroupBox);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(30, 40, 225, 48));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        m_machineNumberNamelabel = new QLabel(widget);
+        m_machineNumberNamelabel = new QLabel(layoutWidget);
         m_machineNumberNamelabel->setObjectName(QString::fromUtf8("m_machineNumberNamelabel"));
 
         gridLayout->addWidget(m_machineNumberNamelabel, 0, 0, 1, 1);
 
-        m_machineNumberNamelineEdit = new QLineEdit(widget);
+        m_machineNumberNamelineEdit = new QLineEdit(layoutWidget);
         m_machineNumberNamelineEdit->setObjectName(QString::fromUtf8("m_machineNumberNamelineEdit"));
 
         gridLayout->addWidget(m_machineNumberNamelineEdit, 0, 1, 1, 1);
 
-        m_functionLabel = new QLabel(widget);
+        m_functionLabel = new QLabel(layoutWidget);
         m_functionLabel->setObjectName(QString::fromUtf8("m_functionLabel"));
 
         gridLayout->addWidget(m_functionLabel, 1, 0, 1, 1);
 
-        m_functionLineEdit = new QLineEdit(widget);
+        m_functionLineEdit = new QLineEdit(layoutWidget);
         m_functionLineEdit->setObjectName(QString::fromUtf8("m_functionLineEdit"));
 
         gridLayout->addWidget(m_functionLineEdit, 1, 1, 1, 1);
 
-        widget1 = new QWidget(m_machineSetupGroupBox);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(30, 110, 131, 24));
-        horizontalLayout_4 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(m_machineSetupGroupBox);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(30, 110, 145, 24));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        m_coinCategorySetupLabel = new QLabel(widget1);
+        m_coinCategorySetupLabel = new QLabel(layoutWidget1);
         m_coinCategorySetupLabel->setObjectName(QString::fromUtf8("m_coinCategorySetupLabel"));
 
         horizontalLayout_4->addWidget(m_coinCategorySetupLabel);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        m_coinCategorySetupLineEdit = new QLineEdit(widget1);
+        m_coinCategorySetupLineEdit = new QLineEdit(layoutWidget1);
         m_coinCategorySetupLineEdit->setObjectName(QString::fromUtf8("m_coinCategorySetupLineEdit"));
 
         horizontalLayout_2->addWidget(m_coinCategorySetupLineEdit);
 
-        label_11 = new QLabel(widget1);
+        label_11 = new QLabel(layoutWidget1);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         horizontalLayout_2->addWidget(label_11);
@@ -193,25 +193,25 @@ public:
 
         horizontalLayout_4->addLayout(horizontalLayout_2);
 
-        widget2 = new QWidget(m_machineSetupGroupBox);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        widget2->setGeometry(QRect(240, 110, 131, 24));
-        horizontalLayout_5 = new QHBoxLayout(widget2);
+        layoutWidget2 = new QWidget(m_machineSetupGroupBox);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(240, 110, 145, 24));
+        horizontalLayout_5 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
-        m_pointSetupLabel = new QLabel(widget2);
+        m_pointSetupLabel = new QLabel(layoutWidget2);
         m_pointSetupLabel->setObjectName(QString::fromUtf8("m_pointSetupLabel"));
 
         horizontalLayout_5->addWidget(m_pointSetupLabel);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        m_pointSetupLineEdit = new QLineEdit(widget2);
+        m_pointSetupLineEdit = new QLineEdit(layoutWidget2);
         m_pointSetupLineEdit->setObjectName(QString::fromUtf8("m_pointSetupLineEdit"));
 
         horizontalLayout_3->addWidget(m_pointSetupLineEdit);
 
-        label_12 = new QLabel(widget2);
+        label_12 = new QLabel(layoutWidget2);
         label_12->setObjectName(QString::fromUtf8("label_12"));
 
         horizontalLayout_3->addWidget(label_12);
@@ -219,58 +219,58 @@ public:
 
         horizontalLayout_5->addLayout(horizontalLayout_3);
 
-        widget3 = new QWidget(m_machineSetupGroupBox);
-        widget3->setObjectName(QString::fromUtf8("widget3"));
-        widget3->setGeometry(QRect(30, 330, 721, 151));
-        verticalLayout = new QVBoxLayout(widget3);
+        layoutWidget3 = new QWidget(m_machineSetupGroupBox);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(30, 330, 721, 151));
+        verticalLayout = new QVBoxLayout(layoutWidget3);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        m_remarkLabel = new QLabel(widget3);
+        m_remarkLabel = new QLabel(layoutWidget3);
         m_remarkLabel->setObjectName(QString::fromUtf8("m_remarkLabel"));
 
         verticalLayout->addWidget(m_remarkLabel);
 
-        m_remarkTextEdit = new QTextEdit(widget3);
+        m_remarkTextEdit = new QTextEdit(layoutWidget3);
         m_remarkTextEdit->setObjectName(QString::fromUtf8("m_remarkTextEdit"));
 
         verticalLayout->addWidget(m_remarkTextEdit);
 
-        m_buttonBox = new QDialogButtonBox(Form);
+        m_buttonBox = new QDialogButtonBox(TmachineFuncSetupViewItemAdd);
         m_buttonBox->setObjectName(QString::fromUtf8("m_buttonBox"));
         m_buttonBox->setGeometry(QRect(640, 650, 156, 23));
         m_buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
-        retranslateUi(Form);
+        retranslateUi(TmachineFuncSetupViewItemAdd);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TmachineFuncSetupViewItemAdd);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TmachineFuncSetupViewItemAdd)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
-        m_categoryLabel->setText(QApplication::translate("Form", "\347\261\273\345\236\213", 0, QApplication::UnicodeUTF8));
-        m_machineSetupGroupBox->setTitle(QApplication::translate("Form", "\346\234\272\345\217\260\345\212\237\350\203\275\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
-        m_mainPossiblityLabel->setText(QApplication::translate("Form", "\344\270\273\345\207\240\347\216\207\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_possibilityRangeLabel->setText(QApplication::translate("Form", "\345\207\240\347\216\207\350\214\203\345\233\264\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_maxBetPointLabel->setText(QApplication::translate("Form", "\346\234\200\345\244\247\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_minBetPointLabel->setText(QApplication::translate("Form", "\346\234\200\345\260\217\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_villageLeisureBetPointLabel->setText(QApplication::translate("Form", "\345\272\204\351\227\262\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_drawGameBetPointLabel->setText(QApplication::translate("Form", "\345\222\214\345\261\200\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_clearCoinTimeLabel->setText(QApplication::translate("Form", "\346\270\205\345\270\201\346\227\266\351\227\264\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_betTimeInDaysLabel->setText(QApplication::translate("Form", "\346\212\225\347\240\201\345\244\251\346\225\260\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_machineNumberNamelabel->setText(QApplication::translate("Form", "\346\234\272\347\273\204\347\274\226\345\217\267\345\220\215\347\247\260\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_functionLabel->setText(QApplication::translate("Form", "\345\212\237\350\203\275\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_coinCategorySetupLabel->setText(QApplication::translate("Form", "\350\256\276\347\275\256\345\270\201\347\247\215\357\274\232", 0, QApplication::UnicodeUTF8));
-        label_11->setText(QApplication::translate("Form", "\345\210\206/\345\205\203", 0, QApplication::UnicodeUTF8));
-        m_pointSetupLabel->setText(QApplication::translate("Form", "\350\256\276\347\275\256\345\210\206\345\200\274\357\274\232", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("Form", "\345\270\201/\345\210\206", 0, QApplication::UnicodeUTF8));
-        m_remarkLabel->setText(QApplication::translate("Form", "\345\244\207\346\263\250\357\274\232", 0, QApplication::UnicodeUTF8));
+        TmachineFuncSetupViewItemAdd->setWindowTitle(QApplication::translate("TmachineFuncSetupViewItemAdd", "Form", 0, QApplication::UnicodeUTF8));
+        m_categoryLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\347\261\273\345\236\213", 0, QApplication::UnicodeUTF8));
+        m_machineSetupGroupBox->setTitle(QApplication::translate("TmachineFuncSetupViewItemAdd", "\346\234\272\345\217\260\345\212\237\350\203\275\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
+        m_mainPossiblityLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\344\270\273\345\207\240\347\216\207\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_possibilityRangeLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\207\240\347\216\207\350\214\203\345\233\264\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_maxBetPointLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\346\234\200\345\244\247\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_minBetPointLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\346\234\200\345\260\217\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_villageLeisureBetPointLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\272\204\351\227\262\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_drawGameBetPointLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\222\214\345\261\200\345\216\213\345\210\206\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_clearCoinTimeLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\346\270\205\345\270\201\346\227\266\351\227\264\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_betTimeInDaysLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\346\212\225\347\240\201\345\244\251\346\225\260\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_machineNumberNamelabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\346\234\272\347\273\204\347\274\226\345\217\267\345\220\215\347\247\260\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_functionLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\212\237\350\203\275\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_coinCategorySetupLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\350\256\276\347\275\256\345\270\201\347\247\215\357\274\232", 0, QApplication::UnicodeUTF8));
+        label_11->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\210\206/\345\205\203", 0, QApplication::UnicodeUTF8));
+        m_pointSetupLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\350\256\276\347\275\256\345\210\206\345\200\274\357\274\232", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\270\201/\345\210\206", 0, QApplication::UnicodeUTF8));
+        m_remarkLabel->setText(QApplication::translate("TmachineFuncSetupViewItemAdd", "\345\244\207\346\263\250\357\274\232", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TmachineFuncSetupViewItemAdd: public Ui_TmachineFuncSetupViewItemAdd {};
 } // namespace Ui
 
 QT_END_NAMESPACE

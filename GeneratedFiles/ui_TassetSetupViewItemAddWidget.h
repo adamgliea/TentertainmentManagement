@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TassetSetupViewItemAddWidget.ui'
 **
-** Created: Thu Jan 10 13:52:51 2013
+** Created: Fri Jan 11 13:05:57 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -27,7 +27,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TassetSetupViewItemAddWidget
 {
 public:
     QDialogButtonBox *m_buttonBox;
@@ -56,16 +56,16 @@ public:
     QLabel *m_inputCategoryNameLabel;
     QComboBox *m_inputCategoryNameComboBox;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TassetSetupViewItemAddWidget)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(898, 652);
-        m_buttonBox = new QDialogButtonBox(Form);
+        if (TassetSetupViewItemAddWidget->objectName().isEmpty())
+            TassetSetupViewItemAddWidget->setObjectName(QString::fromUtf8("TassetSetupViewItemAddWidget"));
+        TassetSetupViewItemAddWidget->resize(898, 652);
+        m_buttonBox = new QDialogButtonBox(TassetSetupViewItemAddWidget);
         m_buttonBox->setObjectName(QString::fromUtf8("m_buttonBox"));
         m_buttonBox->setGeometry(QRect(720, 610, 156, 23));
         m_buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        m_categorySetupGroupBox = new QGroupBox(Form);
+        m_categorySetupGroupBox = new QGroupBox(TassetSetupViewItemAddWidget);
         m_categorySetupGroupBox->setObjectName(QString::fromUtf8("m_categorySetupGroupBox"));
         m_categorySetupGroupBox->setGeometry(QRect(0, 0, 871, 571));
         m_categorySetupGroupBox->setFlat(false);
@@ -170,76 +170,76 @@ public:
         gridLayout_2->addWidget(m_inputCategoryNameComboBox, 0, 1, 1, 1);
 
 
-        retranslateUi(Form);
+        retranslateUi(TassetSetupViewItemAddWidget);
 
         m_continuousLossComboBox->setCurrentIndex(2);
 
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TassetSetupViewItemAddWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TassetSetupViewItemAddWidget)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "\345\244\247\347\261\273\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
-        m_categorySetupGroupBox->setTitle(QApplication::translate("Form", "\345\244\247\347\261\273\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
-        m_warningSetupGroupBox->setTitle(QApplication::translate("Form", "\346\212\245\350\255\246\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_clearCoinSetupLabel->setText(QApplication::translate("Form", "\346\270\205\345\270\201\345\267\256\345\274\202\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_debtSetupLabel->setText(QApplication::translate("Form", "\346\234\272\345\217\260\350\264\237\345\200\272\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_continuousLossLabel->setText(QApplication::translate("Form", "\350\277\236\347\273\255\344\272\217\346\215\237\345\244\251\346\225\260\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
+        TassetSetupViewItemAddWidget->setWindowTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\345\244\247\347\261\273\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
+        m_categorySetupGroupBox->setTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\345\244\247\347\261\273\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
+        m_warningSetupGroupBox->setTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\346\212\245\350\255\246\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_clearCoinSetupLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\346\270\205\345\270\201\345\267\256\345\274\202\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_debtSetupLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\346\234\272\345\217\260\350\264\237\345\200\272\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_continuousLossLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\350\277\236\347\273\255\344\272\217\346\215\237\345\244\251\346\225\260\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
         m_continuousLossComboBox->clear();
         m_continuousLossComboBox->insertItems(0, QStringList()
-         << QApplication::translate("Form", "1", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "2", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "3", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "4", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "5", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "6", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "7", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "8", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "9", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "10", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "11", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "12", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "13", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "14", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "15", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "16", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "17", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "18", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "19", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "20", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "21", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "22", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "23", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "24", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "25", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "26", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "27", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "28", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "29", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "30", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "31", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "1", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "2", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "3", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "4", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "5", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "6", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "7", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "8", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "9", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "10", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "11", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "12", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "13", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "14", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "15", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "16", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "17", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "18", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "19", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "20", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "21", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "22", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "23", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "24", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "25", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "26", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "27", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "28", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "29", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "30", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "31", 0, QApplication::UnicodeUTF8)
         );
-        m_accountReportGroupBox->setTitle(QApplication::translate("Form", "\350\264\246\347\233\256\346\212\245\350\241\250\351\200\211\346\213\251\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_accountReportRadioButton1->setText(QApplication::translate("Form", "\350\264\246\347\233\256\346\212\245\350\241\2501", 0, QApplication::UnicodeUTF8));
-        m_accountReportRadioButton2->setText(QApplication::translate("Form", "\350\264\246\347\233\256\346\212\245\350\241\2502", 0, QApplication::UnicodeUTF8));
-        m_accountReportRadioButton3->setText(QApplication::translate("Form", "\350\264\246\347\233\256\346\212\245\350\241\2503", 0, QApplication::UnicodeUTF8));
-        m_clearCoinPeriodSetupLabel->setText(QApplication::translate("Form", "\346\270\205\345\270\201\345\221\250\346\234\237\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_inputCategoryNameLabel->setText(QApplication::translate("Form", "\345\244\247\347\261\273\345\220\215\347\247\260\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_accountReportGroupBox->setTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\350\264\246\347\233\256\346\212\245\350\241\250\351\200\211\346\213\251\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_accountReportRadioButton1->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\350\264\246\347\233\256\346\212\245\350\241\2501", 0, QApplication::UnicodeUTF8));
+        m_accountReportRadioButton2->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\350\264\246\347\233\256\346\212\245\350\241\2502", 0, QApplication::UnicodeUTF8));
+        m_accountReportRadioButton3->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\350\264\246\347\233\256\346\212\245\350\241\2503", 0, QApplication::UnicodeUTF8));
+        m_clearCoinPeriodSetupLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\346\270\205\345\270\201\345\221\250\346\234\237\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_inputCategoryNameLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\345\244\247\347\261\273\345\220\215\347\247\260\357\274\232", 0, QApplication::UnicodeUTF8));
         m_inputCategoryNameComboBox->clear();
         m_inputCategoryNameComboBox->insertItems(0, QStringList()
-         << QApplication::translate("Form", "\346\237\234\344\275\223\347\261\273", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "\345\275\251\347\245\250\347\261\273", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "\346\250\241\346\213\237\347\261\273", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "\346\216\250\345\270\201\347\261\273", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Form", "\345\215\232\345\275\251\347\261\273", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "\346\237\234\344\275\223\347\261\273", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "\345\275\251\347\245\250\347\261\273", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "\346\250\241\346\213\237\347\261\273", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "\346\216\250\345\270\201\347\261\273", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TassetSetupViewItemAddWidget", "\345\215\232\345\275\251\347\261\273", 0, QApplication::UnicodeUTF8)
         );
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TassetSetupViewItemAddWidget: public Ui_TassetSetupViewItemAddWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

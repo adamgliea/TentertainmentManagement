@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineDetailSetupViewItemTable.ui'
 **
-** Created: Thu Jan 10 13:52:52 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TmachineDetailSetupViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *tableWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TmachineDetailSetupViewItemTable)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(739, 99);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TmachineDetailSetupViewItemTable->objectName().isEmpty())
+            TmachineDetailSetupViewItemTable->setObjectName(QString::fromUtf8("TmachineDetailSetupViewItemTable"));
+        TmachineDetailSetupViewItemTable->resize(739, 99);
+        verticalLayoutWidget = new QWidget(TmachineDetailSetupViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-1, -1, 741, 101));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -66,32 +66,32 @@ public:
         verticalLayout->addWidget(tableWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TmachineDetailSetupViewItemTable);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TmachineDetailSetupViewItemTable);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TmachineDetailSetupViewItemTable)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TmachineDetailSetupViewItemTable->setWindowTitle(QApplication::translate("TmachineDetailSetupViewItemTable", "Form", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Form", "\346\234\272\347\273\204\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("TmachineDetailSetupViewItemTable", "\346\234\272\347\273\204\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Form", "\345\207\272\345\234\272\345\216\202\345\256\266", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("TmachineDetailSetupViewItemTable", "\345\207\272\345\234\272\345\216\202\345\256\266", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Form", "\345\216\202\345\256\266\347\224\265\350\257\235", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem2->setText(QApplication::translate("TmachineDetailSetupViewItemTable", "\345\216\202\345\256\266\347\224\265\350\257\235", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Form", "\345\255\230\346\224\276\345\234\260\347\202\271", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem3->setText(QApplication::translate("TmachineDetailSetupViewItemTable", "\345\255\230\346\224\276\345\234\260\347\202\271", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("Form", "\350\220\245\344\270\232\347\212\266\345\206\265", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem4->setText(QApplication::translate("TmachineDetailSetupViewItemTable", "\350\220\245\344\270\232\347\212\266\345\206\265", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("Form", "\345\244\207\346\263\250", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem5->setText(QApplication::translate("TmachineDetailSetupViewItemTable", "\345\244\207\346\263\250", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TmachineDetailSetupViewItemTable: public Ui_TmachineDetailSetupViewItemTable {};
 } // namespace Ui
 
 QT_END_NAMESPACE

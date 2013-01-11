@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TwarningSystemViewItemTable.ui'
 **
-** Created: Thu Jan 10 13:52:53 2013
+** Created: Fri Jan 11 13:10:28 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TwarningSystemViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *m_warningSystemTableWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TwarningSystemViewItemTable)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(920, 550);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TwarningSystemViewItemTable->objectName().isEmpty())
+            TwarningSystemViewItemTable->setObjectName(QString::fromUtf8("TwarningSystemViewItemTable"));
+        TwarningSystemViewItemTable->resize(920, 550);
+        verticalLayoutWidget = new QWidget(TwarningSystemViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-1, -1, 931, 561));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -61,34 +61,34 @@ public:
         verticalLayout->addWidget(m_warningSystemTableWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TwarningSystemViewItemTable);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TwarningSystemViewItemTable);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TwarningSystemViewItemTable)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TwarningSystemViewItemTable->setWindowTitle(QApplication::translate("TwarningSystemViewItemTable", "Form", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = m_warningSystemTableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Form", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("TwarningSystemViewItemTable", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = m_warningSystemTableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Form", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("TwarningSystemViewItemTable", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = m_warningSystemTableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Form", "\345\207\200\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem2->setText(QApplication::translate("TwarningSystemViewItemTable", "\345\207\200\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem3 = m_warningSystemTableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Form", "\346\270\205\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem3->setText(QApplication::translate("TwarningSystemViewItemTable", "\346\270\205\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem4 = m_warningSystemTableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("Form", "\345\267\256\345\274\202\346\257\224\350\276\203", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem4->setText(QApplication::translate("TwarningSystemViewItemTable", "\345\267\256\345\274\202\346\257\224\350\276\203", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem5 = m_warningSystemTableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("Form", "\351\207\221\351\242\235", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem5->setText(QApplication::translate("TwarningSystemViewItemTable", "\351\207\221\351\242\235", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem6 = m_warningSystemTableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QApplication::translate("Form", "\350\277\236\347\273\255\344\272\217\346\215\237\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem6->setText(QApplication::translate("TwarningSystemViewItemTable", "\350\277\236\347\273\255\344\272\217\346\215\237\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TwarningSystemViewItemTable: public Ui_TwarningSystemViewItemTable {};
 } // namespace Ui
 
 QT_END_NAMESPACE

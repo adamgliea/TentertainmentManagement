@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TsearchWidget.ui'
 **
-** Created: Thu Jan 10 13:52:53 2013
+** Created: Fri Jan 11 13:10:28 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -23,7 +23,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TsearchWidget
 {
 public:
     QPushButton *m_searchButton;
@@ -38,15 +38,15 @@ public:
     QLabel *m_accordingTodateUntilLabel;
     QLineEdit *m_dateEndLineEdit;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TsearchWidget)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(502, 64);
-        m_searchButton = new QPushButton(Form);
+        if (TsearchWidget->objectName().isEmpty())
+            TsearchWidget->setObjectName(QString::fromUtf8("TsearchWidget"));
+        TsearchWidget->resize(502, 64);
+        m_searchButton = new QPushButton(TsearchWidget);
         m_searchButton->setObjectName(QString::fromUtf8("m_searchButton"));
         m_searchButton->setGeometry(QRect(420, 10, 61, 41));
-        layoutWidget = new QWidget(Form);
+        layoutWidget = new QWidget(TsearchWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(0, 0, 195, 22));
         m_accordingToNumberLayout = new QHBoxLayout(layoutWidget);
@@ -62,7 +62,7 @@ public:
 
         m_accordingToNumberLayout->addWidget(m_accordingToNumberLineEdit);
 
-        layoutWidget1 = new QWidget(Form);
+        layoutWidget1 = new QWidget(TsearchWidget);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(0, 30, 394, 22));
         m_accordingToDateLayout = new QHBoxLayout(layoutWidget1);
@@ -89,24 +89,24 @@ public:
         m_accordingToDateLayout->addWidget(m_dateEndLineEdit);
 
 
-        retranslateUi(Form);
+        retranslateUi(TsearchWidget);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TsearchWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TsearchWidget)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
-        m_searchButton->setText(QApplication::translate("Form", "\346\220\234\347\264\242", 0, QApplication::UnicodeUTF8));
-        m_accordingToNumberLabel->setText(QApplication::translate("Form", "\346\214\211\347\205\247\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
-        m_accordingToDateLabel->setText(QApplication::translate("Form", "\346\214\211\347\205\247\346\227\245\346\234\237", 0, QApplication::UnicodeUTF8));
-        m_accordingTodateUntilLabel->setText(QApplication::translate("Form", "\350\207\263", 0, QApplication::UnicodeUTF8));
+        TsearchWidget->setWindowTitle(QApplication::translate("TsearchWidget", "Form", 0, QApplication::UnicodeUTF8));
+        m_searchButton->setText(QApplication::translate("TsearchWidget", "\346\220\234\347\264\242", 0, QApplication::UnicodeUTF8));
+        m_accordingToNumberLabel->setText(QApplication::translate("TsearchWidget", "\346\214\211\347\205\247\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
+        m_accordingToDateLabel->setText(QApplication::translate("TsearchWidget", "\346\214\211\347\205\247\346\227\245\346\234\237", 0, QApplication::UnicodeUTF8));
+        m_accordingTodateUntilLabel->setText(QApplication::translate("TsearchWidget", "\350\207\263", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TsearchWidget: public Ui_TsearchWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TinventoryReportViewItemTable.ui'
 **
-** Created: Thu Jan 10 13:52:52 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TinventoryReportViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *m_inventoryReportTableWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TinventoryReportViewItemTable)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(876, 392);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TinventoryReportViewItemTable->objectName().isEmpty())
+            TinventoryReportViewItemTable->setObjectName(QString::fromUtf8("TinventoryReportViewItemTable"));
+        TinventoryReportViewItemTable->resize(876, 392);
+        verticalLayoutWidget = new QWidget(TinventoryReportViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-1, -1, 881, 401));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -59,32 +59,32 @@ public:
         verticalLayout->addWidget(m_inventoryReportTableWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TinventoryReportViewItemTable);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TinventoryReportViewItemTable);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TinventoryReportViewItemTable)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TinventoryReportViewItemTable->setWindowTitle(QApplication::translate("TinventoryReportViewItemTable", "Form", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = m_inventoryReportTableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Form", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("TinventoryReportViewItemTable", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = m_inventoryReportTableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Form", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = m_inventoryReportTableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Form", "\345\212\240\345\270\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem2->setText(QApplication::translate("TinventoryReportViewItemTable", "\345\212\240\345\270\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem3 = m_inventoryReportTableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Form", "\346\200\273\345\212\240\345\270\201", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem3->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\200\273\345\212\240\345\270\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem4 = m_inventoryReportTableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("Form", "\346\270\205\345\270\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem4->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\270\205\345\270\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem5 = m_inventoryReportTableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("Form", "\346\212\225\345\270\201\347\233\210\345\210\251", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem5->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\212\225\345\270\201\347\233\210\345\210\251", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TinventoryReportViewItemTable: public Ui_TinventoryReportViewItemTable {};
 } // namespace Ui
 
 QT_END_NAMESPACE

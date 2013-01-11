@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TinventoryReportViewItemClearCoinDetailTree.ui'
 **
-** Created: Thu Jan 10 13:52:52 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TinventoryReportViewItemClearCoinDetailTree
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTreeWidget *m_inventoryReportClearCoinDetailTreeWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TinventoryReportViewItemClearCoinDetailTree)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(600, 267);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TinventoryReportViewItemClearCoinDetailTree->objectName().isEmpty())
+            TinventoryReportViewItemClearCoinDetailTree->setObjectName(QString::fromUtf8("TinventoryReportViewItemClearCoinDetailTree"));
+        TinventoryReportViewItemClearCoinDetailTree->resize(600, 267);
+        verticalLayoutWidget = new QWidget(TinventoryReportViewItemClearCoinDetailTree);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-1, -1, 601, 271));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -45,23 +45,23 @@ public:
         verticalLayout->addWidget(m_inventoryReportClearCoinDetailTreeWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TinventoryReportViewItemClearCoinDetailTree);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TinventoryReportViewItemClearCoinDetailTree);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TinventoryReportViewItemClearCoinDetailTree)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TinventoryReportViewItemClearCoinDetailTree->setWindowTitle(QApplication::translate("TinventoryReportViewItemClearCoinDetailTree", "Form", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = m_inventoryReportClearCoinDetailTreeWidget->headerItem();
-        ___qtreewidgetitem->setText(1, QApplication::translate("Form", "\346\270\205\345\270\201\345\200\274", 0, QApplication::UnicodeUTF8));
-        ___qtreewidgetitem->setText(0, QApplication::translate("Form", "\346\270\205\345\270\201\351\241\271\347\233\256", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem->setText(1, QApplication::translate("TinventoryReportViewItemClearCoinDetailTree", "\346\270\205\345\270\201\345\200\274", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem->setText(0, QApplication::translate("TinventoryReportViewItemClearCoinDetailTree", "\346\270\205\345\270\201\351\241\271\347\233\256", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TinventoryReportViewItemClearCoinDetailTree: public Ui_TinventoryReportViewItemClearCoinDetailTree {};
 } // namespace Ui
 
 QT_END_NAMESPACE

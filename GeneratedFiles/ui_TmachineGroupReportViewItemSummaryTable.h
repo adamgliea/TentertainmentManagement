@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineGroupReportViewItemSummaryTable.ui'
 **
-** Created: Thu Jan 10 13:52:53 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -24,7 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TmachineGroupReportViewItemSummaryTable
 {
 public:
     QWidget *gridLayoutWidget;
@@ -34,12 +34,12 @@ public:
     QDateEdit *m_summaryDateEdit;
     QSpacerItem *horizontalSpacer;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TmachineGroupReportViewItemSummaryTable)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(660, 313);
-        gridLayoutWidget = new QWidget(Form);
+        if (TmachineGroupReportViewItemSummaryTable->objectName().isEmpty())
+            TmachineGroupReportViewItemSummaryTable->setObjectName(QString::fromUtf8("TmachineGroupReportViewItemSummaryTable"));
+        TmachineGroupReportViewItemSummaryTable->resize(660, 313);
+        gridLayoutWidget = new QWidget(TmachineGroupReportViewItemSummaryTable);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(0, 0, 661, 311));
         gridLayout = new QGridLayout(gridLayoutWidget);
@@ -75,29 +75,29 @@ public:
         gridLayout->addItem(horizontalSpacer, 0, 1, 1, 1);
 
 
-        retranslateUi(Form);
+        retranslateUi(TmachineGroupReportViewItemSummaryTable);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TmachineGroupReportViewItemSummaryTable);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TmachineGroupReportViewItemSummaryTable)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TmachineGroupReportViewItemSummaryTable->setWindowTitle(QApplication::translate("TmachineGroupReportViewItemSummaryTable", "Form", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = m_summaryReportTableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Form", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("TmachineGroupReportViewItemSummaryTable", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = m_summaryReportTableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Form", "\350\265\204\344\272\247\345\244\247\347\261\273", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("TmachineGroupReportViewItemSummaryTable", "\350\265\204\344\272\247\345\244\247\347\261\273", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = m_summaryReportTableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Form", "\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem2->setText(QApplication::translate("TmachineGroupReportViewItemSummaryTable", "\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem3 = m_summaryReportTableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Form", "\351\207\221\351\242\235", 0, QApplication::UnicodeUTF8));
-        m_machineSummaryReportLabel->setText(QApplication::translate("Form", "\346\200\273\346\234\272\347\273\204\346\212\245\350\241\250", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem3->setText(QApplication::translate("TmachineGroupReportViewItemSummaryTable", "\351\207\221\351\242\235", 0, QApplication::UnicodeUTF8));
+        m_machineSummaryReportLabel->setText(QApplication::translate("TmachineGroupReportViewItemSummaryTable", "\346\200\273\346\234\272\347\273\204\346\212\245\350\241\250", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TmachineGroupReportViewItemSummaryTable: public Ui_TmachineGroupReportViewItemSummaryTable {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineGroupDifferenceReportViewItemTable.ui'
 **
-** Created: Thu Jan 10 13:52:52 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TmachineGroupDifferenceReportViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *tableWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TmachineGroupDifferenceReportViewItemTable)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(749, 424);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TmachineGroupDifferenceReportViewItemTable->objectName().isEmpty())
+            TmachineGroupDifferenceReportViewItemTable->setObjectName(QString::fromUtf8("TmachineGroupDifferenceReportViewItemTable"));
+        TmachineGroupDifferenceReportViewItemTable->resize(749, 424);
+        verticalLayoutWidget = new QWidget(TmachineGroupDifferenceReportViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(0, 0, 751, 431));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -57,30 +57,30 @@ public:
         verticalLayout->addWidget(tableWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TmachineGroupDifferenceReportViewItemTable);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TmachineGroupDifferenceReportViewItemTable);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TmachineGroupDifferenceReportViewItemTable)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TmachineGroupDifferenceReportViewItemTable->setWindowTitle(QApplication::translate("TmachineGroupDifferenceReportViewItemTable", "Form", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Form", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("TmachineGroupDifferenceReportViewItemTable", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Form", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("TmachineGroupDifferenceReportViewItemTable", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Form", "\345\207\200\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem2->setText(QApplication::translate("TmachineGroupDifferenceReportViewItemTable", "\345\207\200\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Form", "\346\270\205\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem3->setText(QApplication::translate("TmachineGroupDifferenceReportViewItemTable", "\346\270\205\346\224\266\345\270\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("Form", "\345\267\256\345\274\202\346\257\224\350\276\203", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem4->setText(QApplication::translate("TmachineGroupDifferenceReportViewItemTable", "\345\267\256\345\274\202\346\257\224\350\276\203", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TmachineGroupDifferenceReportViewItemTable: public Ui_TmachineGroupDifferenceReportViewItemTable {};
 } // namespace Ui
 
 QT_END_NAMESPACE

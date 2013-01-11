@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TcalendarWidget.ui'
 **
-** Created: Thu Jan 10 13:52:51 2013
+** Created: Fri Jan 11 13:10:26 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TcalendarWidget
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QCalendarWidget *calendarWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TcalendarWidget)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(424, 231);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TcalendarWidget->objectName().isEmpty())
+            TcalendarWidget->setObjectName(QString::fromUtf8("TcalendarWidget"));
+        TcalendarWidget->resize(424, 231);
+        verticalLayoutWidget = new QWidget(TcalendarWidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(0, 0, 421, 231));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -45,20 +45,20 @@ public:
         verticalLayout->addWidget(calendarWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TcalendarWidget);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TcalendarWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TcalendarWidget)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TcalendarWidget->setWindowTitle(QApplication::translate("TcalendarWidget", "Form", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TcalendarWidget: public Ui_TcalendarWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

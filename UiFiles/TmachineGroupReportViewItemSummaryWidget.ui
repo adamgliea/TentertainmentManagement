@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>TmachineGroupReportViewItemSummaryWidget</class>
+ <widget class="QWidget" name="TmachineGroupReportViewItemSummaryWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -85,12 +85,6 @@
     </item>
    </layout>
   </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget_2</zorder>
-  <zorder>layoutWidget_3</zorder>
  </widget>
  <resources/>
  <connections/>

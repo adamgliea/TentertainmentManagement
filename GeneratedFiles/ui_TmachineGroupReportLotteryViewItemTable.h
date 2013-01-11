@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineGroupReportLotteryViewItemTable.ui'
 **
-** Created: Thu Jan 10 13:52:53 2013
+** Created: Fri Jan 11 13:10:27 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -21,19 +21,19 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_TmachineGroupReportLotteryViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QTableWidget *m_reportLotteryTableWidget;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *TmachineGroupReportLotteryViewItemTable)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(940, 390);
-        verticalLayoutWidget = new QWidget(Form);
+        if (TmachineGroupReportLotteryViewItemTable->objectName().isEmpty())
+            TmachineGroupReportLotteryViewItemTable->setObjectName(QString::fromUtf8("TmachineGroupReportLotteryViewItemTable"));
+        TmachineGroupReportLotteryViewItemTable->resize(940, 390);
+        verticalLayoutWidget = new QWidget(TmachineGroupReportLotteryViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(0, 0, 941, 391));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
@@ -83,56 +83,56 @@ public:
         verticalLayout->addWidget(m_reportLotteryTableWidget);
 
 
-        retranslateUi(Form);
+        retranslateUi(TmachineGroupReportLotteryViewItemTable);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(TmachineGroupReportLotteryViewItemTable);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *TmachineGroupReportLotteryViewItemTable)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0, QApplication::UnicodeUTF8));
+        TmachineGroupReportLotteryViewItemTable->setWindowTitle(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "Form", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = m_reportLotteryTableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Form", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\345\272\217\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = m_reportLotteryTableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Form", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\234\272\345\217\260\345\220\215\347\247\260", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem2 = m_reportLotteryTableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Form", "\345\210\206\345\200\274", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem2->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\345\210\206\345\200\274", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem3 = m_reportLotteryTableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Form", "\344\273\212\346\212\225", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem3->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\344\273\212\346\212\225", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem4 = m_reportLotteryTableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("Form", "\344\273\212\345\207\272", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem4->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\344\273\212\345\207\272", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem5 = m_reportLotteryTableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("Form", "\346\230\250\346\212\225", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem5->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\230\250\346\212\225", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem6 = m_reportLotteryTableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QApplication::translate("Form", "\346\230\250\345\207\272", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem6->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\230\250\345\207\272", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem7 = m_reportLotteryTableWidget->horizontalHeaderItem(7);
-        ___qtablewidgetitem7->setText(QApplication::translate("Form", "\346\212\225\345\270\201\345\267\256", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem7->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\212\225\345\270\201\345\267\256", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem8 = m_reportLotteryTableWidget->horizontalHeaderItem(8);
-        ___qtablewidgetitem8->setText(QApplication::translate("Form", "\351\200\200\345\270\201\345\267\256", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem8->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\351\200\200\345\270\201\345\267\256", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem9 = m_reportLotteryTableWidget->horizontalHeaderItem(9);
-        ___qtablewidgetitem9->setText(QApplication::translate("Form", "\345\207\200\344\270\212\345\270\201", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem9->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\345\207\200\344\270\212\345\270\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem10 = m_reportLotteryTableWidget->horizontalHeaderItem(10);
-        ___qtablewidgetitem10->setText(QApplication::translate("Form", "\351\207\221\351\242\235", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem10->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\351\207\221\351\242\235", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem11 = m_reportLotteryTableWidget->horizontalHeaderItem(11);
-        ___qtablewidgetitem11->setText(QApplication::translate("Form", "\344\273\212\345\274\200", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem11->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\344\273\212\345\274\200", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem12 = m_reportLotteryTableWidget->horizontalHeaderItem(12);
-        ___qtablewidgetitem12->setText(QApplication::translate("Form", "\344\273\212\346\264\227", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem12->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\344\273\212\346\264\227", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem13 = m_reportLotteryTableWidget->horizontalHeaderItem(13);
-        ___qtablewidgetitem13->setText(QApplication::translate("Form", "\346\230\250\345\274\200", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem13->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\230\250\345\274\200", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem14 = m_reportLotteryTableWidget->horizontalHeaderItem(14);
-        ___qtablewidgetitem14->setText(QApplication::translate("Form", "\346\230\250\346\264\227", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem14->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\230\250\346\264\227", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem15 = m_reportLotteryTableWidget->horizontalHeaderItem(15);
-        ___qtablewidgetitem15->setText(QApplication::translate("Form", "\345\274\200\345\210\206\345\267\256", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem15->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\345\274\200\345\210\206\345\267\256", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem16 = m_reportLotteryTableWidget->horizontalHeaderItem(16);
-        ___qtablewidgetitem16->setText(QApplication::translate("Form", "\346\264\227\345\210\206\345\267\256", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem16->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\346\264\227\345\210\206\345\267\256", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem17 = m_reportLotteryTableWidget->horizontalHeaderItem(17);
-        ___qtablewidgetitem17->setText(QApplication::translate("Form", "\345\274\200\346\264\227\345\267\256", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem17->setText(QApplication::translate("TmachineGroupReportLotteryViewItemTable", "\345\274\200\346\264\227\345\267\256", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class TmachineGroupReportLotteryViewItemTable: public Ui_TmachineGroupReportLotteryViewItemTable {};
 } // namespace Ui
 
 QT_END_NAMESPACE
