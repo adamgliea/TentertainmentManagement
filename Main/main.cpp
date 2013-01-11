@@ -2,9 +2,18 @@
 #include <QtGui/QApplication>
 #include <QtCore/QTextCodec>
 #include "ToutlinerTreeView.h"
+#include <gtest/gtest.h>
+
+int runModelTestCases()
+{
+	return RUN_ALL_TESTS();
+}
 
 int main(int argc, char *argv[])
 {
+	testing::InitGoogleTest(&argc, argv);
+	runModelTestCases();
+
     QApplication a(argc, argv);
     QTextCodec::setCodecForTr(QTextCodec::codecForName("GBK"));
     YR2K::TentertainmentManagement window;
