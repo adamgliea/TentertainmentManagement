@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineFuncSetupViewItemTable.ui'
 **
-** Created: Fri Jan 11 13:10:27 2013
+** Created: Mon Jan 14 13:32:13 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -25,24 +25,23 @@ class Ui_TmachineFuncSetupViewItemTable
 {
 public:
     QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *mainLayout;
     QTableWidget *tableWidget;
-    QTableWidget *tableWidget_2;
 
     void setupUi(QWidget *TmachineFuncSetupViewItemTable)
     {
         if (TmachineFuncSetupViewItemTable->objectName().isEmpty())
             TmachineFuncSetupViewItemTable->setObjectName(QString::fromUtf8("TmachineFuncSetupViewItemTable"));
-        TmachineFuncSetupViewItemTable->resize(710, 152);
+        TmachineFuncSetupViewItemTable->resize(833, 249);
         layoutWidget = new QWidget(TmachineFuncSetupViewItemTable);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 711, 151));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        layoutWidget->setGeometry(QRect(0, 0, 831, 241));
+        mainLayout = new QVBoxLayout(layoutWidget);
+        mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
+        mainLayout->setContentsMargins(0, 0, 0, 0);
         tableWidget = new QTableWidget(layoutWidget);
-        if (tableWidget->columnCount() < 7)
-            tableWidget->setColumnCount(7);
+        if (tableWidget->columnCount() < 13)
+            tableWidget->setColumnCount(13);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -57,28 +56,21 @@ public:
         tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(8, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(9, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(10, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(11, __qtablewidgetitem11);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(12, __qtablewidgetitem12);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
 
-        verticalLayout->addWidget(tableWidget);
-
-        tableWidget_2 = new QTableWidget(layoutWidget);
-        if (tableWidget_2->columnCount() < 6)
-            tableWidget_2->setColumnCount(6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(2, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(3, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(4, __qtablewidgetitem11);
-        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(5, __qtablewidgetitem12);
-        tableWidget_2->setObjectName(QString::fromUtf8("tableWidget_2"));
-
-        verticalLayout->addWidget(tableWidget_2);
+        mainLayout->addWidget(tableWidget);
 
 
         retranslateUi(TmachineFuncSetupViewItemTable);
@@ -103,17 +95,17 @@ public:
         ___qtablewidgetitem5->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\207\240\347\216\207\350\214\203\345\233\264", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
         ___qtablewidgetitem6->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\244\207\346\263\250", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget_2->horizontalHeaderItem(0);
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
         ___qtablewidgetitem7->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\234\200\345\244\247\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem8 = tableWidget_2->horizontalHeaderItem(1);
+        QTableWidgetItem *___qtablewidgetitem8 = tableWidget->horizontalHeaderItem(8);
         ___qtablewidgetitem8->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\234\200\345\260\217\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem9 = tableWidget_2->horizontalHeaderItem(2);
+        QTableWidgetItem *___qtablewidgetitem9 = tableWidget->horizontalHeaderItem(9);
         ___qtablewidgetitem9->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\272\204\351\227\262\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem10 = tableWidget_2->horizontalHeaderItem(3);
+        QTableWidgetItem *___qtablewidgetitem10 = tableWidget->horizontalHeaderItem(10);
         ___qtablewidgetitem10->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\222\214\345\261\200\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem11 = tableWidget_2->horizontalHeaderItem(4);
+        QTableWidgetItem *___qtablewidgetitem11 = tableWidget->horizontalHeaderItem(11);
         ___qtablewidgetitem11->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\212\225\347\240\201\345\244\251\346\225\260", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem12 = tableWidget_2->horizontalHeaderItem(5);
+        QTableWidgetItem *___qtablewidgetitem12 = tableWidget->horizontalHeaderItem(12);
         ___qtablewidgetitem12->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\270\205\345\270\201\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

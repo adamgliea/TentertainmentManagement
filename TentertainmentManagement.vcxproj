@@ -90,6 +90,7 @@
     <ClCompile Include="Panel\TassetSetupPanel.cpp" />
     <ClCompile Include="Panel\TinventoryReportPanel.cpp" />
     <ClCompile Include="Panel\TmachineFuncSetupPanel.cpp" />
+    <ClCompile Include="Panel\TmachineGroupDetailSetupPanel.cpp" />
     <ClCompile Include="Panel\TmachineGroupDifferenceReportPanel.cpp" />
     <ClCompile Include="Panel\TmachineGroupReportPanel.cpp" />
     <ClCompile Include="Panel\TwarningSystemPanel.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="Panel\TassetSetupPanel.h" />
     <ClInclude Include="Panel\TinventoryReportPanel.h" />
     <ClInclude Include="Panel\TmachineFuncSetupPanel.h" />
+    <ClInclude Include="Panel\TmachineGroupDetailSetupPanel.h" />
     <ClInclude Include="Panel\TmachineGroupDifferenceReportPanel.h" />
     <ClInclude Include="Panel\TmachineGroupReportPanel.h" />
     <ClInclude Include="Panel\TwarningSystemPanel.h" />

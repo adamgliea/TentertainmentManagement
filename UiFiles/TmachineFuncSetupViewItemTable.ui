@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>152</height>
+    <width>833</width>
+    <height>249</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,11 +18,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>711</width>
-     <height>151</height>
+     <width>831</width>
+     <height>241</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="mainLayout">
     <item>
      <widget class="QTableWidget" name="tableWidget">
       <column>
@@ -60,10 +60,6 @@
         <string>备注</string>
        </property>
       </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="tableWidget_2">
       <column>
        <property name="text">
         <string>最大压分</string>

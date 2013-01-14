@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineDetailSetupViewItemTable.ui'
 **
-** Created: Fri Jan 11 13:10:27 2013
+** Created: Mon Jan 14 13:25:23 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -25,7 +25,7 @@ class Ui_TmachineDetailSetupViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *mainLayout;
     QTableWidget *tableWidget;
 
     void setupUi(QWidget *TmachineDetailSetupViewItemTable)
@@ -36,9 +36,9 @@ public:
         verticalLayoutWidget = new QWidget(TmachineDetailSetupViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-1, -1, 741, 101));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        mainLayout = new QVBoxLayout(verticalLayoutWidget);
+        mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
+        mainLayout->setContentsMargins(0, 0, 0, 0);
         tableWidget = new QTableWidget(verticalLayoutWidget);
         if (tableWidget->columnCount() < 6)
             tableWidget->setColumnCount(6);
@@ -63,7 +63,7 @@ public:
         tableWidget->horizontalHeader()->setCascadingSectionResizes(true);
         tableWidget->horizontalHeader()->setDefaultSectionSize(120);
 
-        verticalLayout->addWidget(tableWidget);
+        mainLayout->addWidget(tableWidget);
 
 
         retranslateUi(TmachineDetailSetupViewItemTable);

@@ -43,6 +43,9 @@
     <ClCompile Include="Main\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupDetailSetupPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Panel\TassetSetupPanel.h">
@@ -140,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_TwarningSystemViewItemTable.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TmachineGroupDetailSetupPanel.h">
+      <Filter>Panel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
