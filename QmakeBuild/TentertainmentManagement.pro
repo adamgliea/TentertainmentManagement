@@ -19,6 +19,7 @@ INCLUDEPATH += ../. \
 			   ../Outliner \
 			   ../Panel \
 			   ../Common \
+			   ../Model \
 			   /usr/local/include/mysql
 
 LIBS += -lmysqlpp

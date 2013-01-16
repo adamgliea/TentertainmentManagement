@@ -11,7 +11,7 @@
 namespace YR2K {
 	struct DBAssetsInfo;
 
-	class TDatabaseManager : Singleton<TDatabaseManager> {
+	class TDatabaseManager : public Singleton<TDatabaseManager> {
 	public:
 		TDatabaseManager();
 		~TDatabaseManager();
@@ -20,8 +20,9 @@ namespace YR2K {
 
 		// return id of asset in database
 		int addAsset(const struct DBAssetsInfo &info);
-		bool removeAsset(const unsigned int assetId, const enum TECategory assetType);
+		bool removeAsset(const unsigned int assetId);
 		bool findAssetsWithAssetType(const enum TECategory assetType, std::vector<struct DBAssetsInfo> &assets);
+		struct DBAssetsInfo* findAssetWithAssetId(const unsigned int assetId);
 
 	private:
 		void disconnect();

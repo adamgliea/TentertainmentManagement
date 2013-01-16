@@ -7,12 +7,12 @@ namespace YR2K {
 
 	struct DBAssetsInfo {
 		unsigned int assetId;
-		enum TECategory assetType;
+		unsigned int assetType;					//for enum TECategory
 		unsigned int clearCoinCycle;
 		int clearCoinMargin;
 		int liabilities;
-		unsigned int allowLossDays
-		enum TEStatementCategory statmentType;
+		unsigned int allowLossDays;
+		unsigned int statmentType;				//for enum TEStatementCategory
 	};
 
 }
