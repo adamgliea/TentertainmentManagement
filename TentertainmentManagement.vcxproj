@@ -92,7 +92,10 @@
     <ClCompile Include="Panel\TmachineFuncSetupPanel.cpp" />
     <ClCompile Include="Panel\TmachineGroupDetailSetupPanel.cpp" />
     <ClCompile Include="Panel\TmachineGroupDifferenceReportPanel.cpp" />
-    <ClCompile Include="Panel\TmachineGroupReportPanel.cpp" />
+    <ClCompile Include="Panel\TmachineGroupReportEntertainmentPanel.cpp" />
+    <ClCompile Include="Panel\TmachineGroupReportGiftPanel.cpp" />
+    <ClCompile Include="Panel\TmachineGroupReportLotteryPanel.cpp" />
+    <ClCompile Include="Panel\TmachineGroupReportSummaryPanel.cpp" />
     <ClCompile Include="Panel\TwarningSystemPanel.cpp" />
     <ClCompile Include="Panel\TwelcomePanel.cpp" />
   </ItemGroup>
@@ -110,6 +113,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common\TcommonTypes.h" />
     <ClInclude Include="GeneratedFiles\ui_TassetSetupViewItemAddWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_TassetSetupViewItemTable.h" />
     <ClInclude Include="GeneratedFiles\ui_TcalendarWidget.h" />
@@ -139,10 +143,12 @@
     <ClInclude Include="Panel\TmachineFuncSetupPanel.h" />
     <ClInclude Include="Panel\TmachineGroupDetailSetupPanel.h" />
     <ClInclude Include="Panel\TmachineGroupDifferenceReportPanel.h" />
-    <ClInclude Include="Panel\TmachineGroupReportPanel.h" />
+    <ClInclude Include="Panel\TmachineGroupReportEntertainmentPanel.h" />
+    <ClInclude Include="Panel\TmachineGroupReportGiftPanel.h" />
+    <ClInclude Include="Panel\TmachineGroupReportLotteryPanel.h" />
+    <ClInclude Include="Panel\TmachineGroupReportSummaryPanel.h" />
     <ClInclude Include="Panel\TwarningSystemPanel.h" />
     <ClInclude Include="Panel\TwelcomePanel.h" />
-    <ClInclude Include="TcommonTypes.h" />
     <CustomBuild Include="Main\TentertainmentManagement.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing TentertainmentManagement.h...</Message>

@@ -19,9 +19,6 @@
     <ClCompile Include="Panel\TmachineGroupDifferenceReportPanel.cpp">
       <Filter>Panel</Filter>
     </ClCompile>
-    <ClCompile Include="Panel\TmachineGroupReportPanel.cpp">
-      <Filter>Panel</Filter>
-    </ClCompile>
     <ClCompile Include="Outliner\ToutlinerTreeView.cpp">
       <Filter>Outliner</Filter>
     </ClCompile>
@@ -46,18 +43,24 @@
     <ClCompile Include="Panel\TmachineGroupDetailSetupPanel.cpp">
       <Filter>Panel</Filter>
     </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupReportEntertainmentPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupReportGiftPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupReportLotteryPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupReportSummaryPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Panel\TassetSetupPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TadminSetupPanel.h">
-      <Filter>Panel</Filter>
-    </ClInclude>
-    <ClInclude Include="TcommonTypes.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Panel\TmachineGroupReportPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TinventoryReportPanel.h">
@@ -145,6 +148,21 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TmachineGroupDetailSetupPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TmachineGroupReportEntertainmentPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TmachineGroupReportGiftPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TmachineGroupReportLotteryPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\TcommonTypes.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TmachineGroupReportSummaryPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
   </ItemGroup>

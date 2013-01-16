@@ -28,7 +28,9 @@
 #include "TinventoryReportPanel.h"
 #include "TmachineFuncSetupPanel.h"
 #include "TmachineGroupDifferenceReportPanel.h"
-#include "TmachineGroupReportPanel.h"
+#include "TmachineGroupReportEntertainmentPanel.h"
+#include "TmachineGroupReportGiftPanel.h"
+#include "TmachineGroupReportLotteryPanel.h"
 #include "TwarningSystemPanel.h"
 #include "TwelcomePanel.h"
 #include "TcommonTypes.h"
@@ -176,11 +178,12 @@ namespace YR2K {
         m_pStackedWidget->insertWidget(PANEL_ASSET_SETUP, new TassetSetupPanel());
         m_pStackedWidget->insertWidget(PANEL_MACHINE_FUNC_SETUP, new TmachineFuncSetupPanel());
         m_pStackedWidget->insertWidget(PANEL_ADMIN_SETUP, new TadminSetupPanel());
-        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT, new TmachineGroupReportPanel());
+        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT_ENTERAINTMENT, new TmachineGroupReportEntertainmentPanel());
+        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT_GIFT, new TmachineGroupReportGiftPanel());
+        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT_LOTTERY, new TmachineGroupReportLotteryPanel());
         m_pStackedWidget->insertWidget(PANEL_INVENTORY_REPORT, new TinventoryReportPanel());
         m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_DIFFERENCE, new TmachineGroupDifferenceReportPanel());
         m_pStackedWidget->insertWidget(PANEL_WARNING_SYSTEM, new TwarningSystemPanel());
-
     }
 
     //---------------------------------------------------------------------

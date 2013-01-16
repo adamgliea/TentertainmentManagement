@@ -10,5 +10,5 @@ namespace YR2K {
     TmachineGroupDifferenceReportPanel::~TmachineGroupDifferenceReportPanel(void)
     {
     }
-
 }
+
