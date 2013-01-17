@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineFuncSetupViewItemTable.ui'
 **
-** Created: Mon Jan 14 13:32:13 2013
+** Created: Thu Jan 17 13:23:49 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -40,8 +40,8 @@ public:
         mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
         mainLayout->setContentsMargins(0, 0, 0, 0);
         tableWidget = new QTableWidget(layoutWidget);
-        if (tableWidget->columnCount() < 13)
-            tableWidget->setColumnCount(13);
+        if (tableWidget->columnCount() < 12)
+            tableWidget->setColumnCount(12);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -66,8 +66,6 @@ public:
         tableWidget->setHorizontalHeaderItem(10, __qtablewidgetitem10);
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(11, __qtablewidgetitem11);
-        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(12, __qtablewidgetitem12);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
 
         mainLayout->addWidget(tableWidget);
@@ -94,19 +92,17 @@ public:
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
         ___qtablewidgetitem5->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\207\240\347\216\207\350\214\203\345\233\264", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\244\207\346\263\250", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem6->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\234\200\345\244\247\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
-        ___qtablewidgetitem7->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\234\200\345\244\247\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem7->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\234\200\345\260\217\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem8 = tableWidget->horizontalHeaderItem(8);
-        ___qtablewidgetitem8->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\234\200\345\260\217\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem8->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\272\204\351\227\262\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem9 = tableWidget->horizontalHeaderItem(9);
-        ___qtablewidgetitem9->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\272\204\351\227\262\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem9->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\222\214\345\261\200\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem10 = tableWidget->horizontalHeaderItem(10);
-        ___qtablewidgetitem10->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\345\222\214\345\261\200\345\216\213\345\210\206", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem10->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\212\225\347\240\201\345\244\251\346\225\260", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem11 = tableWidget->horizontalHeaderItem(11);
-        ___qtablewidgetitem11->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\212\225\347\240\201\345\244\251\346\225\260", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem12 = tableWidget->horizontalHeaderItem(12);
-        ___qtablewidgetitem12->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\270\205\345\270\201\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem11->setText(QApplication::translate("TmachineFuncSetupViewItemTable", "\346\270\205\345\270\201\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

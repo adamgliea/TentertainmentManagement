@@ -15,7 +15,6 @@ namespace YR2K {
     private:
         Ui::TmachineFuncSetupViewItemTable*           m_pMachineFuncSetupTable;
         Ui::TmachineFuncSetupViewItemAdd*       m_pMachineFuncSetupAddWidget;
-        QPushButton*                            m_pPushButton;
     };
 
 }

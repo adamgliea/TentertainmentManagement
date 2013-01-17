@@ -57,11 +57,6 @@
       </column>
       <column>
        <property name="text">
-        <string>备注</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
         <string>最大压分</string>
        </property>
       </column>

@@ -9,17 +9,17 @@ namespace YR2K {
         : QWidget(parent)
     {
         m_pMachineFuncSetupTable = new Ui::TmachineFuncSetupViewItemTable();
-        m_pMachineFuncSetupTable->setupUi(this);
-        m_pPushButton = new QPushButton(this);
-        m_pPushButton->setText(tr("添加机台功能"));
+
+        QWidget* table = new QWidget(this);
+        m_pMachineFuncSetupTable->setupUi(table);
 
         QGridLayout* mainLayout = new QGridLayout(this);
+        mainLayout->addWidget(table);
 
-        QSpacerItem *horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-        mainLayout->addWidget(m_pPushButton, 0, 0);
-        mainLayout->addItem(horizontalSpacer, 0, 1);
-        mainLayout->addLayout(m_pMachineFuncSetupTable->mainLayout, 1, 0, 1, 2);
+        int w = table->width();
+        int h = table->height();
 
+        setFixedSize(w, h);
         setLayout(mainLayout);
     }
 

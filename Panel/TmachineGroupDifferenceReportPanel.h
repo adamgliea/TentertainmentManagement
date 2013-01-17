@@ -1,21 +1,18 @@
 #ifndef TMACHINEGROUPDIFFERENCEREPORTPANEL_H
 #define TMACHINEGROUPDIFFERENCEREPORTPANEL_H
 #include <QtGui/QWidget>
-#include "ui_TinventoryReportViewItemAddCoinWidget.h"
-#include "ui_TinventoryReportViewItemClearCoinWidget.h"
+#include "ui_TmachineGroupDifferenceReportViewItemTable.h"
 
 namespace YR2K {
 
     class TmachineGroupDifferenceReportPanel : public QWidget
     {
     public:
-        TmachineGroupDifferenceReportPanel(void);
+        TmachineGroupDifferenceReportPanel(QWidget* parent = NULL);
         ~TmachineGroupDifferenceReportPanel(void);
 
     private:
-        Ui::TinventoryReportViewItemAddCoinWidget*      m_pInventoryReportViewItemAddCoinWidget;
-        Ui::TinventoryReportViewItemClearCoinWidget*    m_pInventoryReportViewItemClearCoinWidget;
-
+        Ui::TmachineGroupDifferenceReportViewItemTable*     m_pMachineGroupDifferenceReportViewItemTable;
     };
 
 }

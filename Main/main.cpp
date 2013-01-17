@@ -2,7 +2,7 @@
 #include <QtGui/QApplication>
 #include <QtCore/QTextCodec>
 #include "ToutlinerTreeView.h"
-#include "TinventoryReportPanel.h"
+#include "TmachineFuncSetupPanel.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 //    window.showMaximized();
     window.show();
 
-    YR2K::TinventoryReportPanel xxx;
+    YR2K::TmachineFuncSetupPanel xxx;
     xxx.show();
 //     YR2K::ToutlinerTreeView node;
 //     node.show();
