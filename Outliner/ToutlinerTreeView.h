@@ -3,6 +3,8 @@
 
 #include <QtGui/QTreeView>
 
+#include "TcommonTypes.h"
+
 class QStandardItemModel;
 class QStandardItem;
 
@@ -10,17 +12,6 @@ namespace YR2K {
     class ToutlinerTreeViewNode : public QWidget
     {
     public:
-        enum TECategory
-        {
-            CATEGORY_CABINET,
-            CATEGORY_LOTTERY,
-            CATEGORY_SIMULATE,
-            CATEGORY_COINDOZER,
-            CATEGORY_WAGER,
-
-            CATEGORY_NUM
-        };
-
         ToutlinerTreeViewNode(const QString& name, QWidget* parent);
         ~ToutlinerTreeViewNode();
 
