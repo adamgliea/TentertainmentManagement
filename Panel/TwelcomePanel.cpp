@@ -2,7 +2,8 @@
 
 namespace YR2K {
 
-    TwelcomePanel::TwelcomePanel(void)
+    TwelcomePanel::TwelcomePanel(QWidget* parent /*= NULL*/)
+        : TpanelBase(parent)
     {
     }
 

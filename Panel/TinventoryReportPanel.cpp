@@ -9,7 +9,7 @@
 namespace YR2K {
 
     TinventoryReportPanel::TinventoryReportPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
         m_pAddNewRecordButton = new QPushButton();
         m_pTotalInventoryLabel = new QLabel();

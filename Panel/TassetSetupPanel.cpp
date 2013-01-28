@@ -1,12 +1,16 @@
 #include "TassetSetupPanel.h"
 #include <QtGui/QGridLayout>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QDialogButtonBox>
+
 namespace YR2K {
 
     //---------------------------------------------------------------------
     TassetSetupPanel::TassetSetupPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
+        m_eType = PANEL_ASSET_SETUP;
+
         m_pAssetSetupTable = new Ui::TassetSetupViewItemTable();
         m_pAssetSetupTable->setupUi(this);
         m_pPushButton = new QPushButton(this);
@@ -21,11 +25,30 @@ namespace YR2K {
 
         setLayout(mainLayout);
 
+        // connect signals and slots.
+        //
+//         connect(m_pAssetSetupAddWidget->m_buttonBox, SIGNAL(accepted()), this, SLOT(onAddWidgetConfirm()));
+
     }
 
     //---------------------------------------------------------------------
     TassetSetupPanel::~TassetSetupPanel(void)
     {
+    }
+
+    //---------------------------------------------------------------------
+    void TassetSetupPanel::onAddWidgetConfirm( void )
+    {
+
+    }
+
+    //---------------------------------------------------------------------
+    DBAssetsInfo TassetSetupPanel::getInfo( void ) const
+    {
+        DBAssetsInfo info;
+
+
+        return info;
     }
 
 }

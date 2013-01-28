@@ -1,11 +1,13 @@
 #ifndef TMACHINEGROUPREPORTGIFTPANEL_H
 #define TMACHINEGROUPREPORTGIFTPANEL_H
+
+#include "TpanelBase.h"
 #include <QtGui/QWidget>
 #include "ui_TmachineGroupReportGiftViewItemTable.h"
 #include "ui_TsearchWidget.h"
 
 namespace YR2K {
-    class TmachineGroupReportGiftPanel : public QWidget
+    class TmachineGroupReportGiftPanel : public TpanelBase
     {
     public:
         TmachineGroupReportGiftPanel(QWidget* parent = NULL);

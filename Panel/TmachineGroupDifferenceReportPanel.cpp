@@ -4,7 +4,7 @@
 namespace YR2K {
 
     TmachineGroupDifferenceReportPanel::TmachineGroupDifferenceReportPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
         m_pMachineGroupDifferenceReportViewItemTable = new Ui::TmachineGroupDifferenceReportViewItemTable();
 

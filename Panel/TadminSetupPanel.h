@@ -1,12 +1,13 @@
 #ifndef TADMINSETUPPANEL_H
 #define TADMINSETUPPANEL_H
 #include <QtGui/QWidget>
+#include "TpanelBase.h"
 
 namespace YR2K {
-    class TadminSetupPanel : public QWidget
+    class TadminSetupPanel : public TpanelBase
     {
     public:
-        TadminSetupPanel(void);
+        TadminSetupPanel(QWidget* parent = NULL);
         ~TadminSetupPanel(void);
     };
 }

@@ -6,6 +6,7 @@
 
 namespace YR2K {
 
+    //---------------------------------------------------------------------
     ToutlinerTreeView::ToutlinerTreeView( QWidget* parent /*= NULL*/ )
         : QWidget(parent)
         , m_pTreeView(NULL)
@@ -14,170 +15,87 @@ namespace YR2K {
         m_pTreeView = new QTreeView(this);
         m_pModel = new QStandardItemModel(m_pTreeView);
 
-        QStandardItem* treeRootNode = m_pModel->invisibleRootItem();
+        QStandardItem* invisiableRoot = m_pModel->invisibleRootItem();
 
-        ToutlinerTreeViewNode*  m_adminSetupPanelNode = new ToutlinerTreeViewNode(tr("管理员设置"), this);
-        ToutlinerTreeViewNode*  m_assetSetupPanelNode = new ToutlinerTreeViewNode(tr("资产设定"), this);
-        ToutlinerTreeViewNode*  m_inventoryReportPanelNode = new ToutlinerTreeViewNode(tr("库存报表"), this);
-        ToutlinerTreeViewNode*  m_machineFuncSetupPanelNode= new ToutlinerTreeViewNode(tr("机台功能设置"), this);
-        ToutlinerTreeViewNode*  m_machineGroupDifferenceReportPanelNode = new ToutlinerTreeViewNode(tr("机组差异报表"), this);
-        ToutlinerTreeViewNode*  m_machineGroupReportPanelNode= new ToutlinerTreeViewNode(tr("机组报表"), this);
-        ToutlinerTreeViewNode*  m_warningSystemPanelNode = new ToutlinerTreeViewNode(tr("报警系统"), this);
+        m_adminSetupPanelNode = new QStandardItem(tr("账户设定"));
+        m_assetSetupPanelNode = new QStandardItem(tr("资产设定"));
+        m_inventoryReportPanelNode = new QStandardItem(tr("库存设定"));
+        m_machineFuncSetupPanelNode = new QStandardItem(tr("机台功能设定"));
+        m_machineGroupDifferenceReportPanelNode = new QStandardItem(tr("机组差异报表"));
+        m_machineGroupReportPanelNode = new QStandardItem(tr("机组报表"));
+        m_warningSystemPanelNode = new QStandardItem(tr("警告报表"));
 
-        m_adminSetupPanelNode->addAllCategories();
-        m_assetSetupPanelNode->addAllCategories(); 
-        m_inventoryReportPanelNode->addAllCategories();
-        m_machineFuncSetupPanelNode->addAllCategories();
-        m_machineGroupDifferenceReportPanelNode->addAllCategories();
-        m_machineGroupReportPanelNode->addAllCategories();
-        m_warningSystemPanelNode->addAllCategories();
+        m_machineGroupDetailSetupPanelNode = new QStandardItem(tr("机组明细设置"));
+        m_machineGroupReportEntertainmentPanelNode = new QStandardItem(tr("娱乐机"));
+        m_machineGroupReportGiftPanelNode = new QStandardItem(tr("礼品机"));
+        m_machineGroupReportLotteryPanelNode = new QStandardItem(tr("博彩机"));
+        m_machineGroupReportSummaryPanelNode = new QStandardItem(tr("机组总报表"));
 
-        treeRootNode->appendRow(m_adminSetupPanelNode->getRoot());
-        treeRootNode->appendRow(m_assetSetupPanelNode->getRoot());
-        treeRootNode->appendRow(m_inventoryReportPanelNode->getRoot());
-        treeRootNode->appendRow(m_machineFuncSetupPanelNode->getRoot());
-        treeRootNode->appendRow(m_machineGroupDifferenceReportPanelNode->getRoot());
-        treeRootNode->appendRow(m_machineGroupReportPanelNode->getRoot());
-        treeRootNode->appendRow(m_warningSystemPanelNode->getRoot());
+        invisiableRoot->appendRow(m_adminSetupPanelNode);
+        invisiableRoot->appendRow(m_assetSetupPanelNode);
+        invisiableRoot->appendRow(m_inventoryReportPanelNode);
+        invisiableRoot->appendRow(m_machineFuncSetupPanelNode);
+        invisiableRoot->appendRow(m_machineGroupDifferenceReportPanelNode);
+        invisiableRoot->appendRow(m_machineGroupDetailSetupPanelNode);
+        invisiableRoot->appendRow(m_machineGroupReportPanelNode);
+            m_machineGroupReportPanelNode->appendRow(m_machineGroupReportEntertainmentPanelNode);
+            m_machineGroupReportPanelNode->appendRow(m_machineGroupReportGiftPanelNode);
+            m_machineGroupReportPanelNode->appendRow(m_machineGroupReportLotteryPanelNode);
+            m_machineGroupReportPanelNode->appendRow(m_machineGroupReportSummaryPanelNode);
+        invisiableRoot->appendRow(m_warningSystemPanelNode);
+
+        m_adminSetupPanelNode->setEditable(false);
+        m_assetSetupPanelNode->setEditable(false);
+        m_inventoryReportPanelNode->setEditable(false);
+        m_machineFuncSetupPanelNode->setEditable(false);
+        m_machineGroupDifferenceReportPanelNode->setEditable(false);
+        m_machineGroupReportPanelNode->setEditable(false);
+        m_warningSystemPanelNode->setEditable(false);
+        m_machineGroupDetailSetupPanelNode->setEditable(false);
+        m_machineGroupReportEntertainmentPanelNode->setEditable(false);
+        m_machineGroupReportGiftPanelNode->setEditable(false);
+        m_machineGroupReportLotteryPanelNode->setEditable(false);
+        m_machineGroupReportSummaryPanelNode->setEditable(false);
 
         m_pTreeView->setModel(m_pModel);
         m_pTreeView->expandAll();
-        QHBoxLayout*   mainLayout = new QHBoxLayout();
+
+        QVBoxLayout* mainLayout = new QVBoxLayout(this);
+
         mainLayout->addWidget(m_pTreeView);
         setLayout(mainLayout);
 
+        connect(m_pTreeView, SIGNAL(clicked(const QModelIndex&)), this, SLOT(onTreeViewClicked(const QModelIndex&)));
+
     }
 
-
+    //---------------------------------------------------------------------
     ToutlinerTreeView::~ToutlinerTreeView(void)
     {
     }
 
+    //---------------------------------------------------------------------
     QTreeView* ToutlinerTreeView::getTreeView() const
     {
         return m_pTreeView;
     }
 
-
-    ToutlinerTreeViewNode::ToutlinerTreeViewNode(const QString& name, QWidget* parent )
-        : QWidget(parent)
-        , m_pRoot(NULL)
-        , m_pCabinetCategory(NULL)
-        , m_pLotteryCategory(NULL)
-        , m_pSimulateCategory(NULL)
-        , m_pCoinDozerCategory(NULL)
-        , m_pWagerCategory(NULL)
+    //---------------------------------------------------------------------
+    QStandardItemModel* ToutlinerTreeView::getTreeViewModel() const
     {
-        m_pRoot = new QStandardItem(name);
-        m_pRoot->setEditable(false);
+        return m_pModel;
     }
 
-    ToutlinerTreeViewNode::~ToutlinerTreeViewNode()
+    //---------------------------------------------------------------------
+    void ToutlinerTreeView::onTreeViewClicked( const QModelIndex& modelIndex)
     {
-        // As all the member would be added to parent QT widget
-        // we cannot delete any member here, because QT will manage
-        // memory itself, otherwise the member would be deleted twice
-        // and cause a crash to the software.
+        QStandardItem* item = m_pModel->itemFromIndex(modelIndex);
 
-    }
-
-
-    QStandardItem* ToutlinerTreeViewNode::getRoot() const
-    {
-        return m_pRoot;
-    }
-
-    QStandardItem* ToutlinerTreeViewNode::getCabinetCategoryNode() const
-    {
-        return m_pCabinetCategory;
-    }
-
-    QStandardItem* ToutlinerTreeViewNode::getLotteryCategory() const
-    {
-        return m_pLotteryCategory;
-    }
-
-    QStandardItem* ToutlinerTreeViewNode::getSimulateCategory() const
-    {
-        return m_pSimulateCategory;
-    }
-
-    QStandardItem* ToutlinerTreeViewNode::getCoinDozerCategory() const
-    {
-        return m_pCoinDozerCategory;
-    }
-
-    QStandardItem* ToutlinerTreeViewNode::getWagerCategory() const
-    {
-        return m_pWagerCategory;
-    }
-
-    void ToutlinerTreeViewNode::addCategory(TECategory category)
-    {
-        Q_ASSERT(m_pRoot);
-
-        switch (category)
+        if (item == m_assetSetupPanelNode)
         {
-        case CATEGORY_CABINET:
-            if (!m_pCabinetCategory)
-            {
-                m_pCabinetCategory = new QStandardItem(tr("柜体类"));
-                m_pCabinetCategory->setEditable(false);
-                m_pRoot->appendRow(m_pCabinetCategory);
-            }
-            break;
-        case CATEGORY_LOTTERY:
-            if (!m_pSimulateCategory)
-            {
-                m_pLotteryCategory = new QStandardItem(tr("彩票类"));
-                m_pLotteryCategory->setEditable(false);
-                m_pRoot->appendRow(m_pLotteryCategory);
-            }
-            break;
-        case CATEGORY_SIMULATE:
-            if (!m_pSimulateCategory)
-            {
-                m_pSimulateCategory = new QStandardItem(tr("模拟类"));
-                m_pSimulateCategory->setEditable(false);
-                m_pRoot->appendRow(m_pSimulateCategory);
-            }
-            break;
-        case CATEGORY_COINDOZER:
-            if (!m_pCoinDozerCategory)
-            {
-                m_pCoinDozerCategory = new QStandardItem(tr("推币类"));
-                m_pCoinDozerCategory->setEditable(false);
-                m_pRoot->appendRow(m_pCoinDozerCategory);
-            }
-            break;
-        case CATEGORY_WAGER:
-            if (!m_pWagerCategory)
-            {
-                m_pWagerCategory = new QStandardItem(tr("博彩类"));
-                m_pWagerCategory->setEditable(false);
-                m_pRoot->appendRow(m_pWagerCategory);
-            }
-            break;
-        default:
-            break;
+            emit treeMenuClicked(PANEL_ASSET_SETUP);
         }
-        
     }
-
-    void ToutlinerTreeViewNode::addAllCategories()
-    {
-
-        addCategory(CATEGORY_CABINET);
-        addCategory(CATEGORY_LOTTERY);
-        addCategory(CATEGORY_SIMULATE);
-        addCategory(CATEGORY_COINDOZER);
-        addCategory(CATEGORY_WAGER);
-
-    }
-
-//     void ToutlinerTreeViewNode::destroyIfNotAddedToQTWidget()
-//     {
-//     }
 
 }
 

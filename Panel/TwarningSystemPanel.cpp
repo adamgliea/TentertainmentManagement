@@ -4,7 +4,7 @@
 namespace YR2K {
 
     TwarningSystemPanel::TwarningSystemPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
         m_pWarningSystemViewItemTable = new Ui::TwarningSystemViewItemTable();
 

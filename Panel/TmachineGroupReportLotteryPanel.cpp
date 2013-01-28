@@ -4,7 +4,7 @@ namespace YR2K {
 
     //---------------------------------------------------------------------
     TmachineGroupReportLotteryPanel::TmachineGroupReportLotteryPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
 
         QWidget* searchWidget = new QWidget(this);

@@ -1,5 +1,7 @@
 #ifndef TMACHINEGROUPREPORTSUMMARYPANEL_H
 #define TMACHINEGROUPREPORTSUMMARYPANEL_H
+
+#include "TpanelBase.h"
 #include <QtGui/QWidget>
 #include "ui_TmachineGroupReportViewItemSummaryWidget.h"
 #include "ui_TmachineGroupReportViewItemSummaryTable.h"
@@ -7,7 +9,7 @@
 #include "ui_TinventoryReportViewItemClearCoinWidget.h"
 
 namespace YR2K {
-    class TmachineGroupReportSummaryPanel : public QWidget
+    class TmachineGroupReportSummaryPanel : public TpanelBase
     {
     public:
         TmachineGroupReportSummaryPanel(QWidget* parent = NULL);

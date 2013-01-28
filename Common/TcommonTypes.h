@@ -6,16 +6,18 @@
 namespace YR2K {
     enum TEPanelIndex
     {
+        PANEL_INVALID                   = -1,
         PANEL_WELCOME                   = 0,
-        PANEL_ASSET_SETUP               = 1,
-        PANEL_MACHINE_FUNC_SETUP        = 2,
-        PANEL_ADMIN_SETUP               = 3,
-        PANEL_MACHINE_GROUP_REPORT_ENTERAINTMENT        = 4,
-        PANEL_MACHINE_GROUP_REPORT_GIFT                 = 5,
-        PANEL_MACHINE_GROUP_REPORT_LOTTERY              = 6,
-        PANEL_INVENTORY_REPORT          = 7,
-        PANEL_MACHINE_GROUP_DIFFERENCE  = 8,
-        PANEL_WARNING_SYSTEM            = 9,
+        PANEL_ASSET_SETUP,
+        PANEL_MACHINE_FUNC_SETUP,
+        PANEL_ADMIN_SETUP,
+        PANEL_MACHINE_GROUP_DETAIL_SETUP,
+        PANEL_MACHINE_GROUP_REPORT_ENTERAINTMENT,
+        PANEL_MACHINE_GROUP_REPORT_GIFT,
+        PANEL_MACHINE_GROUP_REPORT_LOTTERY,
+        PANEL_INVENTORY_REPORT,
+        PANEL_MACHINE_GROUP_DIFFERENCE,
+        PANEL_WARNING_SYSTEM,
 
         PANEL_NUM
     };

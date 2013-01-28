@@ -5,7 +5,7 @@
 namespace YR2K {
 
     TmachineGroupDetailSetupPanel::TmachineGroupDetailSetupPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
         m_pMachineDetailSetupTable = new Ui::TmachineDetailSetupViewItemTable();
         m_pMachineDetailSetupTable->setupUi(this);

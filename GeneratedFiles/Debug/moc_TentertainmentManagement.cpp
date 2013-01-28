@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'TentertainmentManagement.h'
 **
-** Created: Fri Jan 11 13:05:57 2013
+** Created: Mon Jan 28 16:46:04 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_YR2K__TentertainmentManagement[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,13 +35,15 @@ static const uint qt_meta_data_YR2K__TentertainmentManagement[] = {
       39,   31,   31,   31, 0x08,
       47,   31,   31,   31, 0x08,
       54,   31,   31,   31, 0x08,
+      67,   62,   31,   31, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_YR2K__TentertainmentManagement[] = {
     "YR2K::TentertainmentManagement\0\0save()\0"
-    "print()\0undo()\0about()\0"
+    "print()\0undo()\0about()\0type\0"
+    "onTreeMenuClicked(TEPanelIndex)\0"
 };
 
 void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -54,10 +56,10 @@ void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject
         case 1: _t->print(); break;
         case 2: _t->undo(); break;
         case 3: _t->about(); break;
+        case 4: _t->onTreeMenuClicked((*reinterpret_cast< const TEPanelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData YR2K::TentertainmentManagement::staticMetaObjectExtraData = {
@@ -92,9 +94,9 @@ int YR2K::TentertainmentManagement::qt_metacall(QMetaObject::Call _c, int _id, v
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

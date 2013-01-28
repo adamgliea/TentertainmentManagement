@@ -22,18 +22,8 @@
 #include <QtCore/QDate>
 #include <QtCore/QTextStream>
 
-
-#include "TadminSetupPanel.h"
-#include "TassetSetupPanel.h"
-#include "TinventoryReportPanel.h"
-#include "TmachineFuncSetupPanel.h"
-#include "TmachineGroupDifferenceReportPanel.h"
-#include "TmachineGroupReportEntertainmentPanel.h"
-#include "TmachineGroupReportGiftPanel.h"
-#include "TmachineGroupReportLotteryPanel.h"
-#include "TwarningSystemPanel.h"
-#include "TwelcomePanel.h"
 #include "TcommonTypes.h"
+#include "TpanelHeaders.h"
 
 namespace YR2K {
 
@@ -49,6 +39,12 @@ namespace YR2K {
     {
         resize(WINDOW_SIZE_WIDTH, WINDOW_SIZE_HEIGHT);
 
+        for(int i = 0; i < PANEL_NUM; i++)
+        {
+            m_aryPanelWidgets[i] = TpanelCreator::getInstance()->create(static_cast<TEPanelIndex>(i));
+        }
+        m_aryPanelWidgets[PANEL_NUM] = TpanelCreator::getInstance()->create(PANEL_INVALID);
+
         createActions();
         createMenus();
         createStatusBar();
@@ -57,6 +53,7 @@ namespace YR2K {
         createTreeView();
         createSplitWindows();
 
+        connect(m_pOutlinerTreeView, SIGNAL(treeMenuClicked(const TEPanelIndex&)), this, SLOT(onTreeMenuClicked(const TEPanelIndex&)));
     }
 
     //---------------------------------------------------------------------
@@ -174,16 +171,14 @@ namespace YR2K {
     void TentertainmentManagement::createStackedWidget()
     {
         m_pStackedWidget = new QStackedWidget(this);
-        m_pStackedWidget->insertWidget(PANEL_WELCOME, new TwelcomePanel());
-        m_pStackedWidget->insertWidget(PANEL_ASSET_SETUP, new TassetSetupPanel());
-        m_pStackedWidget->insertWidget(PANEL_MACHINE_FUNC_SETUP, new TmachineFuncSetupPanel());
-        m_pStackedWidget->insertWidget(PANEL_ADMIN_SETUP, new TadminSetupPanel());
-        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT_ENTERAINTMENT, new TmachineGroupReportEntertainmentPanel());
-        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT_GIFT, new TmachineGroupReportGiftPanel());
-        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_REPORT_LOTTERY, new TmachineGroupReportLotteryPanel());
-        m_pStackedWidget->insertWidget(PANEL_INVENTORY_REPORT, new TinventoryReportPanel());
-        m_pStackedWidget->insertWidget(PANEL_MACHINE_GROUP_DIFFERENCE, new TmachineGroupDifferenceReportPanel());
-        m_pStackedWidget->insertWidget(PANEL_WARNING_SYSTEM, new TwarningSystemPanel());
+
+        for (int i = 0; i < PANEL_NUM + 1; i++)
+        {
+            m_pStackedWidget->insertWidget(i, m_aryPanelWidgets[i]);
+        }
+
+        m_pStackedWidget->setCurrentIndex(PANEL_NUM);
+
     }
 
     //---------------------------------------------------------------------
@@ -205,7 +200,31 @@ namespace YR2K {
         int stackedWidgetWidth = WINDOW_SIZE_WIDTH / 5 * 4;
         sizes << treeViewWidth << stackedWidgetWidth;
         m_pSplitterWindow->setSizes(sizes);
+
     }
+
+    //---------------------------------------------------------------------
+    void TentertainmentManagement::onTreeMenuClicked( const TEPanelIndex& type )
+    {
+        int index = type;
+        if (type == PANEL_INVALID)
+        {
+            index = PANEL_NUM;
+        }
+
+        TpanelBase* panel = m_aryPanelWidgets[type];
+        Q_ASSERT_X(panel != NULL, "TentertainmentManagement::onTreeMenuClicked", "");
+
+        if (panel)
+        {
+            panel->initPanel();
+        }
+
+        m_pStackedWidget->setCurrentIndex(index);
+
+    }
+
+    //---------------------------------------------------------------------
 
 
 }

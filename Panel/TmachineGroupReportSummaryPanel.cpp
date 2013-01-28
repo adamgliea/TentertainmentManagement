@@ -5,7 +5,7 @@ namespace YR2K {
 
     //---------------------------------------------------------------------
     TmachineGroupReportSummaryPanel::TmachineGroupReportSummaryPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
 
         QWidget* summaryWidget = new QWidget(this);

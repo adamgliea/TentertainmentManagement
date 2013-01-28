@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineDetailSetupViewItemTable.ui'
 **
-** Created: Mon Jan 14 13:25:23 2013
+** Created: Mon Jan 28 16:46:05 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

@@ -4,14 +4,22 @@
 #include <QtGui/QPushButton>
 #include "ui_TassetSetupViewItemTable.h"
 #include "ui_TassetSetupViewItemAddWidget.h"
+#include "DatabaseResultModel.h"
+#include "TpanelBase.h"
+
 
 namespace YR2K {
 
-    class TassetSetupPanel : public QWidget
+    class TassetSetupPanel : public TpanelBase
     {
     public:
         TassetSetupPanel(QWidget* parent = NULL);
         ~TassetSetupPanel(void);
+
+
+    private slots:
+        void                                    onAddWidgetConfirm(void);
+        DBAssetsInfo                            getInfo(void) const;
 
     private:
         Ui::TassetSetupViewItemTable*           m_pAssetSetupTable;

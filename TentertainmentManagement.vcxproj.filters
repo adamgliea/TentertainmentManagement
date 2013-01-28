@@ -55,6 +55,30 @@
     <ClCompile Include="Panel\TmachineGroupReportSummaryPanel.cpp">
       <Filter>Panel</Filter>
     </ClCompile>
+    <ClCompile Include="Model\TDatabaseManager.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel\TpanelBase.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel\TpanelCreator.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ToutlinerTreeView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ToutlinerTreeView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TentertainmentManagement.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TentertainmentManagement.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_TentertainmentManagement.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Panel\TassetSetupPanel.h">
@@ -71,9 +95,6 @@
     </ClInclude>
     <ClInclude Include="Panel\TmachineGroupDifferenceReportPanel.h">
       <Filter>Panel</Filter>
-    </ClInclude>
-    <ClInclude Include="Outliner\ToutlinerTreeView.h">
-      <Filter>Outliner</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TwelcomePanel.h">
       <Filter>Panel</Filter>
@@ -165,13 +186,31 @@
     <ClInclude Include="Panel\TmachineGroupReportSummaryPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
+    <ClInclude Include="Common\NoCopy.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Singleton.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\DatabaseResultModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\TDatabaseManager.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TpanelBase.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TpanelCreator.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel\TpanelHeaders.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Main\TentertainmentManagement.h">
       <Filter>Main</Filter>
-    </CustomBuild>
-    <CustomBuild Include="TentertainmentManagement.qrc">
-      <Filter>GeneratedFiles</Filter>
     </CustomBuild>
     <CustomBuild Include="TentertainmentManagement.ui">
       <Filter>GeneratedFiles</Filter>
@@ -239,6 +278,12 @@
     <CustomBuild Include="UiFiles\TwarningSystemViewItemTable.ui">
       <Filter>UiFiles</Filter>
     </CustomBuild>
+    <CustomBuild Include="Outliner\ToutlinerTreeView.h">
+      <Filter>Outliner</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TentertainmentManagement.qrc">
+      <Filter>GeneratedFiles</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Main">
@@ -263,6 +308,19 @@
       <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
       <Extensions>moc;h;cpp</Extensions>
       <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{9a40192c-f2a6-4c77-9bd0-aa2a2fe9e5b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{7edf6a3b-1795-4874-9d10-1b87e4b5c2e6}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{a16a0ca2-3190-4e8a-83b2-e58482df42ca}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
 </Project>

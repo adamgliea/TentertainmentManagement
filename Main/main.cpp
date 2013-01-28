@@ -22,11 +22,11 @@ int main(int argc, char *argv[])
     int w = 0;
     int h = 0;
 
-//    window.showMaximized();
-    window.show();
+   window.showMaximized();
+//     window.show();
 
-    YR2K::TmachineFuncSetupPanel xxx;
-    xxx.show();
+//     YR2K::TmachineFuncSetupPanel xxx;
+//     xxx.show();
 //     YR2K::ToutlinerTreeView node;
 //     node.show();
 

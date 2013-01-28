@@ -2,7 +2,8 @@
 
 namespace YR2K {
 
-    TadminSetupPanel::TadminSetupPanel(void)
+    TadminSetupPanel::TadminSetupPanel(QWidget* parent /*= NULL*/)
+        : TpanelBase(parent)
     {
     }
 

@@ -7,7 +7,7 @@ namespace YR2K {
 
     //---------------------------------------------------------------------
     TmachineGroupReportEntertainmentPanel::TmachineGroupReportEntertainmentPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
         QWidget* searchWidget = new QWidget(this);
         QWidget* table = new QWidget(this);

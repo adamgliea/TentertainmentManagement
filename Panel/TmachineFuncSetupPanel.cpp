@@ -6,7 +6,7 @@
 namespace YR2K {
 
     TmachineFuncSetupPanel::TmachineFuncSetupPanel(QWidget* parent /*= NULL*/)
-        : QWidget(parent)
+        : TpanelBase(parent)
     {
         m_pMachineFuncSetupTable = new Ui::TmachineFuncSetupViewItemTable();
 
