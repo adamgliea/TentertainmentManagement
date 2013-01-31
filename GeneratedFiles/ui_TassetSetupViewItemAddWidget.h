@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TassetSetupViewItemAddWidget.ui'
 **
-** Created: Mon Jan 28 16:46:05 2013
+** Created: Wed Jan 30 13:47:02 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -37,8 +37,8 @@ public:
     QGroupBox *m_warningSetupGroupBox;
     QWidget *layoutWidget1;
     QGridLayout *m_warningSetupGridLayout;
-    QLabel *m_clearCoinSetupLabel;
-    QLineEdit *m_clearCoinSetupLineEdit;
+    QLabel *m_clearCoinMarginSetupLabel;
+    QLineEdit *m_clearCoinMarginSetupLineEdit;
     QLabel *m_debtSetupLabel;
     QLineEdit *m_debtSetupLineEdit;
     QLabel *m_continuousLossLabel;
@@ -52,7 +52,7 @@ public:
     QWidget *layoutWidget3;
     QGridLayout *gridLayout_2;
     QLabel *m_clearCoinPeriodSetupLabel;
-    QLineEdit *lineEdit_2;
+    QLineEdit *m_clearCoinPeriodSetupLineEdit;
     QLabel *m_inputCategoryNameLabel;
     QComboBox *m_inputCategoryNameComboBox;
 
@@ -84,15 +84,15 @@ public:
         m_warningSetupGridLayout = new QGridLayout(layoutWidget1);
         m_warningSetupGridLayout->setObjectName(QString::fromUtf8("m_warningSetupGridLayout"));
         m_warningSetupGridLayout->setContentsMargins(0, 0, 0, 0);
-        m_clearCoinSetupLabel = new QLabel(layoutWidget1);
-        m_clearCoinSetupLabel->setObjectName(QString::fromUtf8("m_clearCoinSetupLabel"));
+        m_clearCoinMarginSetupLabel = new QLabel(layoutWidget1);
+        m_clearCoinMarginSetupLabel->setObjectName(QString::fromUtf8("m_clearCoinMarginSetupLabel"));
 
-        m_warningSetupGridLayout->addWidget(m_clearCoinSetupLabel, 0, 0, 1, 1);
+        m_warningSetupGridLayout->addWidget(m_clearCoinMarginSetupLabel, 0, 0, 1, 1);
 
-        m_clearCoinSetupLineEdit = new QLineEdit(layoutWidget1);
-        m_clearCoinSetupLineEdit->setObjectName(QString::fromUtf8("m_clearCoinSetupLineEdit"));
+        m_clearCoinMarginSetupLineEdit = new QLineEdit(layoutWidget1);
+        m_clearCoinMarginSetupLineEdit->setObjectName(QString::fromUtf8("m_clearCoinMarginSetupLineEdit"));
 
-        m_warningSetupGridLayout->addWidget(m_clearCoinSetupLineEdit, 0, 1, 1, 1);
+        m_warningSetupGridLayout->addWidget(m_clearCoinMarginSetupLineEdit, 0, 1, 1, 1);
 
         m_debtSetupLabel = new QLabel(layoutWidget1);
         m_debtSetupLabel->setObjectName(QString::fromUtf8("m_debtSetupLabel"));
@@ -154,10 +154,10 @@ public:
 
         gridLayout_2->addWidget(m_clearCoinPeriodSetupLabel, 1, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(layoutWidget3);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        m_clearCoinPeriodSetupLineEdit = new QLineEdit(layoutWidget3);
+        m_clearCoinPeriodSetupLineEdit->setObjectName(QString::fromUtf8("m_clearCoinPeriodSetupLineEdit"));
 
-        gridLayout_2->addWidget(lineEdit_2, 1, 1, 1, 1);
+        gridLayout_2->addWidget(m_clearCoinPeriodSetupLineEdit, 1, 1, 1, 1);
 
         m_inputCategoryNameLabel = new QLabel(layoutWidget3);
         m_inputCategoryNameLabel->setObjectName(QString::fromUtf8("m_inputCategoryNameLabel"));
@@ -183,7 +183,7 @@ public:
         TassetSetupViewItemAddWidget->setWindowTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\345\244\247\347\261\273\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
         m_categorySetupGroupBox->setTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\345\244\247\347\261\273\350\256\276\347\275\256", 0, QApplication::UnicodeUTF8));
         m_warningSetupGroupBox->setTitle(QApplication::translate("TassetSetupViewItemAddWidget", "\346\212\245\350\255\246\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
-        m_clearCoinSetupLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\346\270\205\345\270\201\345\267\256\345\274\202\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
+        m_clearCoinMarginSetupLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\346\270\205\345\270\201\345\267\256\345\274\202\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
         m_debtSetupLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\346\234\272\345\217\260\350\264\237\345\200\272\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
         m_continuousLossLabel->setText(QApplication::translate("TassetSetupViewItemAddWidget", "\350\277\236\347\273\255\344\272\217\346\215\237\345\244\251\346\225\260\350\256\276\345\256\232\357\274\232", 0, QApplication::UnicodeUTF8));
         m_continuousLossComboBox->clear();

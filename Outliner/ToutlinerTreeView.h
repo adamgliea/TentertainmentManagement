@@ -22,7 +22,7 @@ namespace YR2K {
         QStandardItemModel*     getTreeViewModel() const;
 
     signals:
-        void                    treeMenuClicked(const TEPanelIndex& type);
+        void                    treeMenuClicked(const TEPanelIndex& type, const TECategory& category);
 
     private slots:
         void                    onTreeViewClicked(const QModelIndex& modelIndex);
@@ -33,6 +33,11 @@ namespace YR2K {
 
         QStandardItem*          m_adminSetupPanelNode;
         QStandardItem*          m_assetSetupPanelNode;
+        QStandardItem*          m_assetSetupPanelCabinetNode;
+        QStandardItem*          m_assetSetupPanelLotteryNode;
+        QStandardItem*          m_assetSetupPanelSimulateNode;
+        QStandardItem*          m_assetSetupPanelCoindozerNode;
+        QStandardItem*          m_assetSetupPanelWagerNode;
         QStandardItem*          m_inventoryReportPanelNode;
         QStandardItem*          m_machineFuncSetupPanelNode;
         QStandardItem*          m_machineGroupDetailSetupPanelNode;

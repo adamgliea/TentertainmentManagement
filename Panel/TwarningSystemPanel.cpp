@@ -3,6 +3,7 @@
 
 namespace YR2K {
 
+    //---------------------------------------------------------------------
     TwarningSystemPanel::TwarningSystemPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
     {
@@ -22,9 +23,16 @@ namespace YR2K {
         setLayout(mainLayout);
     }
 
-
+    //---------------------------------------------------------------------
     TwarningSystemPanel::~TwarningSystemPanel(void)
     {
     }
+
+    //---------------------------------------------------------------------
+    void TwarningSystemPanel::doInitPanel(const TECategory& category)
+    {
+
+    }
+
 }
 

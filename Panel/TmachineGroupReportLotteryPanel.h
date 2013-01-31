@@ -13,9 +13,11 @@ namespace YR2K {
         TmachineGroupReportLotteryPanel(QWidget* parent = NULL);
         ~TmachineGroupReportLotteryPanel(void);
 
+        virtual void                                    doInitPanel(const TECategory& category);
+
     private:
-        Ui::TsearchWidget*                            m_pSearchWidget;
-        Ui::TmachineGroupReportLotteryViewItemTable*  m_pMachineGroupReportLotteryViewItemTable;
+        Ui::TsearchWidget*                              m_pSearchWidget;
+        Ui::TmachineGroupReportLotteryViewItemTable*    m_pMachineGroupReportLotteryViewItemTable;
 
     };
 

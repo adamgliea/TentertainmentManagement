@@ -9,6 +9,8 @@ namespace YR2K {
     public:
         TadminSetupPanel(QWidget* parent = NULL);
         ~TadminSetupPanel(void);
+
+        virtual void        doInitPanel(const TECategory& category);
     };
 }
 

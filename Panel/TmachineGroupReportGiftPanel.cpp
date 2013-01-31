@@ -30,4 +30,10 @@ namespace YR2K {
     {
     }
 
+    //---------------------------------------------------------------------
+    void TmachineGroupReportGiftPanel::doInitPanel(const TECategory& category)
+    {
+
+    }
+
 }

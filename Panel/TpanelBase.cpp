@@ -21,14 +21,18 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TpanelBase::initPanel()
+    void TpanelBase::initPanel(const TECategory& category)
     {
+        if (category == CATEGORY_INVALID)
+        {
+            return;
+        }
 
-        doInitPanel();
+        doInitPanel(category);
     }
 
     //---------------------------------------------------------------------
-    void TpanelBase::doInitPanel()
+    void TpanelBase::doInitPanel(const TECategory& category)
     {
 
     }

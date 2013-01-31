@@ -33,4 +33,10 @@ namespace YR2K {
     {
     }
 
+    //---------------------------------------------------------------------
+    void TmachineGroupReportEntertainmentPanel::doInitPanel(const TECategory& category)
+    {
+
+    }
+
 }

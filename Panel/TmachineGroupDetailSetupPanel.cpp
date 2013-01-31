@@ -4,6 +4,7 @@
 
 namespace YR2K {
 
+    //---------------------------------------------------------------------
     TmachineGroupDetailSetupPanel::TmachineGroupDetailSetupPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
     {
@@ -23,9 +24,15 @@ namespace YR2K {
 
     }
 
-
+    //---------------------------------------------------------------------
     TmachineGroupDetailSetupPanel::~TmachineGroupDetailSetupPanel(void)
     {
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupDetailSetupPanel::doInitPanel(const TECategory& category)
+    {
+
     }
 
 }

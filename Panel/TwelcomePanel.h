@@ -10,6 +10,9 @@ namespace YR2K {
     public:
         TwelcomePanel(QWidget* parent = NULL);
         ~TwelcomePanel(void);
+
+        virtual void                doInitPanel(const TECategory& category);
+
     };
 
 }

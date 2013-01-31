@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'TentertainmentManagement.h'
 **
-** Created: Mon Jan 28 16:46:04 2013
+** Created: Wed Jan 30 17:36:34 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -35,15 +35,15 @@ static const uint qt_meta_data_YR2K__TentertainmentManagement[] = {
       39,   31,   31,   31, 0x08,
       47,   31,   31,   31, 0x08,
       54,   31,   31,   31, 0x08,
-      67,   62,   31,   31, 0x08,
+      80,   62,   31,   31, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_YR2K__TentertainmentManagement[] = {
     "YR2K::TentertainmentManagement\0\0save()\0"
-    "print()\0undo()\0about()\0type\0"
-    "onTreeMenuClicked(TEPanelIndex)\0"
+    "print()\0undo()\0about()\0menuType,category\0"
+    "onTreeMenuClicked(TEPanelIndex,TECategory)\0"
 };
 
 void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -56,7 +56,7 @@ void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject
         case 1: _t->print(); break;
         case 2: _t->undo(); break;
         case 3: _t->about(); break;
-        case 4: _t->onTreeMenuClicked((*reinterpret_cast< const TEPanelIndex(*)>(_a[1]))); break;
+        case 4: _t->onTreeMenuClicked((*reinterpret_cast< const TEPanelIndex(*)>(_a[1])),(*reinterpret_cast< const TECategory(*)>(_a[2]))); break;
         default: ;
         }
     }

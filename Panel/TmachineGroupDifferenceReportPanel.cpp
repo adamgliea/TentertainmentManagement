@@ -3,6 +3,7 @@
 
 namespace YR2K {
 
+    //---------------------------------------------------------------------
     TmachineGroupDifferenceReportPanel::TmachineGroupDifferenceReportPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
     {
@@ -22,9 +23,16 @@ namespace YR2K {
         setLayout(mainLayout);
     }
 
-
+    //---------------------------------------------------------------------
     TmachineGroupDifferenceReportPanel::~TmachineGroupDifferenceReportPanel(void)
     {
     }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupDifferenceReportPanel::doInitPanel(const TECategory& category)
+    {
+
+    }
+
 }
 

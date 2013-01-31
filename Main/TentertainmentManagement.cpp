@@ -53,7 +53,7 @@ namespace YR2K {
         createTreeView();
         createSplitWindows();
 
-        connect(m_pOutlinerTreeView, SIGNAL(treeMenuClicked(const TEPanelIndex&)), this, SLOT(onTreeMenuClicked(const TEPanelIndex&)));
+        connect(m_pOutlinerTreeView, SIGNAL(treeMenuClicked(const TEPanelIndex&, const TECategory&)), this, SLOT(onTreeMenuClicked(const TEPanelIndex&, const TECategory&)));
     }
 
     //---------------------------------------------------------------------
@@ -204,20 +204,20 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TentertainmentManagement::onTreeMenuClicked( const TEPanelIndex& type )
+    void TentertainmentManagement::onTreeMenuClicked( const TEPanelIndex& menuType, const TECategory& category )
     {
-        int index = type;
-        if (type == PANEL_INVALID)
+        int index = menuType;
+        if (menuType == PANEL_INVALID)
         {
             index = PANEL_NUM;
         }
 
-        TpanelBase* panel = m_aryPanelWidgets[type];
+        TpanelBase* panel = m_aryPanelWidgets[menuType];
         Q_ASSERT_X(panel != NULL, "TentertainmentManagement::onTreeMenuClicked", "");
 
         if (panel)
         {
-            panel->initPanel();
+            panel->initPanel(category);
         }
 
         m_pStackedWidget->setCurrentIndex(index);

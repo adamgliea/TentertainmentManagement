@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>747</width>
-    <height>219</height>
+    <width>1021</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,13 +18,13 @@
     <rect>
      <x>-10</x>
      <y>0</y>
-     <width>751</width>
-     <height>211</height>
+     <width>1031</width>
+     <height>671</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="mainLayout">
     <item>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="m_assetSetupTable">
       <column>
        <property name="text">
         <string>大类的名称</string>

@@ -79,11 +79,14 @@
     <ClCompile Include="GeneratedFiles\qrc_TentertainmentManagement.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TassetSetupPanel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TassetSetupPanel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Panel\TassetSetupPanel.h">
-      <Filter>Panel</Filter>
-    </ClInclude>
     <ClInclude Include="Panel\TadminSetupPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
@@ -104,9 +107,6 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_TentertainmentManagement.h">
       <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TassetSetupViewItemAddWidget.h">
-      <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_TassetSetupViewItemTable.h">
       <Filter>Generated Files</Filter>
@@ -283,6 +283,12 @@
     </CustomBuild>
     <CustomBuild Include="TentertainmentManagement.qrc">
       <Filter>GeneratedFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Panel\TassetSetupPanel.h">
+      <Filter>Panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_TassetSetupViewItemAddWidget.h">
+      <Filter>Generated Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

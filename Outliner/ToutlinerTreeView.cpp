@@ -19,6 +19,11 @@ namespace YR2K {
 
         m_adminSetupPanelNode = new QStandardItem(tr("账户设定"));
         m_assetSetupPanelNode = new QStandardItem(tr("资产设定"));
+        m_assetSetupPanelCabinetNode = new QStandardItem(tr("柜体类"));
+        m_assetSetupPanelLotteryNode = new QStandardItem(tr("模拟类"));
+        m_assetSetupPanelSimulateNode = new QStandardItem(tr("彩票类"));
+        m_assetSetupPanelCoindozerNode = new QStandardItem(tr("推币类"));
+        m_assetSetupPanelWagerNode = new QStandardItem(tr("博彩类"));
         m_inventoryReportPanelNode = new QStandardItem(tr("库存设定"));
         m_machineFuncSetupPanelNode = new QStandardItem(tr("机台功能设定"));
         m_machineGroupDifferenceReportPanelNode = new QStandardItem(tr("机组差异报表"));
@@ -33,6 +38,12 @@ namespace YR2K {
 
         invisiableRoot->appendRow(m_adminSetupPanelNode);
         invisiableRoot->appendRow(m_assetSetupPanelNode);
+            m_assetSetupPanelNode->appendRow(m_assetSetupPanelCabinetNode);
+            m_assetSetupPanelNode->appendRow(m_assetSetupPanelLotteryNode);
+            m_assetSetupPanelNode->appendRow(m_assetSetupPanelSimulateNode);
+            m_assetSetupPanelNode->appendRow(m_assetSetupPanelCoindozerNode);
+            m_assetSetupPanelNode->appendRow(m_assetSetupPanelWagerNode);
+
         invisiableRoot->appendRow(m_inventoryReportPanelNode);
         invisiableRoot->appendRow(m_machineFuncSetupPanelNode);
         invisiableRoot->appendRow(m_machineGroupDifferenceReportPanelNode);
@@ -93,8 +104,29 @@ namespace YR2K {
 
         if (item == m_assetSetupPanelNode)
         {
-            emit treeMenuClicked(PANEL_ASSET_SETUP);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
         }
+        if (item == m_assetSetupPanelCabinetNode)
+        {
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_CABINET);
+        }
+        else if (item == m_assetSetupPanelLotteryNode)
+        {
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_LOTTERY);
+        }
+        else if (item == m_assetSetupPanelSimulateNode)
+        {
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_SIMULATE);
+        }
+        else if (item == m_assetSetupPanelCoindozerNode)
+        {
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_COINDOZER);
+        }
+        else if (item == m_assetSetupPanelWagerNode)
+        {
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_WAGER);
+        }
+
     }
 
 }

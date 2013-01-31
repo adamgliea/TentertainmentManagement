@@ -20,6 +20,8 @@ namespace YR2K {
         TinventoryReportPanel(QWidget* parent = NULL);
         ~TinventoryReportPanel(void);
 
+        virtual void                            doInitPanel(const TECategory& category);
+
     private:
         QPushButton*                            m_pAddNewRecordButton;
         QLabel*                                 m_pTotalInventoryLabel;

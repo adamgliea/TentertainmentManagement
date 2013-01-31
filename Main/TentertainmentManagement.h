@@ -30,7 +30,7 @@ namespace YR2K {
         void                        print();
         void                        undo();
         void                        about();
-        void                        onTreeMenuClicked(const TEPanelIndex& type);
+        void                        onTreeMenuClicked(const TEPanelIndex& menuType, const TECategory& category);
 
     private:
         void                        createActions();

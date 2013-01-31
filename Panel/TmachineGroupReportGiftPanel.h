@@ -13,6 +13,8 @@ namespace YR2K {
         TmachineGroupReportGiftPanel(QWidget* parent = NULL);
         ~TmachineGroupReportGiftPanel(void);
 
+        virtual void                                doInitPanel(const TECategory& category);
+
     private:
         Ui::TsearchWidget*                         m_pSearchWidget;
         Ui::TmachineGroupReportGiftViewItemTable*  m_pMachineGroupReportGiftViewItemTable;

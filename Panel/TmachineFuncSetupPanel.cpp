@@ -5,6 +5,7 @@
 
 namespace YR2K {
 
+    //---------------------------------------------------------------------
     TmachineFuncSetupPanel::TmachineFuncSetupPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
     {
@@ -23,8 +24,15 @@ namespace YR2K {
         setLayout(mainLayout);
     }
 
+    //---------------------------------------------------------------------
     TmachineFuncSetupPanel::~TmachineFuncSetupPanel(void)
     {
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineFuncSetupPanel::doInitPanel(const TECategory& category)
+    {
+
     }
 
 }

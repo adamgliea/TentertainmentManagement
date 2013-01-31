@@ -8,6 +8,7 @@
 
 namespace YR2K {
 
+    //---------------------------------------------------------------------
     TinventoryReportPanel::TinventoryReportPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
     {
@@ -51,9 +52,15 @@ namespace YR2K {
         setFixedSize(w, h);
     }
 
-
+    //---------------------------------------------------------------------
     TinventoryReportPanel::~TinventoryReportPanel(void)
     {
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::doInitPanel(const TECategory& category)
+    {
+
     }
 
 }

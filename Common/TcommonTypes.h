@@ -24,6 +24,7 @@ namespace YR2K {
 
     enum TECategory
     {
+        CATEGORY_INVALID = -1,
         CATEGORY_CABINET = 0,
         CATEGORY_LOTTERY,
         CATEGORY_SIMULATE,
@@ -31,6 +32,29 @@ namespace YR2K {
         CATEGORY_WAGER,
 
         CATEGORY_NUM
+    };
+
+    enum TESTatementType
+    {
+        STATEMENT_INVALID = -1,
+        STATEMENT_TYPE_1 = 0,
+        STATEMENT_TYPE_2,
+        STATEMENT_TYPE_3,
+
+        STATEMENT_NUM
+    };
+
+    enum TEAssetSetupTableColumnIndex
+    {
+        ASSET_SETUP_TABLE_COLUMN_INVALID = -1,
+        ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME = 0,
+        ASSET_SETUP_TABLE_COLUMN_CLEARCOIN_PERIOD,
+        ASSET_SETUP_TABLE_COLUMN_CLEARCOIN_MARGIN,
+        ASSET_SETUP_TABLE_COLUMN_LIABILITIES,
+        ASSET_SETUP_TABLE_COLUMN_ALLOWLOSSDAYS,
+        ASSET_SETUP_TABLE_COLUMN_STATEMENTTYPE,
+
+        ASSET_SETUP_TABLE_COLUMN_NUM
     };
 
     enum TEStatementCategory

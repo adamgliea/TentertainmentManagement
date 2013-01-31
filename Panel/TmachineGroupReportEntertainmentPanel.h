@@ -14,6 +14,8 @@ namespace YR2K {
         TmachineGroupReportEntertainmentPanel(QWidget* parent = NULL);
         ~TmachineGroupReportEntertainmentPanel(void);
 
+        virtual void                                        doInitPanel(const TECategory& category);
+
     private:
         Ui::TsearchWidget*                                  m_pSearchWidget;
         Ui::TmachineGroupReportEntertainmentViewItemTable*  m_pMachineGroupReportEntertainmentViewItemTable;

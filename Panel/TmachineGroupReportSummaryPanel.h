@@ -15,6 +15,8 @@ namespace YR2K {
         TmachineGroupReportSummaryPanel(QWidget* parent = NULL);
         ~TmachineGroupReportSummaryPanel(void);
 
+        virtual void                                    doInitPanel(const TECategory& category);
+
     private:
         Ui::TmachineGroupReportViewItemSummaryWidget*   m_pMachineGroupReportViewItemSummaryWidget;
         Ui::TmachineGroupReportViewItemSummaryTable*    m_pMachineGroupReportViewItemSummaryTable;

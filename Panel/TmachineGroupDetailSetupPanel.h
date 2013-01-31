@@ -14,6 +14,7 @@ namespace YR2K {
         TmachineGroupDetailSetupPanel(QWidget* parent = NULL);
         ~TmachineGroupDetailSetupPanel(void);
 
+        virtual void                                    doInitPanel(const TECategory& category);
 
     private:
         Ui::TmachineDetailSetupViewItemTable*           m_pMachineDetailSetupTable;

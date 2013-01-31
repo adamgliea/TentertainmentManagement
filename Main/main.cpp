@@ -3,6 +3,9 @@
 #include <QtCore/QTextCodec>
 #include "ToutlinerTreeView.h"
 #include "TmachineFuncSetupPanel.h"
+#include "TassetSetupPanel.h"
+#include "TDatabaseManager.h"
+
 // #include <gtest/gtest.h>
 
 int runModelTestCases()
@@ -15,6 +18,7 @@ int main(int argc, char *argv[])
 {
 // 	testing::InitGoogleTest(&argc, argv);
 // 	runModelTestCases();
+    bool connectRet = YR2K::TDatabaseManager::getInstance()->connect("test", "127.0.0.1", "root", "111111", 3306);
 
     QApplication a(argc, argv);
     QTextCodec::setCodecForTr(QTextCodec::codecForName("GBK"));
@@ -22,7 +26,7 @@ int main(int argc, char *argv[])
     int w = 0;
     int h = 0;
 
-   window.showMaximized();
+    window.show();
 //     window.show();
 
 //     YR2K::TmachineFuncSetupPanel xxx;

@@ -14,8 +14,10 @@ namespace YR2K {
         TmachineFuncSetupPanel(QWidget* parent = NULL);
         ~TmachineFuncSetupPanel(void);
 
+        virtual void                            doInitPanel(const TECategory& category);
+
     private:
-        Ui::TmachineFuncSetupViewItemTable*           m_pMachineFuncSetupTable;
+        Ui::TmachineFuncSetupViewItemTable*     m_pMachineFuncSetupTable;
         Ui::TmachineFuncSetupViewItemAdd*       m_pMachineFuncSetupAddWidget;
     };
 
