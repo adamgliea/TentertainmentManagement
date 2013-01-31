@@ -24,6 +24,12 @@ namespace YR2K {
 		bool findAssetsWithAssetType(const enum TECategory assetType, std::vector<struct DBAssetsInfo> &assets);
 		struct DBAssetsInfo* findAssetWithAssetId(const unsigned int assetId);
 
+		int addMachine(const struct DBMachineBaseInfo &info, const unsigned int clearPointCycle);
+		bool removeMachine(const unsigned int machineId);
+		bool findMachineBaseInfoWithAssetType(const enum TECategory assetType, std::vector<struct DBMachineBaseInfo> &machines);
+		bool findMachineDetailInfoWithAssetType(const enum TECategory assetType, std::vector<struct DBMachineDetailInfo> &machines);
+		bool updateMachineDetailInfo(const struct DBMachineDetailInfo &detailInfo);
+
 	private:
 		void disconnect();
 

@@ -5,8 +5,12 @@ SOURCES += ../Main/main.cpp \
 		   ../Panel/TassetSetupPanel.cpp \
 		   ../Panel/TinventoryReportPanel.cpp \
 		   ../Panel/TmachineFuncSetupPanel.cpp \
+		   ../Panel/TmachineGroupDetailSetupPanel.cpp \
 		   ../Panel/TmachineGroupDifferenceReportPanel.cpp \
-		   ../Panel/TmachineGroupReportPanel.cpp \
+		   ../Panel/TmachineGroupReportEntertainmentPanel.cpp \
+		   ../Panel/TmachineGroupReportGiftPanel.cpp \
+		   ../Panel/TmachineGroupReportLotteryPanel.cpp \
+		   ../Panel/TmachineGroupReportSummaryPanel.cpp \
 		   ../Panel/TwarningSystemPanel.cpp \
 		   ../Panel/TwelcomePanel.cpp \
 		   ../Model/TDatabaseManager.cpp \
@@ -20,6 +24,7 @@ INCLUDEPATH += ../. \
 			   ../Panel \
 			   ../Common \
 			   ../Model \
+			   ../GeneratedFiles \
 			   /usr/local/include/mysql
 
 LIBS += -lmysqlpp
