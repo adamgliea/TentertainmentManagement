@@ -45,7 +45,7 @@ namespace YR2K {
 		char queryBuffer[256] = {0};
 		snprintf(queryBuffer, 256, "DELETE FROM asset WHERE assetId = %u;", assetId);
 
-		bool ret = query.exec(queryBuffer);
+		bool ret = query.execute(queryBuffer, 256);
 		if (!ret) {
 			printf("delete asset error:%s\n", this->m_conn->error());
 		}
@@ -142,7 +142,7 @@ namespace YR2K {
 		char queryBuffer[256] = {0};
 		snprintf(queryBuffer, 256, "DELETE FROM machine WHERE machineId = %u;", machineId);
 
-		bool ret = query.exec(queryBuffer);
+		bool ret = query.execute(queryBuffer, 256);
 		if (!ret) {
 			printf("delete matchine error:%s\n", this->m_conn->error());
 		}
@@ -228,7 +228,7 @@ namespace YR2K {
 		snprintf(queryBuffer, 512, "UPDATE machine SET machineType=%d, cashRatio=%f, coinRatio=%f, mainProbability=%f, probabilityRange=%f, maxPoints=%d, minPoints=%d, markPoints=%d, drawPoints=%d, pushPointDays=%d, clearPointCycle=%d WHERE machineId=%d;", 
 									detailInfo.machineType, detailInfo.cashRatio, detailInfo.coinRatio, detailInfo.mainProbability, detailInfo.probabilityRange, detailInfo.maxPoints, detailInfo.minPoints, detailInfo.markPoints, detailInfo.drawPoints, detailInfo.pushPointDays, detailInfo.clearPointCycle, detailInfo.machineId);
 
-		bool ret = query.exec(queryBuffer);
+		bool ret = query.execute(queryBuffer, 512);
 		if (!ret) {
 			printf("update matchine detail info error:%s\n", this->m_conn->error());
 		}

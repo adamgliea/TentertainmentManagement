@@ -3,18 +3,18 @@
 #include <QtCore/QTextCodec>
 #include "ToutlinerTreeView.h"
 #include "TmachineFuncSetupPanel.h"
-// #include <gtest/gtest.h>
+#include <gtest/gtest.h>
 
 int runModelTestCases()
 {
-//     return RUN_ALL_TESTS();
+    return RUN_ALL_TESTS();
     return 0;
 }
 
 int main(int argc, char *argv[])
 {
-// 	testing::InitGoogleTest(&argc, argv);
-// 	runModelTestCases();
+	testing::InitGoogleTest(&argc, argv);
+	runModelTestCases();
 
     QApplication a(argc, argv);
     QTextCodec::setCodecForTr(QTextCodec::codecForName("GBK"));
