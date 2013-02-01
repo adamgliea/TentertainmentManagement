@@ -7,6 +7,8 @@
 
 namespace YR2K {
 
+    typedef std::vector<DBAssetsInfo>::iterator DBAssetIter;
+
     const char* CATEGORY_STRING[CATEGORY_NUM] =
     {
         "¹ñÌåÀà",
@@ -41,7 +43,7 @@ namespace YR2K {
         QSpacerItem *horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
         mainLayout->addWidget(m_pPushButton, 0, 0);
         mainLayout->addItem(horizontalSpacer, 0, 1);
-        mainLayout->addLayout(m_pAssetSetupTable->mainLayout, 1, 0, 1, 2);
+        mainLayout->addWidget(m_pAssetSetupTable->m_assetSetupTable, 1, 0, 1, 2);
 
         setLayout(mainLayout);
 
@@ -53,6 +55,7 @@ namespace YR2K {
 
         createActions();
         m_pAssetSetupTable->m_assetSetupTable->setContextMenuPolicy(Qt::CustomContextMenu);
+        m_pAssetSetupTable->m_assetSetupTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
         connect(m_pAssetSetupTable->m_assetSetupTable, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(onCustomContextMenuRequested(const QPoint&)));
     }
 
@@ -153,18 +156,20 @@ namespace YR2K {
         if (table)
         {
             int count = table->rowCount();
-            for (int i = 0; i < count; i++)
+            while (count--)
             {
-                table->removeRow(i);
+                int& rowIndex = count;
+                table->removeRow(rowIndex);
             }
         }
 
-        std::vector<DBAssetsInfo> assets;
-        TDatabaseManager::getInstance()->findAssetsWithAssetType(category, assets);
-        typedef std::vector<DBAssetsInfo>::iterator DBAssetIter;
+        m_vecAssetsFoundResult.clear();
 
-        DBAssetIter iter = assets.begin();
-        DBAssetIter end = assets.end();
+
+        TDatabaseManager::getInstance()->findAssetsWithAssetType(category, m_vecAssetsFoundResult);
+
+        DBAssetIter iter = m_vecAssetsFoundResult.begin();
+        DBAssetIter end = m_vecAssetsFoundResult.end();
 
         int i = 0;
         for (; iter != end; ++iter)
@@ -184,15 +189,15 @@ namespace YR2K {
             QTableWidgetItem* item = NULL;
 
             table->insertRow(rowIndex);
-
             // Set category cell.
             // 
             item = new QTableWidgetItem();
             item->setText(tr(CATEGORY_STRING[info.assetType]));
             table->setItem(rowIndex, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME, item);
-
             // Store id info into this cell.
             item->setData(Qt::UserRole, info.assetId);
+
+
             // Set clear coin period cell.
             // 
             item = new QTableWidgetItem();

@@ -2,6 +2,7 @@
 #define TENTERTAINMENTMANAGEMENT_H
 
 #include <QtGui/QMainWindow>
+#include <QtGui/QScrollArea>
 #include "TpanelBase.h"
 
 QT_BEGIN_NAMESPACE
@@ -41,6 +42,7 @@ namespace YR2K {
         void                        createTreeView();
 
         TpanelBase*                 m_aryPanelWidgets[PANEL_NUM + 1];
+        QScrollArea*                m_aryPanelWidgetScrollAreas[PANEL_NUM + 1];
         QStackedWidget*             m_pStackedWidget;
         QListWidget*                m_pCustomerList;
         QListWidget*                m_pPparagraphsList;

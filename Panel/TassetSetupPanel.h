@@ -46,6 +46,8 @@ namespace YR2K {
         QModelIndex                             m_contextMenuTriggeredIndex;
         QMenu*                                  m_pContextMenu;
         QAction*                                m_pRemoveAction;
+
+        std::vector<DBAssetsInfo>               m_vecAssetsFoundResult;
     };
 }
 #endif  // TASSETSETUPPANEL_H

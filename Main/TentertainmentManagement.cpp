@@ -42,8 +42,12 @@ namespace YR2K {
         for(int i = 0; i < PANEL_NUM; i++)
         {
             m_aryPanelWidgets[i] = TpanelCreator::getInstance()->create(static_cast<TEPanelIndex>(i));
+            m_aryPanelWidgetScrollAreas[i] = new QScrollArea(this);
+            m_aryPanelWidgetScrollAreas[i]->setWidget(m_aryPanelWidgets[i]);
         }
         m_aryPanelWidgets[PANEL_NUM] = TpanelCreator::getInstance()->create(PANEL_INVALID);
+        m_aryPanelWidgetScrollAreas[PANEL_NUM] = new QScrollArea(this);
+        m_aryPanelWidgetScrollAreas[PANEL_NUM]->setWidget(m_aryPanelWidgets[PANEL_NUM]);
 
         createActions();
         createMenus();
@@ -174,7 +178,7 @@ namespace YR2K {
 
         for (int i = 0; i < PANEL_NUM + 1; i++)
         {
-            m_pStackedWidget->insertWidget(i, m_aryPanelWidgets[i]);
+            m_pStackedWidget->insertWidget(i, m_aryPanelWidgetScrollAreas[i]);
         }
 
         m_pStackedWidget->setCurrentIndex(PANEL_NUM);
