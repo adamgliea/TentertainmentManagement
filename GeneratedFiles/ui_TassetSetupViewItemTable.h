@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TassetSetupViewItemTable.ui'
 **
-** Created: Thu Jan 31 15:56:01 2013
+** Created: Mon Feb 4 15:32:54 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -32,7 +32,7 @@ public:
     {
         if (TassetSetupViewItemTable->objectName().isEmpty())
             TassetSetupViewItemTable->setObjectName(QString::fromUtf8("TassetSetupViewItemTable"));
-        TassetSetupViewItemTable->resize(1021, 662);
+        TassetSetupViewItemTable->resize(1000, 660);
         verticalLayoutWidget = new QWidget(TassetSetupViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-10, 0, 1031, 671));

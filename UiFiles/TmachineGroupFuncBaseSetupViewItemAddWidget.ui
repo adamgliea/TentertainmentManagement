@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TmachineDetailSetupViewItemAddWidget</class>
- <widget class="QWidget" name="TmachineDetailSetupViewItemAddWidget">
+ <class>TmachineGroupFuncBaseSetupViewItemAddWidget</class>
+ <widget class="QWidget" name="TmachineGroupFuncBaseSetupViewItemAddWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QDialogButtonBox" name="m_addConfirmButtonBox">
+  <widget class="QDialogButtonBox" name="m_buttonBox">
    <property name="geometry">
     <rect>
      <x>700</x>
@@ -26,7 +26,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QGroupBox" name="m_machineDetailsetupGroupBox">
+  <widget class="QGroupBox" name="m_machineFuncBaseSetupGroupBox">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -42,29 +42,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>50</y>
-      <width>201</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="m_machineNumberLayout">
-     <item>
-      <widget class="QLabel" name="m_machineNumberLabel">
-       <property name="text">
-        <string>机组编号：</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="m_machineNumberLineEdit"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>90</y>
+      <y>40</y>
       <width>791</width>
       <height>22</height>
      </rect>
@@ -86,7 +64,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>130</y>
+      <y>90</y>
       <width>231</width>
       <height>22</height>
      </rect>
@@ -108,7 +86,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>180</y>
+      <y>140</y>
       <width>791</width>
       <height>141</height>
      </rect>
@@ -130,7 +108,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>340</y>
+      <y>310</y>
       <width>137</width>
       <height>22</height>
      </rect>
@@ -144,7 +122,18 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="m_businessStatusComboBox"/>
+      <widget class="QComboBox" name="m_businessStatusComboBox">
+       <item>
+        <property name="text">
+         <string>否</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>是</string>
+        </property>
+       </item>
+      </widget>
      </item>
     </layout>
    </widget>

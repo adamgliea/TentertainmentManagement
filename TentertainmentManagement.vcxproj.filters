@@ -13,9 +13,6 @@
     <ClCompile Include="Panel\TinventoryReportPanel.cpp">
       <Filter>Panel</Filter>
     </ClCompile>
-    <ClCompile Include="Panel\TmachineFuncSetupPanel.cpp">
-      <Filter>Panel</Filter>
-    </ClCompile>
     <ClCompile Include="Panel\TmachineGroupDifferenceReportPanel.cpp">
       <Filter>Panel</Filter>
     </ClCompile>
@@ -39,9 +36,6 @@
     </ClCompile>
     <ClCompile Include="Main\main.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Panel\TmachineGroupDetailSetupPanel.cpp">
-      <Filter>Panel</Filter>
     </ClCompile>
     <ClCompile Include="Panel\TmachineGroupReportEntertainmentPanel.cpp">
       <Filter>Panel</Filter>
@@ -85,15 +79,24 @@
     <ClCompile Include="GeneratedFiles\Release\moc_TassetSetupPanel.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupFuncBaseSetupPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel\TmachineGroupFuncDetailSetupPanel.cpp">
+      <Filter>Panel</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TmachineGroupFuncBaseSetupPanel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TmachineGroupFuncBaseSetupPanel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Panel\TadminSetupPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TinventoryReportPanel.h">
-      <Filter>Panel</Filter>
-    </ClInclude>
-    <ClInclude Include="Panel\TmachineFuncSetupPanel.h">
       <Filter>Panel</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TmachineGroupDifferenceReportPanel.h">
@@ -129,18 +132,6 @@
     <ClInclude Include="GeneratedFiles\ui_TinventoryReportViewItemTable.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineDetailSetupViewItemAddWidget.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineDetailSetupViewItemTable.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineFuncSetupViewItemAdd.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineFuncSetupViewItemTable.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupDifferenceReportViewItemTable.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -167,9 +158,6 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_TwarningSystemViewItemTable.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Panel\TmachineGroupDetailSetupPanel.h">
-      <Filter>Panel</Filter>
     </ClInclude>
     <ClInclude Include="Panel\TmachineGroupReportEntertainmentPanel.h">
       <Filter>Panel</Filter>
@@ -207,6 +195,21 @@
     <ClInclude Include="Panel\TpanelHeaders.h">
       <Filter>Panel</Filter>
     </ClInclude>
+    <ClInclude Include="Panel\TmachineGroupFuncDetailSetupPanel.h">
+      <Filter>Panel</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncBaseSetupViewItemAddWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncBaseSetupViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemAdd.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Main\TentertainmentManagement.h">
@@ -237,18 +240,6 @@
       <Filter>UiFiles</Filter>
     </CustomBuild>
     <CustomBuild Include="UiFiles\TinventoryReportViewItemTable.ui">
-      <Filter>UiFiles</Filter>
-    </CustomBuild>
-    <CustomBuild Include="UiFiles\TmachineDetailSetupViewItemAddWidget.ui">
-      <Filter>UiFiles</Filter>
-    </CustomBuild>
-    <CustomBuild Include="UiFiles\TmachineDetailSetupViewItemTable.ui">
-      <Filter>UiFiles</Filter>
-    </CustomBuild>
-    <CustomBuild Include="UiFiles\TmachineFuncSetupViewItemAdd.ui">
-      <Filter>UiFiles</Filter>
-    </CustomBuild>
-    <CustomBuild Include="UiFiles\TmachineFuncSetupViewItemTable.ui">
       <Filter>UiFiles</Filter>
     </CustomBuild>
     <CustomBuild Include="UiFiles\TmachineGroupDifferenceReportViewItemTable.ui">
@@ -289,6 +280,21 @@
     </CustomBuild>
     <CustomBuild Include="GeneratedFiles\ui_TassetSetupViewItemAddWidget.h">
       <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupFuncBaseSetupViewItemAddWidget.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupFuncBaseSetupViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemAdd.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemTable.ui">
+      <Filter>UiFiles</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Panel\TmachineGroupFuncBaseSetupPanel.h">
+      <Filter>Panel</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

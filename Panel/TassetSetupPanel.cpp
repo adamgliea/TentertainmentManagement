@@ -9,7 +9,7 @@ namespace YR2K {
 
     typedef std::vector<DBAssetsInfo>::iterator DBAssetIter;
 
-    const char* CATEGORY_STRING[CATEGORY_NUM] =
+    static const char* CATEGORY_STRING[CATEGORY_NUM] =
     {
         "柜体类",
         "彩票类",
@@ -18,7 +18,7 @@ namespace YR2K {
         "博彩类",
     };
 
-    const char* STAEMENT_STRING[STATEMENT_NUM] =
+    static const char* STAEMENT_STRING[STATEMENT_NUM] =
     {
         "账目报表1",
         "账目报表2",

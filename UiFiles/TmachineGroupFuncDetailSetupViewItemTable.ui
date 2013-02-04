@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TmachineFuncSetupViewItemTable</class>
- <widget class="QWidget" name="TmachineFuncSetupViewItemTable">
+ <class>TmachineGroupFuncDetailSetupViewItemTable</class>
+ <widget class="QWidget" name="TmachineGroupFuncDetailSetupViewItemTable">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -24,7 +24,7 @@
    </property>
    <layout class="QVBoxLayout" name="mainLayout">
     <item>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="m_machineGroupFuncDetailSetupTable">
       <column>
        <property name="text">
         <string>机组编号</string>

@@ -38,9 +38,18 @@ namespace YR2K {
         QStandardItem*          m_assetSetupPanelSimulateNode;
         QStandardItem*          m_assetSetupPanelCoindozerNode;
         QStandardItem*          m_assetSetupPanelWagerNode;
+
         QStandardItem*          m_inventoryReportPanelNode;
-        QStandardItem*          m_machineFuncSetupPanelNode;
-        QStandardItem*          m_machineGroupDetailSetupPanelNode;
+
+        QStandardItem*          m_machineFuncDetailSetupPanelNode;
+
+        QStandardItem*          m_machineGroupFuncBaseSetupPanel;
+        QStandardItem*          m_machineGroupFuncBaseSetupPanelCabinetNode;
+        QStandardItem*          m_machineGroupFuncBaseSetupPanelLotteryNode;
+        QStandardItem*          m_machineGroupFuncBaseSetupPanelSimulateNode;
+        QStandardItem*          m_machineGroupFuncBaseSetupPanelCoindozerNode;
+        QStandardItem*          m_machineGroupFuncBaseSetupPanelWagerNode;
+
         QStandardItem*          m_machineGroupReportEntertainmentPanelNode;
         QStandardItem*          m_machineGroupReportGiftPanelNode;
         QStandardItem*          m_machineGroupReportLotteryPanelNode;
