@@ -25,10 +25,17 @@ namespace YR2K {
         m_assetSetupPanelCoindozerNode = new QStandardItem(tr("推币类"));
         m_assetSetupPanelWagerNode = new QStandardItem(tr("博彩类"));
         m_inventoryReportPanelNode = new QStandardItem(tr("库存设定"));
-        m_machineFuncDetailSetupPanelNode = new QStandardItem(tr("机台功能设定"));
+
         m_machineGroupDifferenceReportPanelNode = new QStandardItem(tr("机组差异报表"));
         m_machineGroupReportPanelNode = new QStandardItem(tr("机组报表"));
         m_warningSystemPanelNode = new QStandardItem(tr("警告报表"));
+
+        m_machineGroupFuncDetailSetupPanelNode = new QStandardItem(tr("机台功能设定"));
+        m_machineGroupFuncDetailSetupPanelCabinetNode = new QStandardItem(tr("柜体类"));
+        m_machineGroupFuncDetailSetupPanelLotteryNode = new QStandardItem(tr("模拟类"));
+        m_machineGroupFuncDetailSetupPanelSimulateNode = new QStandardItem(tr("彩票类"));
+        m_machineGroupFuncDetailSetupPanelCoindozerNode = new QStandardItem(tr("推币类"));
+        m_machineGroupFuncDetailSetupPanelWagerNode = new QStandardItem(tr("博彩类"));
 
         m_machineGroupFuncBaseSetupPanel = new QStandardItem(tr("机组明细设置"));
         m_machineGroupFuncBaseSetupPanelCabinetNode = new QStandardItem(tr("柜体类"));
@@ -51,8 +58,16 @@ namespace YR2K {
             m_assetSetupPanelNode->appendRow(m_assetSetupPanelWagerNode);
 
         invisiableRoot->appendRow(m_inventoryReportPanelNode);
-        invisiableRoot->appendRow(m_machineFuncDetailSetupPanelNode);
+
         invisiableRoot->appendRow(m_machineGroupDifferenceReportPanelNode);
+
+        invisiableRoot->appendRow(m_machineGroupFuncDetailSetupPanelNode);
+            m_machineGroupFuncDetailSetupPanelNode->appendRow(m_machineGroupFuncDetailSetupPanelCabinetNode);
+            m_machineGroupFuncDetailSetupPanelNode->appendRow(m_machineGroupFuncDetailSetupPanelLotteryNode);
+            m_machineGroupFuncDetailSetupPanelNode->appendRow(m_machineGroupFuncDetailSetupPanelSimulateNode);
+            m_machineGroupFuncDetailSetupPanelNode->appendRow(m_machineGroupFuncDetailSetupPanelCoindozerNode);
+            m_machineGroupFuncDetailSetupPanelNode->appendRow(m_machineGroupFuncDetailSetupPanelWagerNode);
+
         invisiableRoot->appendRow(m_machineGroupFuncBaseSetupPanel);
             m_machineGroupFuncBaseSetupPanel->appendRow(m_machineGroupFuncBaseSetupPanelCabinetNode);
             m_machineGroupFuncBaseSetupPanel->appendRow(m_machineGroupFuncBaseSetupPanelLotteryNode);
@@ -76,10 +91,18 @@ namespace YR2K {
             m_assetSetupPanelWagerNode->setEditable(false);
 
         m_inventoryReportPanelNode->setEditable(false);
-        m_machineFuncDetailSetupPanelNode->setEditable(false);
+
         m_machineGroupDifferenceReportPanelNode->setEditable(false);
         m_machineGroupReportPanelNode->setEditable(false);
         m_warningSystemPanelNode->setEditable(false);
+
+        m_machineGroupFuncDetailSetupPanelNode->setEditable(false);
+            m_machineGroupFuncDetailSetupPanelCabinetNode->setEditable(false);
+            m_machineGroupFuncDetailSetupPanelLotteryNode->setEditable(false);
+            m_machineGroupFuncDetailSetupPanelSimulateNode->setEditable(false);
+            m_machineGroupFuncDetailSetupPanelCoindozerNode->setEditable(false);
+            m_machineGroupFuncDetailSetupPanelWagerNode->setEditable(false);
+
         m_machineGroupFuncBaseSetupPanel->setEditable(false);
             m_machineGroupFuncBaseSetupPanelCabinetNode->setEditable(false);
             m_machineGroupFuncBaseSetupPanelLotteryNode->setEditable(false);
@@ -154,31 +177,58 @@ namespace YR2K {
         }
 
 
-        // Machine detail setup node clicked.
+        // Machine group func base setup node clicked.
         // 
-        if (item == m_machineGroupFuncBaseSetupPanel)
+        if (item == m_machineGroupFuncDetailSetupPanelNode)
         {
             emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
         }
         if (item == m_machineGroupFuncBaseSetupPanelCabinetNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_DETAIL_SETUP, CATEGORY_CABINET);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_CABINET);
         }
         else if (item == m_machineGroupFuncBaseSetupPanelLotteryNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_DETAIL_SETUP, CATEGORY_LOTTERY);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_LOTTERY);
         }
         else if (item == m_machineGroupFuncBaseSetupPanelSimulateNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_DETAIL_SETUP, CATEGORY_SIMULATE);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_SIMULATE);
         }
         else if (item == m_machineGroupFuncBaseSetupPanelCoindozerNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_DETAIL_SETUP, CATEGORY_COINDOZER);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_COINDOZER);
         }
         else if (item == m_machineGroupFuncBaseSetupPanelWagerNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_DETAIL_SETUP, CATEGORY_WAGER);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_WAGER);
+        }
+
+        // Machine group detail setup node clicked.
+        // 
+        if (item == m_machineGroupFuncDetailSetupPanelNode)
+        {
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
+        }
+        if (item == m_machineGroupFuncDetailSetupPanelCabinetNode)
+        {
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_CABINET);
+        }
+        else if (item == m_machineGroupFuncDetailSetupPanelLotteryNode)
+        {
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_LOTTERY);
+        }
+        else if (item == m_machineGroupFuncDetailSetupPanelSimulateNode)
+        {
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_SIMULATE);
+        }
+        else if (item == m_machineGroupFuncDetailSetupPanelCoindozerNode)
+        {
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_COINDOZER);
+        }
+        else if (item == m_machineGroupFuncDetailSetupPanelWagerNode)
+        {
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_WAGER);
         }
     }
 

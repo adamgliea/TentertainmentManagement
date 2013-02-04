@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TmachineGroupFuncDetailSetupViewItemTable.ui'
 **
-** Created: Mon Feb 4 19:31:51 2013
+** Created: Mon Feb 4 20:39:20 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -32,10 +32,10 @@ public:
     {
         if (TmachineGroupFuncDetailSetupViewItemTable->objectName().isEmpty())
             TmachineGroupFuncDetailSetupViewItemTable->setObjectName(QString::fromUtf8("TmachineGroupFuncDetailSetupViewItemTable"));
-        TmachineGroupFuncDetailSetupViewItemTable->resize(833, 249);
+        TmachineGroupFuncDetailSetupViewItemTable->resize(1000, 660);
         layoutWidget = new QWidget(TmachineGroupFuncDetailSetupViewItemTable);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 831, 241));
+        layoutWidget->setGeometry(QRect(0, 0, 1001, 661));
         mainLayout = new QVBoxLayout(layoutWidget);
         mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
         mainLayout->setContentsMargins(0, 0, 0, 0);

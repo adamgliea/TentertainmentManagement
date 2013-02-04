@@ -53,14 +53,14 @@ namespace YR2K {
         case PANEL_ASSET_SETUP:
             panel = new TassetSetupPanel();
             break;
+        case PANEL_MACHINE_GROUP_FUNC_BASE_SETUP:
+            panel = new TmachineGroupFuncBaseSetupPanel();
+            break;
         case PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP:
             panel = new TmachineGroupFuncDetailSetupPanel();
             break;
         case PANEL_ADMIN_SETUP:
             panel = new TadminSetupPanel();
-            break;
-        case PANEL_MACHINE_GROUP_DETAIL_SETUP:
-            panel = new TmachineGroupFuncBaseSetupPanel();
             break;
         case PANEL_MACHINE_GROUP_REPORT_ENTERAINTMENT:
             panel = new TmachineGroupReportEntertainmentPanel();

@@ -22,6 +22,8 @@ namespace YR2K {
     TmachineGroupFuncBaseSetupPanel::TmachineGroupFuncBaseSetupPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
         , m_eCurrentOperatingCategory(CATEGORY_INVALID)
+        , m_pContextMenu(NULL)
+        , m_pRemoveAction(NULL)
     {
         m_pMachineBaseSetupTable = new Ui::TmachineDetailSetupViewItemTable();
         m_pMachineBaseSetupTable->setupUi(this);

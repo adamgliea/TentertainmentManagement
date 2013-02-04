@@ -3,6 +3,7 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QPushButton>
+#include <QtGui/QMenu>
 
 namespace YR2K {
 
@@ -20,11 +21,14 @@ namespace YR2K {
     //---------------------------------------------------------------------
     TmachineGroupFuncDetailSetupPanel::TmachineGroupFuncDetailSetupPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
+        , m_pUpdateAction(NULL)
+        , m_pContextMenu(NULL)
+        , m_pRemoveAction(NULL)
     {
-        m_pMachineFuncSetupTable = new Ui::TmachineGroupFuncDetailSetupViewItemTable();
+        m_pMachineFuncDetailSetupTable = new Ui::TmachineGroupFuncDetailSetupViewItemTable();
 
         QWidget* table = new QWidget(this);
-        m_pMachineFuncSetupTable->setupUi(table);
+        m_pMachineFuncDetailSetupTable->setupUi(table);
 
         QGridLayout* mainLayout = new QGridLayout(this);
         mainLayout->addWidget(table);
@@ -34,6 +38,13 @@ namespace YR2K {
 
         setFixedSize(w, h);
         setLayout(mainLayout);
+
+        createActions();
+
+        m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable->setContextMenuPolicy(Qt::CustomContextMenu);
+        m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        connect(m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(onCustomContextMenuRequested(const QPoint&)));
+
     }
 
     //---------------------------------------------------------------------
@@ -42,10 +53,19 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
+    DBMachineDetailInfo TmachineGroupFuncDetailSetupPanel::getInfo( void ) const
+    {
+        DBMachineDetailInfo info;
+
+
+        return info;
+    }
+
+    //---------------------------------------------------------------------
     void TmachineGroupFuncDetailSetupPanel::doInitPanel(const TECategory& category)
     {
-        Q_ASSERT_X(m_pMachineFuncSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
-        QTableWidget* table = m_pMachineFuncSetupTable->m_machineGroupFuncDetailSetupTable;
+        Q_ASSERT_X(m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
+        QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
         if (table)
         {
             int count = table->rowCount();
@@ -74,8 +94,8 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TmachineGroupFuncDetailSetupPanel::insertRecordToTable( const int rowIndex, const DBMachineDetailInfo& info )
     {
-        Q_ASSERT_X(m_pMachineFuncSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
-        QTableWidget* table = m_pMachineFuncSetupTable->m_machineGroupFuncDetailSetupTable;
+        Q_ASSERT_X(m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
+        QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
         if (table)
         {
             QTableWidgetItem* item = NULL;
@@ -145,5 +165,114 @@ namespace YR2K {
             table->setItem(rowIndex, DETAIL_SETUP_TABLE_COLUMN_CLEAR_POINT_CYCLE, item);
         }
     }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::destroyAddWidgetPanel()
+    {
+        if (m_pUpdateWidgetPanel)
+        {
+            m_pUpdateWidgetPanel->close();
+            delete m_pUpdateWidgetPanel;
+            m_pUpdateWidgetPanel = NULL;
+        }
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::createActions( void )
+    {
+        m_pContextMenu = new QMenu(tr(""), this);
+        m_pRemoveAction = new QAction(tr("删除该行记录"), m_pContextMenu);
+        m_pUpdateAction = new QAction(tr("更新该行记录"), m_pContextMenu);
+        m_pContextMenu->addAction(m_pRemoveAction);
+        connect(m_pRemoveAction, SIGNAL(triggered()), this, SLOT(onRemoveActionTriggered()));
+        connect(m_pUpdateAction, SIGNAL(triggered()), this, SLOT(onUpdateActionTriggered()));
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::onUpdateActionTriggered()
+    {
+        // Initialize the panel and launch it up.
+        // 
+        m_pUpdateWidgetPanel = new QWidget();
+        m_pMachineFuncDetailSetupAddWidget->setupUi(m_pUpdateWidgetPanel);
+        connect(m_pMachineFuncDetailSetupAddWidget->m_buttonBox, SIGNAL(accepted()), this, SLOT(onConfirmUpdateNewRecord()));
+        connect(m_pMachineFuncDetailSetupAddWidget->m_buttonBox, SIGNAL(rejected()), this, SLOT(onCancelUpdateNewRecord()));
+        m_pUpdateWidgetPanel->show();
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::onConfirmUpdateNewRecord()
+    {
+        DBMachineDetailInfo machineDetailInfo = this->getInfo();
+        bool success = TDatabaseManager::getInstance()->updateMachineDetailInfo(machineDetailInfo);
+
+        // Close the window and destroy the panel object.
+        // 
+        this->destroyAddWidgetPanel();
+
+        Q_ASSERT_X(m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
+        QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
+        if (table)
+        {
+            int rowIndex = table->rowCount();
+            this->insertRecordToTable(rowIndex, machineDetailInfo);
+        }
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::onCancelUpdateNewRecord()
+    {
+        // Close the window and destroy the panel object.
+        // 
+        this->destroyAddWidgetPanel();
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::onCustomContextMenuRequested( const QPoint& pos )
+    {
+        Q_ASSERT_X(m_pMachineFuncDetailSetupTable != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
+        if (m_pMachineFuncDetailSetupTable)
+        {
+            QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
+            Q_ASSERT_X(table != NULL, "TmachineGroupFuncDetailSetupPanel::onCustomContextMenuRequested", "");
+
+            if (table)
+            {
+                m_contextMenuTriggeredIndex = table->indexAt(pos);
+                int row = m_contextMenuTriggeredIndex.row();
+                if (m_contextMenuTriggeredIndex.isValid())
+                {
+                    table->selectRow(row);
+                    QPoint pos = QCursor::pos();
+                    m_pContextMenu->exec(QCursor::pos());
+                }
+            }
+        }
+    }
+
+    //---------------------------------------------------------------------
+    void TmachineGroupFuncDetailSetupPanel::onRemoveActionTriggered()
+    {
+        int row = m_contextMenuTriggeredIndex.row();
+        Q_ASSERT_X(m_pMachineFuncDetailSetupTable != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
+        if (m_pMachineFuncDetailSetupTable)
+        {
+            QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
+            Q_ASSERT_X(table != NULL, "TmachineGroupFuncDetailSetupPanel::onCustomContextMenuRequested", "");
+
+            if (table)
+            {
+                QTableWidgetItem* item = table->item(row, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME);
+                Q_ASSERT_X(item != NULL, "TmachineGroupFuncDetailSetupPanel::onCustomContextMenuRequested", "");
+                if (item)
+                {
+                    int machineBasiInfoId = item->data(Qt::UserRole).toInt();
+                    bool success = TDatabaseManager::getInstance()->removeMachine(machineBasiInfoId);
+                    table->removeRow(row);
+                }
+            }
+        }
+    }
+
 }
 
