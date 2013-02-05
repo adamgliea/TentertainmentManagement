@@ -158,7 +158,7 @@ namespace YR2K {
             // Set statement type
             // 
             item = new QTableWidgetItem();
-            item->setText(QString::number(info.mainProbability));
+            item->setText(QString::number(info.probabilityRange));
             table->setItem(rowIndex, DETAIL_SETUP_TABLE_COLUMN_PROBABILITY_RANGE, item);
 
             item = new QTableWidgetItem();
@@ -229,6 +229,8 @@ namespace YR2K {
     {
         DBMachineDetailInfo machineDetailInfo = this->getInfo();
         bool success = TDatabaseManager::getInstance()->updateMachineDetailInfo(machineDetailInfo);
+
+        doInitPanel(m_eCurrentOperatingCategory);
 
         // Close the window and destroy the panel object.
         // 
