@@ -23,7 +23,7 @@ namespace YR2K {
         : TpanelBase(parent)
         , m_pUpdateAction(NULL)
         , m_pContextMenu(NULL)
-        , m_pRemoveAction(NULL)
+        , m_uiCurrentUpdateMachineId(0xFFFFFFFF)
     {
         m_pMachineFuncDetailSetupTable = new Ui::TmachineGroupFuncDetailSetupViewItemTable();
 
@@ -38,6 +38,8 @@ namespace YR2K {
 
         setFixedSize(w, h);
         setLayout(mainLayout);
+
+        m_pMachineFuncDetailSetupAddWidget = new Ui::TmachineGroupFuncDetailSetupViewItemAdd();
 
         createActions();
 
@@ -57,6 +59,23 @@ namespace YR2K {
     {
         DBMachineDetailInfo info;
 
+        Q_ASSERT_X(m_pMachineFuncDetailSetupAddWidget != NULL, "TmachineGroupFuncDetailSetupPanel::getInfo", "");
+        if (m_pMachineFuncDetailSetupAddWidget)
+        {
+            info.machineId = m_uiCurrentUpdateMachineId;
+            info.assetType = m_eCurrentOperatingCategory;
+            info.machineType = m_pMachineFuncDetailSetupAddWidget->m_machineTypeLineEdit->text().toInt();
+            info.cashRatio = m_pMachineFuncDetailSetupAddWidget->m_cashRatioLineEdit->text().toFloat();
+            info.coinRatio = m_pMachineFuncDetailSetupAddWidget->m_coinRatioLineEdit->text().toFloat();
+            info.mainProbability = m_pMachineFuncDetailSetupAddWidget->m_mainProbabilityLineEdit->text().toFloat();
+            info.probabilityRange = m_pMachineFuncDetailSetupAddWidget->m_probabilityRangeLineEdit->text().toFloat();
+            info.maxPoints = m_pMachineFuncDetailSetupAddWidget->m_maxPointsLineEdit->text().toInt();
+            info.minPoints = m_pMachineFuncDetailSetupAddWidget->m_minPointsLineEdit->text().toInt();
+            info.markPoints = m_pMachineFuncDetailSetupAddWidget->m_markPointsLineEdit->text().toInt();
+            info.drawPoints = m_pMachineFuncDetailSetupAddWidget->m_drawPointsLineEdit->text().toInt();
+            info.pushPointDays = m_pMachineFuncDetailSetupAddWidget->m_pushPointDaysLineEdit->text().toInt();
+            info.clearPointCycle = m_pMachineFuncDetailSetupAddWidget->m_clearPointCycleLineEdit->text().toInt();
+        }
 
         return info;
     }
@@ -89,6 +108,8 @@ namespace YR2K {
             insertRecordToTable(i, *iter);
             i++;
         }
+
+        m_eCurrentOperatingCategory = category;
     }
 
     //---------------------------------------------------------------------
@@ -167,7 +188,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupFuncDetailSetupPanel::destroyAddWidgetPanel()
+    void TmachineGroupFuncDetailSetupPanel::destroyUpdateWidgetPanel()
     {
         if (m_pUpdateWidgetPanel)
         {
@@ -181,10 +202,8 @@ namespace YR2K {
     void TmachineGroupFuncDetailSetupPanel::createActions( void )
     {
         m_pContextMenu = new QMenu(tr(""), this);
-        m_pRemoveAction = new QAction(tr("删除该行记录"), m_pContextMenu);
         m_pUpdateAction = new QAction(tr("更新该行记录"), m_pContextMenu);
-        m_pContextMenu->addAction(m_pRemoveAction);
-        connect(m_pRemoveAction, SIGNAL(triggered()), this, SLOT(onRemoveActionTriggered()));
+        m_pContextMenu->addAction(m_pUpdateAction);
         connect(m_pUpdateAction, SIGNAL(triggered()), this, SLOT(onUpdateActionTriggered()));
     }
 
@@ -195,9 +214,14 @@ namespace YR2K {
         // 
         m_pUpdateWidgetPanel = new QWidget();
         m_pMachineFuncDetailSetupAddWidget->setupUi(m_pUpdateWidgetPanel);
+
+        initUpdateWidgetPanel(m_pMachineFuncDetailSetupAddWidget);
+
         connect(m_pMachineFuncDetailSetupAddWidget->m_buttonBox, SIGNAL(accepted()), this, SLOT(onConfirmUpdateNewRecord()));
         connect(m_pMachineFuncDetailSetupAddWidget->m_buttonBox, SIGNAL(rejected()), this, SLOT(onCancelUpdateNewRecord()));
+
         m_pUpdateWidgetPanel->show();
+
     }
 
     //---------------------------------------------------------------------
@@ -208,15 +232,7 @@ namespace YR2K {
 
         // Close the window and destroy the panel object.
         // 
-        this->destroyAddWidgetPanel();
-
-        Q_ASSERT_X(m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
-        QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
-        if (table)
-        {
-            int rowIndex = table->rowCount();
-            this->insertRecordToTable(rowIndex, machineDetailInfo);
-        }
+        this->destroyUpdateWidgetPanel();
     }
 
     //---------------------------------------------------------------------
@@ -224,7 +240,7 @@ namespace YR2K {
     {
         // Close the window and destroy the panel object.
         // 
-        this->destroyAddWidgetPanel();
+        this->destroyUpdateWidgetPanel();
     }
 
     //---------------------------------------------------------------------
@@ -243,6 +259,12 @@ namespace YR2K {
                 if (m_contextMenuTriggeredIndex.isValid())
                 {
                     table->selectRow(row);
+                    QTableWidgetItem* item = table->item(row, DETAIL_SETUP_TABLE_COLUMN_ASSET_TYPE);
+                    if (item)
+                    {
+                        m_uiCurrentUpdateMachineId = item->data(Qt::UserRole).toInt();
+                    }
+
                     QPoint pos = QCursor::pos();
                     m_pContextMenu->exec(QCursor::pos());
                 }
@@ -251,26 +273,60 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupFuncDetailSetupPanel::onRemoveActionTriggered()
+    void TmachineGroupFuncDetailSetupPanel::initUpdateWidgetPanel(Ui::TmachineGroupFuncDetailSetupViewItemAdd* widget)
     {
-        int row = m_contextMenuTriggeredIndex.row();
-        Q_ASSERT_X(m_pMachineFuncDetailSetupTable != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
-        if (m_pMachineFuncDetailSetupTable)
+        DBMachineDetailInfo info;
+        if (widget)
         {
-            QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
-            Q_ASSERT_X(table != NULL, "TmachineGroupFuncDetailSetupPanel::onCustomContextMenuRequested", "");
-
-            if (table)
+            Q_ASSERT_X(m_pMachineFuncDetailSetupTable != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
+            if (m_pMachineFuncDetailSetupTable)
             {
-                QTableWidgetItem* item = table->item(row, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME);
-                Q_ASSERT_X(item != NULL, "TmachineGroupFuncDetailSetupPanel::onCustomContextMenuRequested", "");
-                if (item)
+                QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
+                Q_ASSERT_X(table != NULL, "TmachineGroupFuncDetailSetupPanel::onUpdateActionTriggered", "");
+
+                if (table)
                 {
-                    int machineBasiInfoId = item->data(Qt::UserRole).toInt();
-                    bool success = TDatabaseManager::getInstance()->removeMachine(machineBasiInfoId);
-                    table->removeRow(row);
+                    if (m_contextMenuTriggeredIndex.isValid())
+                    {
+                        int row = m_contextMenuTriggeredIndex.row();
+                        QTableWidgetItem* item = table->item(row, DETAIL_SETUP_TABLE_COLUMN_ASSET_TYPE);
+                        if (item)
+                        {
+                            int machineId = item->data(Qt::UserRole).toInt();
+                            std::vector<DBMachineDetailInfo> vecInfo;
+                            TDatabaseManager::getInstance()->findMachineDetailInfoWithAssetType(m_eCurrentOperatingCategory, vecInfo);
+                            DBMachineDetailInfoIter iter = vecInfo.begin();
+                            DBMachineDetailInfoIter end = vecInfo.end();
+                            bool find = false;
+                            for (; iter != end; ++iter)
+                            {
+                                if (machineId == (*iter).machineId)
+                                {
+                                    info = *iter;
+                                    find = true;
+                                    continue;
+                                }
+                            }
+
+                            if (find)
+                            {
+                                widget->m_categoryLabel->setText(CATEGORY_STRING[m_eCurrentOperatingCategory]);
+                                widget->m_mainProbabilityLineEdit->setText(QString::number(info.mainProbability));
+                                widget->m_probabilityRangeLineEdit->setText(QString::number(info.probabilityRange));
+                                widget->m_cashRatioLineEdit->setText(QString::number(info.cashRatio));
+                                widget->m_coinRatioLineEdit->setText(QString::number(info.coinRatio));
+                                widget->m_maxPointsLineEdit->setText(QString::number(info.maxPoints));
+                                widget->m_minPointsLineEdit->setText(QString::number(info.minPoints));
+                                widget->m_markPointsLineEdit->setText(QString::number(info.markPoints));
+                                widget->m_clearPointCycleLineEdit->setText(QString::number(info.clearPointCycle));
+                                widget->m_pushPointDaysLineEdit->setText(QString::number(info.pushPointDays));
+                                widget->m_machineTypeLineEdit->setText(QString::number(info.machineType));
+                            }
+                        }
+                    }
                 }
             }
+
         }
     }
 

@@ -26,12 +26,12 @@ namespace YR2K {
         void                                            onCancelUpdateNewRecord();
 
         void                                            onCustomContextMenuRequested(const QPoint& pos);
-        void                                            onRemoveActionTriggered();
 
     private:
-        void                                            destroyAddWidgetPanel();
+        void                                            destroyUpdateWidgetPanel();
         void                                            insertRecordToTable(const int rowIndex, const DBMachineDetailInfo& info);
         void                                            createActions(void);
+        void                                            initUpdateWidgetPanel(Ui::TmachineGroupFuncDetailSetupViewItemAdd* widget);
 
     private:
         Ui::TmachineGroupFuncDetailSetupViewItemTable*  m_pMachineFuncDetailSetupTable;
@@ -44,9 +44,10 @@ namespace YR2K {
         QModelIndex                                     m_contextMenuTriggeredIndex;
         QMenu*                                          m_pContextMenu;
         QAction*                                        m_pUpdateAction;
-        QAction*                                        m_pRemoveAction;
 
         TECategory                                      m_eCurrentOperatingCategory;
+
+        unsigned int                                    m_uiCurrentUpdateMachineId;
     };
 
 }

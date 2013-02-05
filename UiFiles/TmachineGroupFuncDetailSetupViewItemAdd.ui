@@ -44,7 +44,7 @@
    <property name="title">
     <string>机台功能设置</string>
    </property>
-   <widget class="QLabel" name="m_mainPossiblityLabel">
+   <widget class="QLabel" name="m_mainProbabilityLabel">
     <property name="geometry">
      <rect>
       <x>31</x>
@@ -57,7 +57,7 @@
      <string>主几率：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_mainPossiblityLineEdit">
+   <widget class="QLineEdit" name="m_mainProbabilityLineEdit">
     <property name="geometry">
      <rect>
       <x>97</x>
@@ -67,7 +67,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_possibilityRangeLabel">
+   <widget class="QLabel" name="m_probabilityRangeLabel">
     <property name="geometry">
      <rect>
       <x>244</x>
@@ -80,7 +80,7 @@
      <string>几率范围：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_possibilityRangeLineEdit">
+   <widget class="QLineEdit" name="m_probabilityRangeLineEdit">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -90,7 +90,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_maxBetPointLabel">
+   <widget class="QLabel" name="m_maxPointsLabel">
     <property name="geometry">
      <rect>
       <x>31</x>
@@ -103,7 +103,7 @@
      <string>最大压分：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_maxBetPointLineEdit">
+   <widget class="QLineEdit" name="m_maxPointsLineEdit">
     <property name="geometry">
      <rect>
       <x>97</x>
@@ -113,7 +113,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_minBetPointLabel">
+   <widget class="QLabel" name="m_minPointsLabel">
     <property name="geometry">
      <rect>
       <x>244</x>
@@ -126,7 +126,7 @@
      <string>最小压分：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_maxBetPointLineEdit_2">
+   <widget class="QLineEdit" name="m_minPointsLineEdit">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -136,7 +136,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_villageLeisureBetPointLabel">
+   <widget class="QLabel" name="m_markPointsLabel">
     <property name="geometry">
      <rect>
       <x>31</x>
@@ -149,7 +149,7 @@
      <string>庄闲压分：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_villageLeisureBetPointLineEdit">
+   <widget class="QLineEdit" name="m_markPointsLineEdit">
     <property name="geometry">
      <rect>
       <x>97</x>
@@ -159,7 +159,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_drawGameBetPointLineEdit">
+   <widget class="QLineEdit" name="m_drawPointsLineEdit">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -169,7 +169,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_drawGameBetPointLabel">
+   <widget class="QLabel" name="m_drawPointsLabel">
     <property name="geometry">
      <rect>
       <x>244</x>
@@ -182,7 +182,7 @@
      <string>和局压分：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_clearCoinTimeLineEdit">
+   <widget class="QLineEdit" name="m_clearPointCycleLineEdit">
     <property name="geometry">
      <rect>
       <x>97</x>
@@ -192,7 +192,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_clearCoinTimeLabel">
+   <widget class="QLabel" name="m_clearPointCycleLabel">
     <property name="geometry">
      <rect>
       <x>31</x>
@@ -205,7 +205,7 @@
      <string>清币时间：</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="m_betTimeInDaysLineEdit">
+   <widget class="QLineEdit" name="m_pushPointDaysLineEdit">
     <property name="geometry">
      <rect>
       <x>97</x>
@@ -215,7 +215,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="m_betTimeInDaysLabel">
+   <widget class="QLabel" name="m_pushPointDaysLabel">
     <property name="geometry">
      <rect>
       <x>31</x>
@@ -239,14 +239,14 @@
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="m_machineNumberNamelabel">
+      <widget class="QLabel" name="m_machineTypeLabel">
        <property name="text">
         <string>机组编号名称：</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="m_machineNumberNamelineEdit"/>
+      <widget class="QLineEdit" name="m_machineTypeLineEdit"/>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="m_functionLabel">
@@ -271,7 +271,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="QLabel" name="m_coinCategorySetupLabel">
+      <widget class="QLabel" name="m_cashRatioLabel">
        <property name="text">
         <string>设置币种：</string>
        </property>
@@ -280,7 +280,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLineEdit" name="m_coinCategorySetupLineEdit"/>
+        <widget class="QLineEdit" name="m_cashRatioLineEdit"/>
        </item>
        <item>
         <widget class="QLabel" name="label_11">
@@ -304,7 +304,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QLabel" name="m_pointSetupLabel">
+      <widget class="QLabel" name="m_coinRatioLabel">
        <property name="text">
         <string>设置分值：</string>
        </property>
@@ -313,7 +313,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLineEdit" name="m_pointSetupLineEdit"/>
+        <widget class="QLineEdit" name="m_coinRatioLineEdit"/>
        </item>
        <item>
         <widget class="QLabel" name="label_12">

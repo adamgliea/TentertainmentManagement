@@ -71,9 +71,6 @@ namespace YR2K {
             info.location = m_pMachineBaseSetupAddWidget->m_manufacturerTextEdit->toPlainText().toStdString();
             info.businessConditions = m_pMachineBaseSetupAddWidget->m_businessStatusComboBox->currentIndex() == 1;
             info.remark = m_pMachineBaseSetupAddWidget->m_remarkTextEdit->toPlainText().toStdString();
-
-            std::wstring str = m_pMachineBaseSetupAddWidget->m_manufacturerTextEdit->toPlainText().toStdWString();
-            std::string s = m_pMachineBaseSetupAddWidget->m_manufacturerTextEdit->toPlainText().toStdString();
         }
 
         return info;

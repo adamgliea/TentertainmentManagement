@@ -19,6 +19,9 @@ int main(int argc, char *argv[])
 // 	testing::InitGoogleTest(&argc, argv);
 // 	runModelTestCases();
     QTextCodec::setCodecForTr(QTextCodec::codecForName("GBK"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("GBK"));
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("GBK"));
+
     bool connectRet = YR2K::TDatabaseManager::getInstance()->connect("test", "127.0.0.1", "root", "111111", 3306);
 
     QApplication a(argc, argv);

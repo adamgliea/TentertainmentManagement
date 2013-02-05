@@ -207,10 +207,10 @@
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncBaseSetupViewItemTable.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemAdd.h">
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemTable.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemTable.h">
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemAdd.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -290,9 +290,6 @@
     <CustomBuild Include="UiFiles\TmachineGroupFuncBaseSetupViewItemTable.ui">
       <Filter>UiFiles</Filter>
     </CustomBuild>
-    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemAdd.ui">
-      <Filter>UiFiles</Filter>
-    </CustomBuild>
     <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemTable.ui">
       <Filter>UiFiles</Filter>
     </CustomBuild>
@@ -301,6 +298,9 @@
     </CustomBuild>
     <CustomBuild Include="Panel\TmachineGroupFuncDetailSetupPanel.h">
       <Filter>Panel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemAdd.ui">
+      <Filter>UiFiles</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
