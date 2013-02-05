@@ -49,14 +49,14 @@
     </property>
     <layout class="QHBoxLayout" name="m_depositaryLayout">
      <item>
-      <widget class="QLabel" name="m_depositaryLabel">
+      <widget class="QLabel" name="m_factoryNameLabel">
        <property name="text">
         <string>出场厂家：</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="m_depositaryLineEdit"/>
+      <widget class="QLineEdit" name="m_factoryNameLineEdit"/>
      </item>
     </layout>
    </widget>
@@ -71,14 +71,14 @@
     </property>
     <layout class="QHBoxLayout" name="m_phoneLayout">
      <item>
-      <widget class="QLabel" name="m_phoneLabel">
+      <widget class="QLabel" name="m_factoryPhoneNumberLabel">
        <property name="text">
         <string>厂家电话：</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="m_phoneLineEdit"/>
+      <widget class="QLineEdit" name="m_factoryPhoneNumberLineEdit"/>
      </item>
     </layout>
    </widget>
@@ -93,14 +93,14 @@
     </property>
     <layout class="QVBoxLayout" name="m_manufacturerLayout">
      <item>
-      <widget class="QLabel" name="m_manufacturerLabel">
+      <widget class="QLabel" name="m_locationLabel">
        <property name="text">
         <string>存放地点：</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="m_manufacturerTextEdit"/>
+      <widget class="QTextEdit" name="m_locationTextEdit"/>
      </item>
     </layout>
    </widget>
@@ -115,14 +115,14 @@
     </property>
     <layout class="QHBoxLayout" name="m_businessStatusLayout">
      <item>
-      <widget class="QLabel" name="m_businessStatusLabel">
+      <widget class="QLabel" name="m_businessConditionsLabel">
        <property name="text">
         <string>营业状况：</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="m_businessStatusComboBox">
+      <widget class="QComboBox" name="m_businessConditionsComboBox">
        <item>
         <property name="text">
          <string>否</string>

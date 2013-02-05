@@ -4,7 +4,7 @@
 
 #include "TDatabaseManager.h"
 #include "TpanelBase.h"
-#include "ui_TmachineGroupFuncDetailSetupViewItemAdd.h"
+#include "ui_TmachineGroupFuncDetailSetupViewItemUpdate.h"
 #include "ui_TmachineGroupFuncDetailSetupViewItemTable.h"
 
 namespace YR2K {
@@ -31,11 +31,11 @@ namespace YR2K {
         void                                            destroyUpdateWidgetPanel();
         void                                            insertRecordToTable(const int rowIndex, const DBMachineDetailInfo& info);
         void                                            createActions(void);
-        void                                            initUpdateWidgetPanel(Ui::TmachineGroupFuncDetailSetupViewItemAdd* widget);
+        void                                            initUpdateWidgetPanel(Ui::TmachineGroupFuncDetailSetupViewItemUpdate* widget);
 
     private:
         Ui::TmachineGroupFuncDetailSetupViewItemTable*  m_pMachineFuncDetailSetupTable;
-        Ui::TmachineGroupFuncDetailSetupViewItemAdd*    m_pMachineFuncDetailSetupAddWidget;
+        Ui::TmachineGroupFuncDetailSetupViewItemUpdate* m_pMachineFuncDetailSetupUpdateWidget;
 
         std::vector<DBMachineDetailInfo>                m_vecMachineFuncDetailInfoFoundResult;
 

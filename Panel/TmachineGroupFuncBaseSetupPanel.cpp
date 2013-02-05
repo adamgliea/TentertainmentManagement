@@ -66,10 +66,10 @@ namespace YR2K {
         if (m_pMachineBaseSetupAddWidget)
         {
             info.assetType = m_eCurrentOperatingCategory;
-            info.factoryName = m_pMachineBaseSetupAddWidget->m_depositaryLineEdit->text().toStdString();
-            info.factoryPhoneNumber = m_pMachineBaseSetupAddWidget->m_phoneLineEdit->text().toStdString();
-            info.location = m_pMachineBaseSetupAddWidget->m_manufacturerTextEdit->toPlainText().toStdString();
-            info.businessConditions = m_pMachineBaseSetupAddWidget->m_businessStatusComboBox->currentIndex() == 1;
+            info.factoryName = m_pMachineBaseSetupAddWidget->m_factoryNameLineEdit->text().toStdString();
+            info.factoryPhoneNumber = m_pMachineBaseSetupAddWidget->m_factoryPhoneNumberLineEdit->text().toStdString();
+            info.location = m_pMachineBaseSetupAddWidget->m_locationTextEdit->toPlainText().toStdString();
+            info.businessConditions = m_pMachineBaseSetupAddWidget->m_businessConditionsComboBox->currentIndex() == 1;
             info.remark = m_pMachineBaseSetupAddWidget->m_remarkTextEdit->toPlainText().toStdString();
         }
 

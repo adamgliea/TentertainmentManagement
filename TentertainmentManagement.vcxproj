@@ -171,8 +171,8 @@
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupDifferenceReportViewItemTable.h" />
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncBaseSetupViewItemAddWidget.h" />
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncBaseSetupViewItemTable.h" />
-    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemAdd.h" />
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemTable.h" />
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemUpdate.h" />
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportEntertainmentViewItemTable.h" />
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportGiftViewItemTable.h" />
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupReportLotteryViewItemTable.h" />
@@ -520,7 +520,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemAdd.ui">
+    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemUpdate.ui">
       <FileType>Document</FileType>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>

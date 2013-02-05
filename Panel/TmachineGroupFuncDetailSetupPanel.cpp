@@ -39,7 +39,7 @@ namespace YR2K {
         setFixedSize(w, h);
         setLayout(mainLayout);
 
-        m_pMachineFuncDetailSetupAddWidget = new Ui::TmachineGroupFuncDetailSetupViewItemAdd();
+        m_pMachineFuncDetailSetupUpdateWidget = new Ui::TmachineGroupFuncDetailSetupViewItemUpdate();
 
         createActions();
 
@@ -59,22 +59,22 @@ namespace YR2K {
     {
         DBMachineDetailInfo info;
 
-        Q_ASSERT_X(m_pMachineFuncDetailSetupAddWidget != NULL, "TmachineGroupFuncDetailSetupPanel::getInfo", "");
-        if (m_pMachineFuncDetailSetupAddWidget)
+        Q_ASSERT_X(m_pMachineFuncDetailSetupUpdateWidget != NULL, "TmachineGroupFuncDetailSetupPanel::getInfo", "");
+        if (m_pMachineFuncDetailSetupUpdateWidget)
         {
             info.machineId = m_uiCurrentUpdateMachineId;
             info.assetType = m_eCurrentOperatingCategory;
-            info.machineType = m_pMachineFuncDetailSetupAddWidget->m_machineTypeLineEdit->text().toInt();
-            info.cashRatio = m_pMachineFuncDetailSetupAddWidget->m_cashRatioLineEdit->text().toFloat();
-            info.coinRatio = m_pMachineFuncDetailSetupAddWidget->m_coinRatioLineEdit->text().toFloat();
-            info.mainProbability = m_pMachineFuncDetailSetupAddWidget->m_mainProbabilityLineEdit->text().toFloat();
-            info.probabilityRange = m_pMachineFuncDetailSetupAddWidget->m_probabilityRangeLineEdit->text().toFloat();
-            info.maxPoints = m_pMachineFuncDetailSetupAddWidget->m_maxPointsLineEdit->text().toInt();
-            info.minPoints = m_pMachineFuncDetailSetupAddWidget->m_minPointsLineEdit->text().toInt();
-            info.markPoints = m_pMachineFuncDetailSetupAddWidget->m_markPointsLineEdit->text().toInt();
-            info.drawPoints = m_pMachineFuncDetailSetupAddWidget->m_drawPointsLineEdit->text().toInt();
-            info.pushPointDays = m_pMachineFuncDetailSetupAddWidget->m_pushPointDaysLineEdit->text().toInt();
-            info.clearPointCycle = m_pMachineFuncDetailSetupAddWidget->m_clearPointCycleLineEdit->text().toInt();
+            info.machineType = m_pMachineFuncDetailSetupUpdateWidget->m_machineTypeLineEdit->text().toInt();
+            info.cashRatio = m_pMachineFuncDetailSetupUpdateWidget->m_cashRatioLineEdit->text().toFloat();
+            info.coinRatio = m_pMachineFuncDetailSetupUpdateWidget->m_coinRatioLineEdit->text().toFloat();
+            info.mainProbability = m_pMachineFuncDetailSetupUpdateWidget->m_mainProbabilityLineEdit->text().toFloat();
+            info.probabilityRange = m_pMachineFuncDetailSetupUpdateWidget->m_probabilityRangeLineEdit->text().toFloat();
+            info.maxPoints = m_pMachineFuncDetailSetupUpdateWidget->m_maxPointsLineEdit->text().toInt();
+            info.minPoints = m_pMachineFuncDetailSetupUpdateWidget->m_minPointsLineEdit->text().toInt();
+            info.markPoints = m_pMachineFuncDetailSetupUpdateWidget->m_markPointsLineEdit->text().toInt();
+            info.drawPoints = m_pMachineFuncDetailSetupUpdateWidget->m_drawPointsLineEdit->text().toInt();
+            info.pushPointDays = m_pMachineFuncDetailSetupUpdateWidget->m_pushPointDaysLineEdit->text().toInt();
+            info.clearPointCycle = m_pMachineFuncDetailSetupUpdateWidget->m_clearPointCycleLineEdit->text().toInt();
         }
 
         return info;
@@ -213,12 +213,12 @@ namespace YR2K {
         // Initialize the panel and launch it up.
         // 
         m_pUpdateWidgetPanel = new QWidget();
-        m_pMachineFuncDetailSetupAddWidget->setupUi(m_pUpdateWidgetPanel);
+        m_pMachineFuncDetailSetupUpdateWidget->setupUi(m_pUpdateWidgetPanel);
 
-        initUpdateWidgetPanel(m_pMachineFuncDetailSetupAddWidget);
+        initUpdateWidgetPanel(m_pMachineFuncDetailSetupUpdateWidget);
 
-        connect(m_pMachineFuncDetailSetupAddWidget->m_buttonBox, SIGNAL(accepted()), this, SLOT(onConfirmUpdateNewRecord()));
-        connect(m_pMachineFuncDetailSetupAddWidget->m_buttonBox, SIGNAL(rejected()), this, SLOT(onCancelUpdateNewRecord()));
+        connect(m_pMachineFuncDetailSetupUpdateWidget->m_buttonBox, SIGNAL(accepted()), this, SLOT(onConfirmUpdateNewRecord()));
+        connect(m_pMachineFuncDetailSetupUpdateWidget->m_buttonBox, SIGNAL(rejected()), this, SLOT(onCancelUpdateNewRecord()));
 
         m_pUpdateWidgetPanel->show();
 
@@ -273,7 +273,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupFuncDetailSetupPanel::initUpdateWidgetPanel(Ui::TmachineGroupFuncDetailSetupViewItemAdd* widget)
+    void TmachineGroupFuncDetailSetupPanel::initUpdateWidgetPanel(Ui::TmachineGroupFuncDetailSetupViewItemUpdate* widget)
     {
         DBMachineDetailInfo info;
         if (widget)

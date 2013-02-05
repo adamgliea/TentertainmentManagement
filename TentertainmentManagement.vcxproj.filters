@@ -210,7 +210,7 @@
     <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemTable.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemAdd.h">
+    <ClInclude Include="GeneratedFiles\ui_TmachineGroupFuncDetailSetupViewItemUpdate.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -299,7 +299,7 @@
     <CustomBuild Include="Panel\TmachineGroupFuncDetailSetupPanel.h">
       <Filter>Panel</Filter>
     </CustomBuild>
-    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemAdd.ui">
+    <CustomBuild Include="UiFiles\TmachineGroupFuncDetailSetupViewItemUpdate.ui">
       <Filter>UiFiles</Filter>
     </CustomBuild>
   </ItemGroup>
