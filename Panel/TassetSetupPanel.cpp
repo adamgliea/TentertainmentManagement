@@ -30,6 +30,7 @@ namespace YR2K {
         : TpanelBase(parent)
         , m_pContextMenu(NULL)
         , m_pRemoveAction(NULL)
+        , m_eCurrentOperatingCategory(CATEGORY_INVALID)
     {
         m_eType = PANEL_ASSET_SETUP;
 
@@ -119,14 +120,16 @@ namespace YR2K {
         // 
         this->destroyAddWidgetPanel();
 
-        Q_ASSERT_X(m_pAssetSetupTable->m_assetSetupTable != NULL, "", "");
-        QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
-        if (table)
+        if (assetInfo.assetType == m_eCurrentOperatingCategory)
         {
-            int rowIndex = table->rowCount();
-            this->insertRecordToTable(rowIndex, assetInfo);
+            Q_ASSERT_X(m_pAssetSetupTable->m_assetSetupTable != NULL, "", "");
+            QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
+            if (table)
+            {
+                int rowIndex = table->rowCount();
+                this->insertRecordToTable(rowIndex, assetInfo);
+            }
         }
-
     }
 
     //---------------------------------------------------------------------
@@ -177,6 +180,9 @@ namespace YR2K {
             insertRecordToTable(i, *iter);
             i++;
         }
+
+        m_eCurrentOperatingCategory = category;
+
     }
 
     //---------------------------------------------------------------------

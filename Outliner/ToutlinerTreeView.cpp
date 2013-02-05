@@ -20,8 +20,8 @@ namespace YR2K {
         m_adminSetupPanelNode = new QStandardItem(tr("账户设定"));
         m_assetSetupPanelNode = new QStandardItem(tr("资产设定"));
         m_assetSetupPanelCabinetNode = new QStandardItem(tr("柜体类"));
-        m_assetSetupPanelLotteryNode = new QStandardItem(tr("模拟类"));
-        m_assetSetupPanelSimulateNode = new QStandardItem(tr("彩票类"));
+        m_assetSetupPanelLotteryNode = new QStandardItem(tr("彩票类"));
+        m_assetSetupPanelSimulateNode = new QStandardItem(tr("模拟类"));
         m_assetSetupPanelCoindozerNode = new QStandardItem(tr("推币类"));
         m_assetSetupPanelWagerNode = new QStandardItem(tr("博彩类"));
         m_inventoryReportPanelNode = new QStandardItem(tr("库存设定"));
@@ -32,15 +32,15 @@ namespace YR2K {
 
         m_machineGroupFuncDetailSetupPanelNode = new QStandardItem(tr("机台功能设定"));
         m_machineGroupFuncDetailSetupPanelCabinetNode = new QStandardItem(tr("柜体类"));
-        m_machineGroupFuncDetailSetupPanelLotteryNode = new QStandardItem(tr("模拟类"));
-        m_machineGroupFuncDetailSetupPanelSimulateNode = new QStandardItem(tr("彩票类"));
+        m_machineGroupFuncDetailSetupPanelLotteryNode = new QStandardItem(tr("彩票类"));
+        m_machineGroupFuncDetailSetupPanelSimulateNode = new QStandardItem(tr("模拟类"));
         m_machineGroupFuncDetailSetupPanelCoindozerNode = new QStandardItem(tr("推币类"));
         m_machineGroupFuncDetailSetupPanelWagerNode = new QStandardItem(tr("博彩类"));
 
         m_machineGroupFuncBaseSetupPanel = new QStandardItem(tr("机组明细设置"));
         m_machineGroupFuncBaseSetupPanelCabinetNode = new QStandardItem(tr("柜体类"));
-        m_machineGroupFuncBaseSetupPanelLotteryNode = new QStandardItem(tr("模拟类"));
-        m_machineGroupFuncBaseSetupPanelSimulateNode = new QStandardItem(tr("彩票类"));
+        m_machineGroupFuncBaseSetupPanelLotteryNode = new QStandardItem(tr("彩票类"));
+        m_machineGroupFuncBaseSetupPanelSimulateNode = new QStandardItem(tr("模拟类"));
         m_machineGroupFuncBaseSetupPanelCoindozerNode = new QStandardItem(tr("推币类"));
         m_machineGroupFuncBaseSetupPanelWagerNode = new QStandardItem(tr("博彩类"));
 

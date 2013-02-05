@@ -48,6 +48,7 @@ namespace YR2K {
         QAction*                                m_pRemoveAction;
 
         std::vector<DBAssetsInfo>               m_vecAssetsFoundResult;
+        TECategory                              m_eCurrentOperatingCategory;
     };
 }
 #endif  // TASSETSETUPPANEL_H
