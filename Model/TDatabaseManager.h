@@ -30,6 +30,16 @@ namespace YR2K {
 		bool findMachineDetailInfoWithAssetType(const enum TECategory assetType, std::vector<struct DBMachineDetailInfo> &machines);
 		bool updateMachineDetailInfo(const struct DBMachineDetailInfo &detailInfo);
 
+		unsigned int getInventoryPoint();
+		bool updateInventoryPoint(const unsigned int point);
+
+		int addInventoryReport(const struct DBInventoryReportInfo &info);
+		bool findInventoryReportWithMachineId(const unsigned int machineId, struct DBInventoryReportInfo &outInfo);
+		bool findInventoryReportWithTimerange(const unsigned int machineId, 
+											  const unsigned int startTime, 
+											  const unsigned int endTime, 
+											  std::vector<struct DBInventoryReportInfo> &infos);
+
 	private:
 		void disconnect();
 

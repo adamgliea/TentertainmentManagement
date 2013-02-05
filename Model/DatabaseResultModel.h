@@ -47,6 +47,14 @@ namespace YR2K {
 		unsigned int pushPointDays;
 		unsigned int clearPointCycle;
 	};
+
+	struct DBInventoryReportInfo {
+		unsigned int reportId;
+		unsigned int machineId;
+		std::string addPointString;
+		std::string clearPointString;
+		unsigned int opTime;
+	};
 }
 
 #endif

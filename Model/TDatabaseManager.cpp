@@ -236,6 +236,123 @@ namespace YR2K {
 		return ret;
 	}
 
+	unsigned int TDatabaseManager::getInventoryPoint() {
+		unsigned int ret = 0;
+
+		mysqlpp::Query query = this->m_conn->query();
+		char queryBuffer[512] = {0};
+		snprintf(queryBuffer, 512, "SELECT inventory FROM tmGlobaldata;");
+
+		mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+		if (res) {
+			int i = 0;
+			for (; i < res.num_rows(); ++i) {
+				ret = res[i]["inventory"];
+			}
+		}
+		else {
+			printf("select inventory point error:%s\n", this->m_conn->error());
+		}
+
+		return ret;
+	}
+
+	bool TDatabaseManager::updateInventoryPoint(const unsigned int point) {
+		mysqlpp::Query query = this->m_conn->query();
+		char queryBuffer[512] = {0};
+		snprintf(queryBuffer, 512, "UPDATE tmGlobaldata SET inventory=%u;", point);
+
+		bool ret = query.execute(queryBuffer, 512);
+		if (!ret) {
+			printf("update inventory error:%s\n", this->m_conn->error());
+		}
+
+		return ret;
+	}
+
+	int TDatabaseManager::addInventoryReport(const struct DBInventoryReportInfo &info) {
+		int ret = -1;
+
+		mysqlpp::Query query = this->m_conn->query();
+		char queryBuffer[256] = {0};
+		snprintf(queryBuffer, 256, 
+				 "INSERT INTO inventoryReport(machineId, addPointString, clearPointString, opDate) VALUES(%u, \'%s\', \'%s\', %d);",
+				 info.machineId, info.addPointString.c_str(), info.clearPointString.c_str(), info.opTime);
+
+		mysqlpp::SimpleResult queryRet = query.execute(queryBuffer, 256);
+		if (queryRet) {
+			printf("insert inventory report ok\n");
+			ret = queryRet.insert_id();
+		}
+		else {
+			printf("insert inventory report error:%s\n", this->m_conn->error());
+		}
+
+		return ret;
+	}
+		
+	bool TDatabaseManager::findInventoryReportWithMachineId(const unsigned int machineId, struct DBInventoryReportInfo &outInfo) {
+		bool ret = false;
+
+		mysqlpp::Query query = this->m_conn->query();
+		char queryBuffer[512] = {0};
+		snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE machineId=%u;", machineId);
+
+		mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+		if (res) {
+			int i = 0;
+			for (; i < res.num_rows(); ++i) {
+				outInfo.reportId = res[i]["id"];
+				outInfo.machineId = res[i]["machineId"];
+				outInfo.addPointString = res[i]["addPointString"];
+				outInfo.clearPointString = res[i]["clearPointString"];
+				outInfo.opTime = res[i]["opDate"];
+
+				ret = true;
+			}
+		}
+		else {
+			printf("select inventory report error:%s\n", this->m_conn->error());
+		}
+
+		return ret;
+	}
+
+	bool findInventoryReportWithTimerange(const unsigned int machineId, 
+									      const unsigned int startTime, 
+										  const unsigned int endTime, 
+										  std::vector<struct DBInventoryReportInfo> &infos) {
+		bool ret = false;
+
+		mysqlpp::Query query = this->m_conn->query();
+		char queryBuffer[512] = {0};
+		snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE machineId=%u AND (opDate >= %u AND opDate <= %u);",
+				 machineId, startTime, endTime);
+
+		mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+		if (res) {
+			int i = 0;
+			for (; i < res.num_rows(); ++i) {
+				struct DBInventoryReportInfo info = {0};
+
+				info.reportId = res[i]["id"];
+				outInfo.machineId = res[i]["machineId"];
+				outInfo.addPointString = res[i]["addPointString"];
+				outInfo.clearPointString = res[i]["clearPointString"];
+				outInfo.opTime = res[i]["opDate"];
+
+				infos.push_back(info);
+			}
+
+			ret = true;
+		}
+		else {
+			printf("select inventory report with time range error:%s\n", this->m_conn->error());
+		}
+
+		return ret;
+	}
+
 #pragma mark -- Private Functions
 
 	void TDatabaseManager::disconnect() {

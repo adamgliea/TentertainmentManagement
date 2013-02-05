@@ -100,3 +100,14 @@ TEST_F(TDatabaseTest, removeMachine) {
 	bool removeRet = YR2K::TDatabaseManager::getInstance()->removeMachine(lastInsertMachineId);
 	ASSERT_TRUE(removeRet);
 }
+
+TEST_F(TDatabaseTest, getInventoryPoint) {
+	unsigned int inventoryPoint = YR2K::TDatabaseManager::getInstance()->getInventoryPoint();
+	ASSERT_TRUE(inventoryPoint != 0);
+}
+
+TEST_F(TDatabaseTest, getInventoryPoint) {
+	unsigned int inventoryPoint = YR2K::TDatabaseManager::getInstance()->getInventoryPoint();
+	ASSERT_TRUE(inventoryPoint != 0);
+}
+
