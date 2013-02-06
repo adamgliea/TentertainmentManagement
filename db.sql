@@ -47,6 +47,24 @@ CREATE TABLE `inventoryReport` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `report1`
+--
+
+DROP TABLE IF EXISTS `report1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `report1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `machineId` int(11) NOT NULL,
+  `todayData` int(11) NOT NULL,
+  `lastDayData` int(11) NOT NULL,
+  `point` decimal(10,0) NOT NULL,
+  `opTime` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `machine`
 --
 
@@ -104,4 +122,4 @@ CREATE TABLE `asset` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-02-05 20:48:32
+-- Dump completed on 2013-02-06 20:44:42

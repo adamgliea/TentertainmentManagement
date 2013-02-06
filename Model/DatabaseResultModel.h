@@ -55,6 +55,15 @@ namespace YR2K {
 		std::string clearPointString;
 		unsigned int opTime;
 	};
+
+	struct DBReport1Info {
+		unsigned int reportId;
+		unsigned int machineId;
+		unsigned int todayData;
+		unsigned int lastDayData;
+		float point;
+		unsigned int opTime;
+	};
 }
 
 #endif
