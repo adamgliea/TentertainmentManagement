@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TinventoryReportViewItemAddCoinWidget.ui'
 **
-** Created: Wed Feb 6 14:15:45 2013
+** Created: Wed Feb 6 19:30:55 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

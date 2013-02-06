@@ -233,32 +233,32 @@ namespace YR2K {
         // 
         if (item == m_assetSetupPanelNode)
         {
-            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         if (item == m_assetSetupPanelCabinetNode)
         {
-            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_CABINET);
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_CABINET, 0);
             return true;
         }
         else if (item == m_assetSetupPanelLotteryNode)
         {
-            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_LOTTERY);
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_LOTTERY, 0);
             return true;
         }
         else if (item == m_assetSetupPanelSimulateNode)
         {
-            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_SIMULATE);
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_SIMULATE, 0);
             return true;
         }
         else if (item == m_assetSetupPanelCoindozerNode)
         {
-            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_COINDOZER);
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_COINDOZER, 0);
             return true;
         }
         else if (item == m_assetSetupPanelWagerNode)
         {
-            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_WAGER);
+            emit treeMenuClicked(PANEL_ASSET_SETUP, CATEGORY_WAGER, 0);
             return true;
         }
 
@@ -274,32 +274,32 @@ namespace YR2K {
         // 
         if (item == m_machineGroupFuncBaseSetupPanel)
         {
-            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         if (item == m_machineGroupFuncBaseSetupPanelCabinetNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_CABINET);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_CABINET, 0);
             return true;
         }
         else if (item == m_machineGroupFuncBaseSetupPanelLotteryNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_LOTTERY);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_LOTTERY, 0);
             return true;
         }
         else if (item == m_machineGroupFuncBaseSetupPanelSimulateNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_SIMULATE);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_SIMULATE, 0);
             return true;
         }
         else if (item == m_machineGroupFuncBaseSetupPanelCoindozerNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_COINDOZER);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_COINDOZER, 0);
             return true;
         }
         else if (item == m_machineGroupFuncBaseSetupPanelWagerNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_WAGER);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_BASE_SETUP, CATEGORY_WAGER, 0);
             return true;
         }
 
@@ -315,32 +315,32 @@ namespace YR2K {
         // 
         if (item == m_machineGroupFuncDetailSetupPanelNode)
         {
-            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         if (item == m_machineGroupFuncDetailSetupPanelCabinetNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_CABINET);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_CABINET, 0);
             return true;
         }
         else if (item == m_machineGroupFuncDetailSetupPanelLotteryNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_LOTTERY);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_LOTTERY, 0);
             return true;
         }
         else if (item == m_machineGroupFuncDetailSetupPanelSimulateNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_SIMULATE);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_SIMULATE, 0);
             return true;
         }
         else if (item == m_machineGroupFuncDetailSetupPanelCoindozerNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_COINDOZER);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_COINDOZER, 0);
             return true;
         }
         else if (item == m_machineGroupFuncDetailSetupPanelWagerNode)
         {
-            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_WAGER);
+            emit treeMenuClicked(PANEL_MACHINE_GROUP_FUNC_DETAIL_SETUP, CATEGORY_WAGER, 0);
             return true;
         }
 
@@ -356,32 +356,60 @@ namespace YR2K {
         // 
         if (item == m_inventoryReportPanelNode)
         {
-            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
+
         if (item == m_inventoryReportPanelCabinetNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_CABINET);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         else if (item == m_inventoryReportPanelLotteryNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_LOTTERY);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         else if (item == m_inventoryReportPanelSimulateNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_SIMULATE);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         else if (item == m_inventoryReportPanelCoindozerNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_COINDOZER);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
             return true;
         }
         else if (item == m_inventoryReportPanelWagerNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_WAGER);
+            emit treeMenuClicked(PANEL_INVALID, CATEGORY_INVALID, 0);
+            return true;
+        }
+
+
+        if (item->parent() == m_inventoryReportPanelCabinetNode)
+        {
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_CABINET, 0);
+            return true;
+        }
+        else if (item->parent() == m_inventoryReportPanelLotteryNode)
+        {
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_LOTTERY, 0);
+            return true;
+        }
+        else if (item->parent() == m_inventoryReportPanelSimulateNode)
+        {
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_SIMULATE, 0);
+            return true;
+        }
+        else if (item->parent() == m_inventoryReportPanelCoindozerNode)
+        {
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_COINDOZER, 0);
+            return true;
+        }
+        else if (item->parent() == m_inventoryReportPanelWagerNode)
+        {
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_WAGER, 0);
             return true;
         }
 

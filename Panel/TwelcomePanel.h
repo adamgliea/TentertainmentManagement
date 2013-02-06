@@ -11,7 +11,7 @@ namespace YR2K {
         TwelcomePanel(QWidget* parent = NULL);
         ~TwelcomePanel(void);
 
-        virtual void                doInitPanel(const TECategory& category);
+        virtual void                doInitPanel(const TECategory& category, unsigned int itemData);
 
     };
 

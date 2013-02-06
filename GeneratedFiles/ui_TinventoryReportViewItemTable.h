@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TinventoryReportViewItemTable.ui'
 **
-** Created: Wed Feb 6 15:07:39 2013
+** Created: Wed Feb 6 19:30:55 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

@@ -62,7 +62,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TinventoryReportPanel::doInitPanel(const TECategory& category)
+    void TinventoryReportPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
         Q_ASSERT_X(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget != NULL, "", "");
         QTableWidget* table = m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget;

@@ -31,7 +31,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupReportGiftPanel::doInitPanel(const TECategory& category)
+    void TmachineGroupReportGiftPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
 
     }

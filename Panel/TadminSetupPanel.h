@@ -10,7 +10,7 @@ namespace YR2K {
         TadminSetupPanel(QWidget* parent = NULL);
         ~TadminSetupPanel(void);
 
-        virtual void        doInitPanel(const TECategory& category);
+        virtual void        doInitPanel(const TECategory& category, unsigned int itemData);
     };
 }
 

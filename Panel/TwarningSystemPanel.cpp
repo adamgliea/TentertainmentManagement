@@ -29,7 +29,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TwarningSystemPanel::doInitPanel(const TECategory& category)
+    void TwarningSystemPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
 
     }

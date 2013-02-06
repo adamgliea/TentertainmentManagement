@@ -14,7 +14,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TadminSetupPanel::doInitPanel(const TECategory& category)
+    void TadminSetupPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
 
     }

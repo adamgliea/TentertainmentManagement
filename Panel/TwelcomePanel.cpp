@@ -14,7 +14,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TwelcomePanel::doInitPanel(const TECategory& category)
+    void TwelcomePanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
 
     }

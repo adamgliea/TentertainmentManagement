@@ -152,7 +152,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TassetSetupPanel::doInitPanel(const TECategory& category)
+    void TassetSetupPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
         Q_ASSERT_X(m_pAssetSetupTable->m_assetSetupTable != NULL, "", "");
         QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;

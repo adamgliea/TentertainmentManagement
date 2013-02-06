@@ -82,7 +82,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupFuncDetailSetupPanel::doInitPanel(const TECategory& category)
+    void TmachineGroupFuncDetailSetupPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
         Q_ASSERT_X(m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable != NULL, "", "");
         QTableWidget* table = m_pMachineFuncDetailSetupTable->m_machineGroupFuncDetailSetupTable;
@@ -231,7 +231,7 @@ namespace YR2K {
         DBMachineDetailInfo machineDetailInfo = this->getInfo();
         bool success = TDatabaseManager::getInstance()->updateMachineDetailInfo(machineDetailInfo);
 
-        doInitPanel(m_eCurrentOperatingCategory);
+        doInitPanel(m_eCurrentOperatingCategory, 0);
 
         // Close the window and destroy the panel object.
         // 

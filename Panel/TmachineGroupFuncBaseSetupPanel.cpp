@@ -77,7 +77,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupFuncBaseSetupPanel::doInitPanel(const TECategory& category)
+    void TmachineGroupFuncBaseSetupPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
         Q_ASSERT_X(m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable != NULL, "", "");
         QTableWidget* table = m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable;
