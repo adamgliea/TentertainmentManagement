@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'TentertainmentManagement.h'
 **
-** Created: Wed Feb 6 10:16:12 2013
+** Created: Wed Feb 6 16:56:02 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_YR2K__TentertainmentManagement[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -36,6 +36,11 @@ static const uint qt_meta_data_YR2K__TentertainmentManagement[] = {
       47,   31,   31,   31, 0x08,
       54,   31,   31,   31, 0x08,
       80,   62,   31,   31, 0x08,
+     135,  123,   31,   31, 0x08,
+     194,  182,   31,   31, 0x08,
+     254,  241,   31,   31, 0x08,
+     316,  302,   31,   31, 0x08,
+     375,  365,   31,   31, 0x08,
 
        0        // eod
 };
@@ -44,6 +49,13 @@ static const char qt_meta_stringdata_YR2K__TentertainmentManagement[] = {
     "YR2K::TentertainmentManagement\0\0save()\0"
     "print()\0undo()\0about()\0menuType,category\0"
     "onTreeMenuClicked(TEPanelIndex,TECategory)\0"
+    "cabinetItem\0onInitInventoryTreeCabinetNode(QStandardItem*)\0"
+    "lotteryItem\0onInitInventoryTreeLotteryNode(QStandardItem*)\0"
+    "simulateItem\0"
+    "onInitInventoryTreeSimulateNode(QStandardItem*)\0"
+    "coindozerItem\0"
+    "onInitInventoryTreeCoindozerNode(QStandardItem*)\0"
+    "wagerItem\0onInitInventoryTreeWagerNode(QStandardItem*)\0"
 };
 
 void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -57,6 +69,11 @@ void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject
         case 2: _t->undo(); break;
         case 3: _t->about(); break;
         case 4: _t->onTreeMenuClicked((*reinterpret_cast< const TEPanelIndex(*)>(_a[1])),(*reinterpret_cast< const TECategory(*)>(_a[2]))); break;
+        case 5: _t->onInitInventoryTreeCabinetNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
+        case 6: _t->onInitInventoryTreeLotteryNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
+        case 7: _t->onInitInventoryTreeSimulateNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
+        case 8: _t->onInitInventoryTreeCoindozerNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
+        case 9: _t->onInitInventoryTreeWagerNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -94,9 +111,9 @@ int YR2K::TentertainmentManagement::qt_metacall(QMetaObject::Call _c, int _id, v
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 10;
     }
     return _id;
 }

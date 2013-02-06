@@ -24,8 +24,11 @@
 
 #include "TcommonTypes.h"
 #include "TpanelHeaders.h"
+#include "TDatabaseManager.h"
 
 namespace YR2K {
+
+    typedef std::vector<DBMachineBaseInfo>::iterator DBMachineBaseInfoIter;
 
     static const int WINDOW_SIZE_WIDTH = 1280;
     static const int WINDOW_SIZE_HEIGHT = 720;
@@ -58,6 +61,16 @@ namespace YR2K {
         createSplitWindows();
 
         connect(m_pOutlinerTreeView, SIGNAL(treeMenuClicked(const TEPanelIndex&, const TECategory&)), this, SLOT(onTreeMenuClicked(const TEPanelIndex&, const TECategory&)));
+        connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeCabinetNode(QStandardItem*)), this, SLOT(onInitInventoryTreeCabinetNode(QStandardItem*)));
+        connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeLotteryNode(QStandardItem*)), this, SLOT(onInitInventoryTreeLotteryNode(QStandardItem*)));
+        connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeSimulateNode(QStandardItem*)), this, SLOT(onInitInventoryTreeSimulateNode(QStandardItem*)));
+        connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeCoindozerNode(QStandardItem*)), this, SLOT(onInitInventoryTreeCoindozerNode(QStandardItem*)));
+        connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeWagerNode(QStandardItem*)), this, SLOT(onInitInventoryTreeWagerNode(QStandardItem*)));
+
+        connect(m_aryPanelWidgets[PANEL_MACHINE_GROUP_FUNC_BASE_SETUP], SIGNAL(machineBaseRecordAdded(const DBMachineBaseInfo&)), m_pOutlinerTreeView, SLOT(onMachineBaseRecordAdded(const DBMachineBaseInfo&)));
+        connect(m_aryPanelWidgets[PANEL_MACHINE_GROUP_FUNC_BASE_SETUP], SIGNAL(machineBaseRecordRemoved(const DBMachineBaseInfo&)), m_pOutlinerTreeView, SLOT(onMachineBaseRecordRemoved(const DBMachineBaseInfo&)));
+
+        m_pOutlinerTreeView->initInventoryTreeNode();
     }
 
     //---------------------------------------------------------------------
@@ -228,7 +241,65 @@ namespace YR2K {
 
     }
 
+    static void addChildNodeToTreeNode(QStandardItem* parentItem, std::vector<DBMachineBaseInfo>& data)
+    {
+        DBMachineBaseInfoIter iter = data.begin();
+        DBMachineBaseInfoIter end = data.end();
+
+        QStandardItem* item = NULL;
+        for (; iter != end; ++iter)
+        {
+            item = new QStandardItem((*iter).factoryName.c_str());
+            item->setData((*iter).machineId, Qt::UserRole);
+            item->setEditable(false);
+            parentItem->appendRow(item);
+        }
+    }
+
     //---------------------------------------------------------------------
+    void TentertainmentManagement::onInitInventoryTreeCabinetNode( QStandardItem* cabinetItem )
+    {
+        std::vector<DBMachineBaseInfo> cabinetRecords;
+        TDatabaseManager::getInstance()->findMachineBaseInfoWithAssetType(CATEGORY_CABINET, cabinetRecords);
+
+        addChildNodeToTreeNode(cabinetItem, cabinetRecords);
+    }
+
+    //---------------------------------------------------------------------
+    void TentertainmentManagement::onInitInventoryTreeLotteryNode( QStandardItem* lotteryItem )
+    {
+        std::vector<DBMachineBaseInfo> lotteryRecords;
+        TDatabaseManager::getInstance()->findMachineBaseInfoWithAssetType(CATEGORY_LOTTERY, lotteryRecords);
+
+        addChildNodeToTreeNode(lotteryItem, lotteryRecords);
+    }
+
+    //---------------------------------------------------------------------
+    void TentertainmentManagement::onInitInventoryTreeSimulateNode( QStandardItem* simulateItem )
+    {
+        std::vector<DBMachineBaseInfo> simulateRecords;
+        TDatabaseManager::getInstance()->findMachineBaseInfoWithAssetType(CATEGORY_SIMULATE, simulateRecords);
+
+        addChildNodeToTreeNode(simulateItem, simulateRecords);
+    }
+
+    //---------------------------------------------------------------------
+    void TentertainmentManagement::onInitInventoryTreeCoindozerNode( QStandardItem* coindozerItem )
+    {
+        std::vector<DBMachineBaseInfo> coindozerRecords;
+        TDatabaseManager::getInstance()->findMachineBaseInfoWithAssetType(CATEGORY_COINDOZER, coindozerRecords);
+
+        addChildNodeToTreeNode(coindozerItem, coindozerRecords);
+    }
+
+    //---------------------------------------------------------------------
+    void TentertainmentManagement::onInitInventoryTreeWagerNode( QStandardItem* wagerItem )
+    {
+        std::vector<DBMachineBaseInfo> wagerRecords;
+        TDatabaseManager::getInstance()->findMachineBaseInfoWithAssetType(CATEGORY_WAGER, wagerRecords);
+
+        addChildNodeToTreeNode(wagerItem, wagerRecords);
+    }
 
 
 }

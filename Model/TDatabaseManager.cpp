@@ -144,12 +144,44 @@ namespace YR2K {
 
 		bool ret = query.execute(queryBuffer, 256);
 		if (!ret) {
-			printf("delete matchine error:%s\n", this->m_conn->error());
+			printf("delete machine error:%s\n", this->m_conn->error());
 		}
 
 		return ret;
 	}
 		
+
+    bool TDatabaseManager::findMachineBaseInfoWithMachineId( const unsigned int machineId, DBMachineBaseInfo &machine )
+    {
+        bool ret = false;
+
+        mysqlpp::Query query = this->m_conn->query();
+        char queryBuffer[256] = {0};
+        snprintf(queryBuffer, 256, "SELECT * FROM machine WHERE machineId=%u;", machineId);
+
+        mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+        if (res) {
+            size_t i = 0;
+            for (; i < res.num_rows(); ++i) {
+                machine.machineId = res[i]["machineId"];
+                machine.assetType = res[i]["assetType"];
+                machine.factoryName = std::string(res[i]["factoryName"]);
+                machine.factoryPhoneNumber = std::string(res[i]["factoryPhoneNumber"]);
+                machine.location = std::string(res[i]["location"]);
+                machine.businessConditions = res[i]["businessConditions"];
+                machine.remark = std::string(res[i]["remark"]);
+            }
+
+            ret = true;
+        }
+        else {
+            printf("select machines with id error:%s\n", this->m_conn->error());
+            ret = false;
+        }
+
+        return ret;
+    }
+
 	bool TDatabaseManager::findMachineBaseInfoWithAssetType(const enum TECategory assetType, std::vector<struct DBMachineBaseInfo> &machines) {
 		bool ret = false;
 
@@ -355,6 +387,43 @@ namespace YR2K {
 
     }
 
+    bool TDatabaseManager::findMachineDetailInfoWithMachineId( const unsigned int machineId, DBMachineDetailInfo& machine )
+    {
+        bool ret = false;
+
+        mysqlpp::Query query = this->m_conn->query();
+        char queryBuffer[256] = {0};
+        snprintf(queryBuffer, 256, "SELECT * FROM machine WHERE machineId=%u;", machineId);
+
+        mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+        if (res) {
+            size_t i = 0;
+            for (; i < res.num_rows(); ++i) {
+                machine.machineId = res[i]["machineId"];
+                machine.assetType = res[i]["assetType"];
+                machine.machineType = res[i]["machineType"];
+                machine.cashRatio = res[i]["cashRatio"];
+                machine.coinRatio = res[i]["coinRatio"];
+                machine.mainProbability = res[i]["mainProbability"];
+                machine.probabilityRange = res[i]["probabilityRange"];
+                machine.maxPoints = res[i]["maxPoints"];
+                machine.minPoints = res[i]["minPoints"];
+                machine.markPoints = res[i]["markPoints"];
+                machine.drawPoints = res[i]["drawPoints"];
+                machine.pushPointDays = res[i]["pushPointDays"];
+                machine.clearPointCycle = res[i]["clearPointCycle"];
+            }
+
+            ret = true;
+        }
+        else {
+            printf("select machines with id error:%s\n", this->m_conn->error());
+            ret = false;
+        }
+
+        return ret;
+    }
+
 #pragma mark -- Private Functions
 
 	void TDatabaseManager::disconnect() {
@@ -363,6 +432,10 @@ namespace YR2K {
 			this->m_conn = NULL;
 		}
 	}
+
+
+
+
 
     
 

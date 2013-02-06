@@ -20,6 +20,10 @@ namespace YR2K {
 
         DBMachineBaseInfo                               getInfo(void) const;
 
+    signals:
+        void                                            machineBaseRecordAdded(const DBMachineBaseInfo& machineBaseInfo);
+        void                                            machineBaseRecordRemoved(const DBMachineBaseInfo& machineBaseInfo);
+
     private slots:
         void                                            onAddButtonClicked();
         void                                            onConfirmAddNewRecord();

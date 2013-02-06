@@ -2,6 +2,7 @@
 #define TINVENTORYREPORTPANEL_H
 #include <QtGui/QWidget>
 
+#include "DatabaseResultModel.h"
 #include "TpanelBase.h"
 #include "ui_TsearchWidget.h"
 #include "ui_TinventoryReportViewItemTable.h"
@@ -29,6 +30,13 @@ namespace YR2K {
 
         Ui::TinventoryReportViewItemTable*      m_pIinventoryReportViewItemTable;
         Ui::TsearchWidget*                      m_pSearchWidget;
+
+        QModelIndex                             m_contextMenuTriggeredIndex;
+        QMenu*                                  m_pContextMenu;
+        QAction*                                m_pUpdateAction;
+
+        std::vector<DBInventoryReportInfo>      m_vecInventoryReportInfoFoundResult;
+        TECategory                              m_eCurrentOperatingCategory;
 
     };
 

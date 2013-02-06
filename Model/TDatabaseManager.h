@@ -10,6 +10,7 @@
 
 namespace YR2K {
 	struct DBAssetsInfo;
+    struct DBMachineDetailInfo;
 
 	class TDatabaseManager : public Singleton<TDatabaseManager> {
 	public:
@@ -26,7 +27,10 @@ namespace YR2K {
 
 		int addMachine(const struct DBMachineBaseInfo &info, const unsigned int clearPointCycle);
 		bool removeMachine(const unsigned int machineId);
+        bool findMachineBaseInfoWithMachineId(const unsigned int machineId, DBMachineBaseInfo &machine);
 		bool findMachineBaseInfoWithAssetType(const enum TECategory assetType, std::vector<struct DBMachineBaseInfo> &machines);
+
+        bool findMachineDetailInfoWithMachineId(const unsigned int machineId, DBMachineDetailInfo& machine);
 		bool findMachineDetailInfoWithAssetType(const enum TECategory assetType, std::vector<struct DBMachineDetailInfo> &machines);
 		bool updateMachineDetailInfo(const struct DBMachineDetailInfo &detailInfo);
 

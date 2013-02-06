@@ -3,6 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include <QtGui/QScrollArea>
+#include <QtGui/QStandardItem>
 #include "TpanelBase.h"
 
 QT_BEGIN_NAMESPACE
@@ -32,6 +33,12 @@ namespace YR2K {
         void                        undo();
         void                        about();
         void                        onTreeMenuClicked(const TEPanelIndex& menuType, const TECategory& category);
+
+        void                        onInitInventoryTreeCabinetNode(QStandardItem* cabinetItem);
+        void                        onInitInventoryTreeLotteryNode(QStandardItem* lotteryItem);
+        void                        onInitInventoryTreeSimulateNode(QStandardItem* simulateItem);
+        void                        onInitInventoryTreeCoindozerNode(QStandardItem* coindozerItem);
+        void                        onInitInventoryTreeWagerNode(QStandardItem* wagerItem);
 
     private:
         void                        createActions();

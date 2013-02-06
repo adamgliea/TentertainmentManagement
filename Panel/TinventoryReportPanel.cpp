@@ -1,16 +1,20 @@
 #include "TinventoryReportPanel.h"
 
+#include "TDatabaseManager.h"
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
-
+#include <QtGui/QMenu>
 
 namespace YR2K {
+
+    typedef std::vector<DBInventoryReportInfo>::iterator DBInventoryReportInfoIter;
 
     //---------------------------------------------------------------------
     TinventoryReportPanel::TinventoryReportPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
+        , m_eCurrentOperatingCategory(CATEGORY_INVALID)
     {
         m_pAddNewRecordButton = new QPushButton();
         m_pTotalInventoryLabel = new QLabel();
@@ -60,6 +64,33 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TinventoryReportPanel::doInitPanel(const TECategory& category)
     {
+        Q_ASSERT_X(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget != NULL, "", "");
+        QTableWidget* table = m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget;
+        if (table)
+        {
+            int count = table->rowCount();
+            while (count--)
+            {
+                int& rowIndex = count;
+                table->removeRow(rowIndex);
+            }
+        }
+
+//         m_vecInventoryReportInfoFoundResult.clear();
+
+//         TDatabaseManager::getInstance()->findMachineDetailInfoWithAssetType(category, m_vecInventoryReportInfoFoundResult);
+
+//         DBInventoryReportInfoIter iter = m_vecInventoryReportInfoFoundResult.begin();
+//         DBInventoryReportInfoIter end = m_vecInventoryReportInfoFoundResult.end();
+// 
+//         int i = 0;
+//         for (; iter != end; ++iter)
+//         {
+//             insertRecordToTable(i, *iter);
+//             i++;
+//         }
+// 
+//         m_eCurrentOperatingCategory = category;
 
     }
 

@@ -205,6 +205,7 @@ namespace YR2K {
         DBMachineBaseInfo machineBaseInfo = this->getInfo();
         bool success = TDatabaseManager::getInstance()->addMachine(machineBaseInfo, assets[0].clearCoinCycle);
 
+        emit machineBaseRecordAdded(machineBaseInfo);
         // Close the window and destroy the panel object.
         // 
         this->destroyAddWidgetPanel();
@@ -265,9 +266,13 @@ namespace YR2K {
                 Q_ASSERT_X(item != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
                 if (item)
                 {
+                    DBMachineBaseInfo infoToBeRemoved;
                     int machineBasiInfoId = item->data(Qt::UserRole).toInt();
-                    bool success = TDatabaseManager::getInstance()->removeMachine(machineBasiInfoId);
+                    bool success = TDatabaseManager::getInstance()->findMachineBaseInfoWithMachineId(machineBasiInfoId, infoToBeRemoved);
+                    success = TDatabaseManager::getInstance()->removeMachine(machineBasiInfoId);
                     table->removeRow(row);
+
+                    emit machineBaseRecordRemoved(infoToBeRemoved);
                 }
             }
         }

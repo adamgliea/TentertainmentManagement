@@ -23,6 +23,7 @@ namespace YR2K {
         : TpanelBase(parent)
         , m_pUpdateAction(NULL)
         , m_pContextMenu(NULL)
+        , m_eCurrentOperatingCategory(CATEGORY_INVALID)
         , m_uiCurrentUpdateMachineId(0xFFFFFFFF)
     {
         m_pMachineFuncDetailSetupTable = new Ui::TmachineGroupFuncDetailSetupViewItemTable();
@@ -295,20 +296,8 @@ namespace YR2K {
                         if (item)
                         {
                             int machineId = item->data(Qt::UserRole).toInt();
-                            std::vector<DBMachineDetailInfo> vecInfo;
-                            TDatabaseManager::getInstance()->findMachineDetailInfoWithAssetType(m_eCurrentOperatingCategory, vecInfo);
-                            DBMachineDetailInfoIter iter = vecInfo.begin();
-                            DBMachineDetailInfoIter end = vecInfo.end();
-                            bool find = false;
-                            for (; iter != end; ++iter)
-                            {
-                                if (machineId == (*iter).machineId)
-                                {
-                                    info = *iter;
-                                    find = true;
-                                    continue;
-                                }
-                            }
+
+                            bool find = TDatabaseManager::getInstance()->findMachineDetailInfoWithMachineId(machineId, info);
 
                             if (find)
                             {

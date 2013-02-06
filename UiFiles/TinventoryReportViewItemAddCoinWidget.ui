@@ -6,57 +6,60 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>150</width>
-    <height>87</height>
+    <width>250</width>
+    <height>119</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="m_submitButton">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>60</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>提交</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>141</width>
+     <x>30</x>
+     <y>10</y>
+     <width>191</width>
      <height>48</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0" colspan="2">
+    <item row="0" column="0" colspan="2">
      <widget class="QLabel" name="m_addCoinValueLabel">
       <property name="text">
        <string>加币数量：</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="0" column="3">
      <widget class="QLineEdit" name="m_addCoinValueLineEdit"/>
     </item>
     <item row="0" column="2">
-     <widget class="QLineEdit" name="m_idLineEdit"/>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="m_idLabel">
-      <property name="text">
-       <string>编号：</string>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-     </widget>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
+  </widget>
+  <widget class="QDialogButtonBox" name="m_buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>80</y>
+     <width>156</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
   </widget>
  </widget>
  <resources/>
