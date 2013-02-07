@@ -72,6 +72,7 @@ namespace YR2K {
 
         m_pOutlinerTreeView->initInventoryTreeNode();
 
+//         m_aryPanelWidgets[PANEL_INVENTORY_REPORT]->doHack();
     }
 
     //---------------------------------------------------------------------

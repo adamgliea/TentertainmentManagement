@@ -9,6 +9,7 @@
 #include "ui_TsearchWidget.h"
 #include "ui_TinventoryReportViewItemTable.h"
 
+#include "TkeyValueTreeView.h"
 
 
 class QPushButton;
@@ -30,8 +31,7 @@ namespace YR2K {
 
     private:
         void                                    insertRecordToTable(const int rowIndex, const DBInventoryReportInfo& info);
-        int                                     computeTotalAddCoins(const QString& data);
-        int                                     computeTotalClearCoins(const QString& data);
+        int                                     computeCoins(const QString& data);
         int                                     computeTotalBenifit(const QString& addCoinData, const QString& clearCoinData);
     private slots:
         void                                    onBeginDateClicked();
@@ -63,10 +63,8 @@ namespace YR2K {
         QDate                                   m_selectedBeginDate;
         QDate                                   m_selectedEndDate;
 
-        QTreeView*                              m_addCoinTreeView;
-        QTreeView*                              m_clearCoinTreeView;
-        QStandardItemModel*                     m_addCoinTreeModel;
-        QStandardItemModel*                     m_clearCoinTreeModel;
+        TkeyValueTreeView*                      m_addCoinTreeView;
+        TkeyValueTreeView*                      m_clearCoinTreeView;
     };
 
 }

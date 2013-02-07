@@ -17,7 +17,10 @@ namespace YR2K {
         TkeyValueTreeView(const QString& keyName, const QStringList& valueList, QWidget* parent = NULL);
         ~TkeyValueTreeView(void);
 
+        void                        init();
+
         QStringList                 getValueList() const;
+        void                        setValueList(const QStringList& valueList);
 
     signals:
         void                        addValueTriggered();

@@ -40,8 +40,8 @@ namespace YR2K {
         QDate lastMonthCurrentDate(currentDate.addMonths(-1));
         dateString = lastMonthCurrentDate.toString("yyyy/MM/dd");
         m_pSearchWidget->m_dateBeginButton->setText(dateString);
-        m_selectedEndDate= lastMonthCurrentDate;
-        m_selectedBeginDate = currentDate;
+        m_selectedEndDate= currentDate;
+        m_selectedBeginDate = lastMonthCurrentDate;
 
 
         m_pBeginDateCalendar = new QCalendarWidget();
@@ -59,10 +59,8 @@ namespace YR2K {
         mainLayout->addWidget(table, 2, 0, 1, 4);
         setLayout(mainLayout);
 
-        m_addCoinTreeView = new QTreeView();
-        m_clearCoinTreeView = new QTreeView();
-        m_addCoinTreeModel = new QStandardItemModel();
-        m_clearCoinTreeModel= new QStandardItemModel();
+        m_addCoinTreeView = new TkeyValueTreeView(tr("¼Ó±Ò"), QStringList());
+        m_clearCoinTreeView = new TkeyValueTreeView(tr("Çå±Ò"), QStringList());
 
         int w = table->width();
         int h = searchWidget->height() + table->height();
@@ -140,33 +138,39 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TinventoryReportPanel::doHack()
     {
-        QDate date0(2013, 1, 1);
-        QDate date1(2013, 1, 2);
-        QDate date2(2013, 1, 3);
-        QDate date3(2013, 1, 4);
-        QDate date4(2013, 1, 5);
-        QDate date5(2013, 1, 6);
+        QDate date0(2013, 1, 8);
+        QDate date1(2013, 1, 9);
+        QDate date2(2013, 1, 10);
+        QDate date3(2013, 1, 11);
+        QDate date4(2013, 1, 12);
+        QDate date5(2013, 1, 13);
 
         DBInventoryReportInfo info;
         info.machineId = 18;
 
-        info.addPointString = "0";
+        info.addPointString = "1|2|3|4|5";
+        info.clearPointString = "0|1|2";
         info.opTime = date0.toJulianDay();
+
         TDatabaseManager::getInstance()->addInventoryReport(info);
 
-        info.addPointString = "1";
+        info.addPointString = "2|3|4|5|6";
+        info.clearPointString = "1|2|3";
         info.opTime = date1.toJulianDay();
         TDatabaseManager::getInstance()->addInventoryReport(info);
 
-        info.addPointString = "2";
+        info.addPointString = "2|2|2|4|4";
+        info.clearPointString = "1|1|3";
         info.opTime = date2.toJulianDay();
         TDatabaseManager::getInstance()->addInventoryReport(info);
 
-        info.addPointString = "3";
+        info.addPointString = "9|1|2|8|4";
+        info.clearPointString = "4|1|3";
         info.opTime = date3.toJulianDay();
         TDatabaseManager::getInstance()->addInventoryReport(info);
 
-        info.addPointString = "4";
+        info.addPointString = "10|1";
+        info.clearPointString = "4|1|3";
         info.opTime = date4.toJulianDay();
         TDatabaseManager::getInstance()->addInventoryReport(info);
 
@@ -298,7 +302,7 @@ namespace YR2K {
 
             item = new QTableWidgetItem();
             QString addCoin = info.addPointString.c_str();
-            item->setText(QString::number(computeTotalAddCoins(addCoin)));
+            item->setText(QString::number(computeCoins(addCoin)));
             table->setItem(rowIndex, INVENTORY_REPORT_TABLE_COLUMN_TOTAL_ADDCOIN, item);
 
             item = new QTableWidgetItem();
@@ -307,7 +311,7 @@ namespace YR2K {
 
             item = new QTableWidgetItem();
             QString clearCoin = info.clearPointString.c_str();
-            item->setText(QString::number(computeTotalAddCoins(clearCoin)));
+            item->setText(QString::number(computeCoins(clearCoin)));
             table->setItem(rowIndex, INVENTORY_REPORT_TABLE_COLUMN_TOTAL_CLEARCOIN, item);
 
             item = new QTableWidgetItem();
@@ -319,21 +323,28 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    int TinventoryReportPanel::computeTotalAddCoins( const QString& data )
+    int TinventoryReportPanel::computeCoins( const QString& data )
     {
-        return 0;
-    }
+        QStringList list = data.split("|");
+        int count = list.count();
 
-    //---------------------------------------------------------------------
-    int TinventoryReportPanel::computeTotalClearCoins( const QString& data )
-    {
-        return 0;
+        int addCoins = 0;
+        for (int i = 0; i < count; i++)
+        {
+            addCoins += list[i].toInt();
+        }
+
+        return addCoins;
     }
 
     //---------------------------------------------------------------------
     int TinventoryReportPanel::computeTotalBenifit( const QString& addCoinData, const QString& clearCoinData )
     {
-        return 0;
+        int addCoins = computeCoins(addCoinData);
+        int clearCoins = computeCoins(clearCoinData);
+        int benifit = addCoins - clearCoins;
+
+        return benifit;
     }
 
     //---------------------------------------------------------------------
@@ -356,42 +367,30 @@ namespace YR2K {
         if (column == INVENTORY_REPORT_TABLE_COLUMN_ADDCOIN_INFO)
         {
             TDatabaseManager::getInstance()->findInventoryReportWithReportId(reportId, info);
-            m_addCoinTreeModel->clear();
 
             QString addCoinString = info.addPointString.c_str();
             QStringList list = addCoinString.split("|");
 
-            QString labelString; 
-            QStandardItem* labelItem = NULL;
-            QStandardItem* valueItem = NULL;
-            QList<QStandardItem*> record;
-            QStandardItem* invisiableRoot = m_addCoinTreeModel->invisibleRootItem();
+            m_addCoinTreeView->setValueList(list);
+            m_addCoinTreeView->init();
 
-            for (int i = 0; i < list.count(); i++)
-            {
-                labelString = tr("¼Ó±Ò");
-                labelString.append(QString::number(i));
-
-                labelItem = new QStandardItem(labelString);
-                valueItem = new QStandardItem(list[i]);
-
-                record.clear();
-                record << labelItem;
-                record << valueItem;
-
-                invisiableRoot->appendRow(record);
-            }
-
-            m_addCoinTreeView->setModel(m_addCoinTreeModel);
             m_addCoinTreeView->showNormal();
-
             return;
-
 
         }
 
         if (column == INVENTORY_REPORT_TABLE_COLUMN_CLEARCOIN_INFO)
         {
+
+            TDatabaseManager::getInstance()->findInventoryReportWithReportId(reportId, info);
+
+            QString clearCoinString = info.clearPointString.c_str();
+            QStringList list = clearCoinString.split("|");
+
+            m_clearCoinTreeView->setValueList(list);
+            m_clearCoinTreeView->init();
+
+            m_clearCoinTreeView->showNormal();
 
             return;
         }

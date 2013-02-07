@@ -13,32 +13,10 @@ namespace YR2K {
         m_pTreeView = new QTreeView(this);
         m_pTreeModel = new QStandardItemModel(m_pTreeView);
 
-        QString labelString; 
-        QStandardItem* labelItem = NULL;
-        QStandardItem* valueItem = NULL;
-        QList<QStandardItem*> record;
-        QStandardItem* invisiableRoot = m_pTreeModel->invisibleRootItem();
-
-        for (int i = 0; i < valueList.count(); i++)
-        {
-            labelString = m_strKeyName;
-            labelString.append(QString::number(i));
-
-            labelItem = new QStandardItem(labelString);
-            valueItem = new QStandardItem(valueList[i]);
-
-            record.clear();
-            record << labelItem;
-            record << valueItem;
-
-            invisiableRoot->appendRow(record);
-        }
-
-        m_pTreeView->setModel(m_pTreeModel);
+        init();
 
         QVBoxLayout* mainLayout = new QVBoxLayout(this);
         mainLayout->addWidget(m_pTreeView);
-
         setLayout(mainLayout);
 
 
@@ -52,11 +30,49 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
+    void TkeyValueTreeView::init()
+    {
+        m_pTreeModel->clear();
+
+        QString labelString; 
+        QStandardItem* labelItem = NULL;
+        QStandardItem* valueItem = NULL;
+        QList<QStandardItem*> record;
+        QStandardItem* invisiableRoot = m_pTreeModel->invisibleRootItem();
+
+        for (int i = 0; i < m_strValueList.count(); i++)
+        {
+            labelString = m_strKeyName;
+            labelString.append(QString::number(i));
+
+            labelItem = new QStandardItem(labelString);
+            labelItem->setEditable(false);
+
+            valueItem = new QStandardItem(m_strValueList[i]);
+            valueItem->setEditable(false);
+
+            record.clear();
+            record << labelItem;
+            record << valueItem;
+
+            invisiableRoot->appendRow(record);
+        }
+
+        m_pTreeView->setModel(m_pTreeModel);
+
+    }
+
+    //---------------------------------------------------------------------
     QStringList TkeyValueTreeView::getValueList() const
     {
         return m_strValueList;
     }
 
+    //---------------------------------------------------------------------
+    void TkeyValueTreeView::setValueList( const QStringList& valueList )
+    {
+        m_strValueList = valueList;
+    }
 
     //---------------------------------------------------------------------
     void TkeyValueTreeView::createActions( void )
@@ -142,8 +158,10 @@ namespace YR2K {
             key.append(QString::number(currentCount));
 
             QStandardItem* newItemKey = new QStandardItem(key);
+            newItemKey->setEditable(false);
             QStandardItem* newItemValue = new QStandardItem(value);
-            
+            newItemValue->setEditable(false);
+
             QList<QStandardItem*> newRecord;
             newRecord << newItemKey;
             newRecord << newItemValue;
