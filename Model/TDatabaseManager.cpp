@@ -458,8 +458,8 @@ namespace YR2K {
     {
         mysqlpp::Query query = this->m_conn->query();
         char queryBuffer[512] = {0};
-        snprintf(queryBuffer, 512, "UPDATE inventoryReport SET machineId=%u, addPointString='%s', clearPointString='%s', opDate=%d WHERE id=%u;", 
-            inventoryReportInfo.machineId, inventoryReportInfo.addPointString, inventoryReportInfo.clearPointString, inventoryReportInfo.opTime, inventoryReportInfo.reportId);
+        snprintf(queryBuffer, 512, "UPDATE inventoryReport SET machineId=%u, addPointString=\'%s\', clearPointString=\'%s\', opDate=%d WHERE id=%u;", 
+            inventoryReportInfo.machineId, inventoryReportInfo.addPointString.c_str(), inventoryReportInfo.clearPointString.c_str(), inventoryReportInfo.opTime, inventoryReportInfo.reportId);
 
         bool ret = query.execute(queryBuffer, 512);
         if (!ret) {
@@ -467,6 +467,7 @@ namespace YR2K {
         }
 
         return ret;
+        
     }
 
 #pragma mark -- Private Functions
