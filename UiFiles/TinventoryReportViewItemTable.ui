@@ -22,7 +22,7 @@
      <height>661</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="m_mainLayout">
     <item>
      <widget class="QTableWidget" name="m_inventoryReportTableWidget">
       <column>
@@ -43,6 +43,11 @@
       <column>
        <property name="text">
         <string>清币信息</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>总清币</string>
        </property>
       </column>
       <column>

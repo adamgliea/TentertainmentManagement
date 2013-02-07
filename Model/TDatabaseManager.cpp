@@ -351,15 +351,15 @@ namespace YR2K {
 	}
 
     bool TDatabaseManager::findInventoryReportWithTimerange( const unsigned int machineId,
-                                                             const unsigned int startTime,
-                                                             const unsigned int endTime,
+                                                             const int startTime,
+                                                             const int endTime,
                                                              std::vector<struct DBInventoryReportInfo> &infos )
     {
         bool ret = false;
 
         mysqlpp::Query query = this->m_conn->query();
         char queryBuffer[512] = {0};
-        snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE machineId=%u AND (opDate >= %u AND opDate <= %u);",
+        snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE machineId=%u AND (opDate >= %d AND opDate <= %d);",
             machineId, startTime, endTime);
 
         mysqlpp::StoreQueryResult res = query.store(queryBuffer);

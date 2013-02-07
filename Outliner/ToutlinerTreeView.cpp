@@ -386,30 +386,30 @@ namespace YR2K {
             return true;
         }
 
-
+        unsigned int machineId = item->data(Qt::UserRole).toUInt();
         if (item->parent() == m_inventoryReportPanelCabinetNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_CABINET, 0);
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_CABINET, machineId);
             return true;
         }
         else if (item->parent() == m_inventoryReportPanelLotteryNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_LOTTERY, 0);
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_LOTTERY, machineId);
             return true;
         }
         else if (item->parent() == m_inventoryReportPanelSimulateNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_SIMULATE, 0);
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_SIMULATE, machineId);
             return true;
         }
         else if (item->parent() == m_inventoryReportPanelCoindozerNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_COINDOZER, 0);
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_COINDOZER, machineId);
             return true;
         }
         else if (item->parent() == m_inventoryReportPanelWagerNode)
         {
-            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_WAGER, 0);
+            emit treeMenuClicked(PANEL_INVENTORY_REPORT, CATEGORY_WAGER, machineId);
             return true;
         }
 

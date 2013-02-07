@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TinventoryReportViewItemTable.ui'
 **
-** Created: Wed Feb 6 19:30:55 2013
+** Created: Thu Feb 7 16:17:15 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -25,7 +25,7 @@ class Ui_TinventoryReportViewItemTable
 {
 public:
     QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *m_mainLayout;
     QTableWidget *m_inventoryReportTableWidget;
 
     void setupUi(QWidget *TinventoryReportViewItemTable)
@@ -36,12 +36,12 @@ public:
         verticalLayoutWidget = new QWidget(TinventoryReportViewItemTable);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(-1, -1, 1001, 661));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        m_mainLayout = new QVBoxLayout(verticalLayoutWidget);
+        m_mainLayout->setObjectName(QString::fromUtf8("m_mainLayout"));
+        m_mainLayout->setContentsMargins(0, 0, 0, 0);
         m_inventoryReportTableWidget = new QTableWidget(verticalLayoutWidget);
-        if (m_inventoryReportTableWidget->columnCount() < 5)
-            m_inventoryReportTableWidget->setColumnCount(5);
+        if (m_inventoryReportTableWidget->columnCount() < 6)
+            m_inventoryReportTableWidget->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         m_inventoryReportTableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -52,9 +52,11 @@ public:
         m_inventoryReportTableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         m_inventoryReportTableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        m_inventoryReportTableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         m_inventoryReportTableWidget->setObjectName(QString::fromUtf8("m_inventoryReportTableWidget"));
 
-        verticalLayout->addWidget(m_inventoryReportTableWidget);
+        m_mainLayout->addWidget(m_inventoryReportTableWidget);
 
 
         retranslateUi(TinventoryReportViewItemTable);
@@ -74,7 +76,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = m_inventoryReportTableWidget->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\270\205\345\270\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem4 = m_inventoryReportTableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\212\225\345\270\201\347\233\210\345\210\251", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem4->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\200\273\346\270\205\345\270\201", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem5 = m_inventoryReportTableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QApplication::translate("TinventoryReportViewItemTable", "\346\212\225\345\270\201\347\233\210\345\210\251", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

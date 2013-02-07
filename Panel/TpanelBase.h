@@ -14,7 +14,7 @@ namespace YR2K {
 
         TEPanelIndex        getType();
         void                initPanel(const TECategory& category, unsigned int itemData);
-
+        virtual void        doHack();
 
     protected:
         virtual void        doInitPanel(const TECategory& category, unsigned int itemData);

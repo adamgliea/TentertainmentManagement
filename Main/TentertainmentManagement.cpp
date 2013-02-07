@@ -71,6 +71,7 @@ namespace YR2K {
         connect(m_aryPanelWidgets[PANEL_MACHINE_GROUP_FUNC_BASE_SETUP], SIGNAL(machineBaseRecordRemoved(const DBMachineBaseInfo&)), m_pOutlinerTreeView, SLOT(onMachineBaseRecordRemoved(const DBMachineBaseInfo&)));
 
         m_pOutlinerTreeView->initInventoryTreeNode();
+
     }
 
     //---------------------------------------------------------------------

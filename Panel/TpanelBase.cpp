@@ -37,5 +37,10 @@ namespace YR2K {
 
     }
 
+    void TpanelBase::doHack()
+    {
+
+    }
+
 }
 
