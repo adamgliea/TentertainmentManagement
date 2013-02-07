@@ -40,6 +40,8 @@ namespace YR2K {
         void                                    onEndDateActived(const QDate& date);
         void                                    onSearchClicked();
         void                                    onCellClicked(int row, int column);
+        void                                    onAddCoinUpdated();
+        void                                    onClearCoinUpdated();
 
     private:
         QLabel*                                 m_pTotalInventoryLabel;
@@ -56,6 +58,7 @@ namespace YR2K {
         TECategory                              m_eCurrentOperatingCategory;
 
         unsigned int                            m_uiCurrentOperatingId;
+        unsigned int                            m_uiCurrentOperatingReportId;
 
         QCalendarWidget*                        m_pBeginDateCalendar;
         QCalendarWidget*                        m_pEndDateCalendar;

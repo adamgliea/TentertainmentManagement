@@ -6,7 +6,9 @@
 
 #include <QtGui/QStandardItem>
 #include <QtGui/QStandardItemModel>
+#include <QtGui/QPushButton>
 
+class QCloseEven;
 
 namespace YR2K {
 
@@ -23,16 +25,17 @@ namespace YR2K {
         void                        setValueList(const QStringList& valueList);
 
     signals:
-        void                        addValueTriggered();
+        void                        valueUpdated();
 
-    private slots:
-        void                        onCustomContextMenuRequested(const QPoint& pos);
-        void                        onAddActionTriggered();
-        void                        onRemoveActionTriggered();
+    protected:
+
+        private slots:
+        void                        onAddButtonClicked();
+        void                        onRemoveButtonClicked();
         void                        onAddValue(const QString& value);
+        void                        onItemClicked(const QModelIndex& modelIndex);
 
     private:
-        void                        createActions(void);
         void                        updateValueList();
 
     private:
@@ -42,10 +45,12 @@ namespace YR2K {
         QString                     m_strKeyName;
         QStringList                 m_strValueList;
 
-        QModelIndex                 m_contextMenuTriggeredIndex;
-        QMenu*                      m_pContextMenu;
-        QAction*                    m_pAddAction;
-        QAction*                    m_pRemoveAction;
+        QModelIndex                 m_currentClickedModelIndex;
+
+        QPushButton*                m_pAddButton;
+        QPushButton*                m_pRemoveButton;
+
+        QPushButton*                m_pApplyButton;
     };
 }
 

@@ -19,6 +19,7 @@ namespace YR2K {
         : TpanelBase(parent)
         , m_eCurrentOperatingCategory(CATEGORY_INVALID)
         , m_uiCurrentOperatingId(0xFFFFFFFF)
+        , m_uiCurrentOperatingReportId(0xFFFFFFFF)
     {
         m_pTotalInventoryLabel = new QLabel();
         m_pTotalInventoryLineEdit = new QLineEdit();
@@ -75,6 +76,9 @@ namespace YR2K {
 
         connect(m_pSearchWidget->m_searchButton, SIGNAL(clicked()), this, SLOT(onSearchClicked()));
         connect(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget, SIGNAL(cellClicked (int, int)), this, SLOT(onCellClicked(int, int)));
+
+        connect(m_addCoinTreeView, SIGNAL(valueUpdated()), this, SLOT(onAddCoinUpdated()));
+//         connect(m_clearCoinTreeView, SIGNAL(valueUpdated()), this, SLOT(onClearCoinUpdated()));
     }
 
     //---------------------------------------------------------------------
@@ -375,6 +379,8 @@ namespace YR2K {
             m_addCoinTreeView->init();
 
             m_addCoinTreeView->showNormal();
+
+            m_uiCurrentOperatingReportId = reportId;
             return;
 
         }
@@ -392,8 +398,41 @@ namespace YR2K {
 
             m_clearCoinTreeView->showNormal();
 
+            m_uiCurrentOperatingReportId = reportId;
+
             return;
         }
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::onAddCoinUpdated()
+    {
+        QStringList newValueList = m_addCoinTreeView->getValueList();
+        QString recordString = "";
+
+        int count = newValueList.count();
+        if (count > 0)
+        {
+            recordString.append(newValueList[0]);
+            for (int i = 1; i < count; i++)
+            {
+                recordString.append("|");
+                recordString.append(newValueList[i]);
+            }
+
+            DBInventoryReportInfo info;
+            TDatabaseManager::getInstance()->findInventoryReportWithReportId(m_uiCurrentOperatingReportId, info);
+
+            info.addPointString = recordString.toStdString();
+            TDatabaseManager::getInstance()->updateInventoryReport(info);
+        }
+
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::onClearCoinUpdated()
+    {
+
     }
 
 }

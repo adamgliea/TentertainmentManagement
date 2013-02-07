@@ -454,6 +454,21 @@ namespace YR2K {
     }
 
 
+    bool TDatabaseManager::updateInventoryReport( const DBInventoryReportInfo& inventoryReportInfo )
+    {
+        mysqlpp::Query query = this->m_conn->query();
+        char queryBuffer[512] = {0};
+        snprintf(queryBuffer, 512, "UPDATE inventoryReport SET machineId=%u, addPointString='%s', clearPointString='%s', opDate=%d WHERE id=%u;", 
+            inventoryReportInfo.machineId, inventoryReportInfo.addPointString, inventoryReportInfo.clearPointString, inventoryReportInfo.opTime, inventoryReportInfo.reportId);
+
+        bool ret = query.execute(queryBuffer, 512);
+        if (!ret) {
+            printf("update inventoryReport info error:%s\n", this->m_conn->error());
+        }
+
+        return ret;
+    }
+
 #pragma mark -- Private Functions
 
 	void TDatabaseManager::disconnect() {

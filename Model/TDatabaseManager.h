@@ -44,6 +44,7 @@ namespace YR2K {
 											  const int startTime, 
 											  const int endTime, 
 											  std::vector<struct DBInventoryReportInfo> &infos);
+        bool updateInventoryReport(const DBInventoryReportInfo& inventoryReportInfo);
 
 	private:
 		void disconnect();
