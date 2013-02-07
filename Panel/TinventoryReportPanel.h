@@ -3,7 +3,7 @@
 #include <QtGui/QWidget>
 #include <QtGui/QCalendarWidget>
 #include <QtCore/QDate>
-
+#include <QtGui/QTreeView>
 #include "DatabaseResultModel.h"
 #include "TpanelBase.h"
 #include "ui_TsearchWidget.h"
@@ -38,6 +38,7 @@ namespace YR2K {
         void                                    onBeginDateActived(const QDate& date);
         void                                    onEndDateActived(const QDate& date);
         void                                    onSearchClicked();
+        void                                    onCellClicked(int row, int column);
 
     private:
         QLabel*                                 m_pTotalInventoryLabel;
@@ -60,6 +61,9 @@ namespace YR2K {
 
         QDate                                   m_selectedBeginDate;
         QDate                                   m_selectedEndDate;
+
+        QTreeView*                              m_addCoinTreeView;
+        QTreeView*                              m_clearCoinTreeView;
 
     };
 

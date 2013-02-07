@@ -39,6 +39,7 @@ namespace YR2K {
 
 		int addInventoryReport(const struct DBInventoryReportInfo &info);
 		bool findInventoryReportWithMachineId(const unsigned int machineId, struct DBInventoryReportInfo &outInfo);
+        bool findInventoryReportWithReportId(const unsigned int reportId, struct DBInventoryReportInfo &outInfo);
 		bool findInventoryReportWithTimerange(const unsigned int machineId, 
 											  const int startTime, 
 											  const int endTime, 

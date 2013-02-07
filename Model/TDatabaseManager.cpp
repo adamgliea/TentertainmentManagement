@@ -424,6 +424,36 @@ namespace YR2K {
         return ret;
     }
 
+
+    bool TDatabaseManager::findInventoryReportWithReportId( const unsigned int reportId, struct DBInventoryReportInfo &outInfo )
+    {
+        bool ret = false;
+
+        mysqlpp::Query query = this->m_conn->query();
+        char queryBuffer[512] = {0};
+        snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE id=%u;", reportId);
+
+        mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+        if (res) {
+            int i = 0;
+            for (; i < res.num_rows(); ++i) {
+                outInfo.reportId = res[i]["id"];
+                outInfo.machineId = res[i]["machineId"];
+                outInfo.addPointString = res[i]["addPointString"];
+                outInfo.clearPointString = res[i]["clearPointString"];
+                outInfo.opTime = res[i]["opDate"];
+
+                ret = true;
+            }
+        }
+        else {
+            printf("select inventory report error:%s\n", this->m_conn->error());
+        }
+
+        return ret;
+    }
+
+
 #pragma mark -- Private Functions
 
 	void TDatabaseManager::disconnect() {

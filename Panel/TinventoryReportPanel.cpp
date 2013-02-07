@@ -7,7 +7,8 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QMenu>
 
-
+#include <QtGui/QStandardItem>
+#include <QtGui/QStandardItemModel>
 
 namespace YR2K {
 
@@ -58,6 +59,9 @@ namespace YR2K {
         mainLayout->addWidget(table, 2, 0, 1, 4);
         setLayout(mainLayout);
 
+        m_addCoinTreeView = new QTreeView();
+        m_clearCoinTreeView = new QTreeView();
+
         int w = table->width();
         int h = searchWidget->height() + table->height();
 
@@ -70,17 +74,35 @@ namespace YR2K {
         connect(m_pEndDateCalendar, SIGNAL(activated(const QDate&)), this, SLOT(onEndDateActived(const QDate&)));
 
         connect(m_pSearchWidget->m_searchButton, SIGNAL(clicked()), this, SLOT(onSearchClicked()));
-
+        connect(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget, SIGNAL(cellClicked (int, int)), this, SLOT(onCellClicked(int, int)));
     }
 
     //---------------------------------------------------------------------
     TinventoryReportPanel::~TinventoryReportPanel(void)
     {
-        delete m_pBeginDateCalendar;
-        m_pBeginDateCalendar = NULL;
+        if (m_pBeginDateCalendar)
+        {
+            delete m_pBeginDateCalendar;
+            m_pBeginDateCalendar = NULL;
+        }
 
-        delete m_pEndDateCalendar;
-        m_pEndDateCalendar = NULL;
+        if (m_pEndDateCalendar)
+        {
+            delete m_pEndDateCalendar;
+            m_pEndDateCalendar = NULL;
+        }
+
+        if (m_addCoinTreeView)
+        {
+            delete m_addCoinTreeView;
+            m_addCoinTreeView = NULL;
+        }
+
+        if (m_clearCoinTreeView)
+        {
+            delete m_clearCoinTreeView;
+            m_clearCoinTreeView = NULL;
+        }
     }
 
     //---------------------------------------------------------------------
@@ -266,7 +288,7 @@ namespace YR2K {
             item = new QTableWidgetItem();
             item->setText(tr(machineInfo.factoryName.c_str()));
             table->setItem(rowIndex, INVENTORY_REPORT_TABLE_COLUMN_MANCHINE_NAME, item);
-            item->setData(Qt::UserRole, info.machineId);
+            item->setData(Qt::UserRole, info.reportId);
 
             item = new QTableWidgetItem();
             item->setText(tr("点击查看详情"));
@@ -310,6 +332,55 @@ namespace YR2K {
     int TinventoryReportPanel::computeTotalBenifit( const QString& addCoinData, const QString& clearCoinData )
     {
         return 0;
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::onCellClicked( int row, int column )
+    {
+        QStandardItemModel* model = NULL;
+        unsigned int reportId = 0;
+        DBInventoryReportInfo info;
+
+        Q_ASSERT_X(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget!= NULL, "", "");
+        QTableWidget* table = m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget;
+        if (table)
+        {
+            QTableWidgetItem* item = table->item(row, INVENTORY_REPORT_TABLE_COLUMN_MANCHINE_NAME);
+            if (item)
+            {
+                reportId = item->data(Qt::UserRole).toUInt();
+            }
+        }
+
+        if (column == INVENTORY_REPORT_TABLE_COLUMN_ADDCOIN_INFO)
+        {
+            TDatabaseManager::getInstance()->findInventoryReportWithReportId(reportId, info);
+            model = new QStandardItemModel();
+            QString addCoinString = info.addPointString.c_str();
+            QStringList list = addCoinString.split("|");
+            QStandardItem* invisiableRoot = model->invisibleRootItem();
+
+            QStandardItem* xx = new QStandardItem(tr("iam"));
+            QStandardItem* yy = new QStandardItem(tr("no1"));
+            QList<QStandardItem*> record;
+            record << xx;
+            record << yy;
+
+            invisiableRoot->appendRow(record);
+
+            m_addCoinTreeView->setModel(model);
+            m_addCoinTreeView->showNormal();
+
+            return;
+
+
+        }
+
+        if (column == INVENTORY_REPORT_TABLE_COLUMN_CLEARCOIN_INFO)
+        {
+
+            return;
+        }
     }
 
 }
