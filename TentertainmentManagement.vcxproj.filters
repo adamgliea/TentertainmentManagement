@@ -103,6 +103,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_TinventoryReportPanel.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Panel\TkeyValueTreeView.cpp">
+      <Filter>Panel\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TkeyValueTreeView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TkeyValueTreeView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Panel\TadminSetupPanel.h">
@@ -308,6 +317,9 @@
     <CustomBuild Include="Panel\TinventoryReportPanel.h">
       <Filter>Panel</Filter>
     </CustomBuild>
+    <CustomBuild Include="Panel\TkeyValueTreeView.h">
+      <Filter>Panel\Widget</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Main">
@@ -345,6 +357,9 @@
       <UniqueIdentifier>{a16a0ca2-3190-4e8a-83b2-e58482df42ca}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Panel\Widget">
+      <UniqueIdentifier>{fa313a1f-a46c-4b17-aa5e-cbbafea5833e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

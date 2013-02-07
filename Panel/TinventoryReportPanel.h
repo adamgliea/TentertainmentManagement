@@ -14,6 +14,7 @@
 class QPushButton;
 class QLabel;
 class QLineEdit;
+class QStandardItemModel;
 
 namespace YR2K {
 
@@ -64,7 +65,8 @@ namespace YR2K {
 
         QTreeView*                              m_addCoinTreeView;
         QTreeView*                              m_clearCoinTreeView;
-
+        QStandardItemModel*                     m_addCoinTreeModel;
+        QStandardItemModel*                     m_clearCoinTreeModel;
     };
 
 }

@@ -61,6 +61,8 @@ namespace YR2K {
 
         m_addCoinTreeView = new QTreeView();
         m_clearCoinTreeView = new QTreeView();
+        m_addCoinTreeModel = new QStandardItemModel();
+        m_clearCoinTreeModel= new QStandardItemModel();
 
         int w = table->width();
         int h = searchWidget->height() + table->height();
@@ -337,7 +339,6 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TinventoryReportPanel::onCellClicked( int row, int column )
     {
-        QStandardItemModel* model = NULL;
         unsigned int reportId = 0;
         DBInventoryReportInfo info;
 
@@ -355,20 +356,33 @@ namespace YR2K {
         if (column == INVENTORY_REPORT_TABLE_COLUMN_ADDCOIN_INFO)
         {
             TDatabaseManager::getInstance()->findInventoryReportWithReportId(reportId, info);
-            model = new QStandardItemModel();
+            m_addCoinTreeModel->clear();
+
             QString addCoinString = info.addPointString.c_str();
             QStringList list = addCoinString.split("|");
-            QStandardItem* invisiableRoot = model->invisibleRootItem();
 
-            QStandardItem* xx = new QStandardItem(tr("iam"));
-            QStandardItem* yy = new QStandardItem(tr("no1"));
+            QString labelString; 
+            QStandardItem* labelItem = NULL;
+            QStandardItem* valueItem = NULL;
             QList<QStandardItem*> record;
-            record << xx;
-            record << yy;
+            QStandardItem* invisiableRoot = m_addCoinTreeModel->invisibleRootItem();
 
-            invisiableRoot->appendRow(record);
+            for (int i = 0; i < list.count(); i++)
+            {
+                labelString = tr("¼Ó±Ò");
+                labelString.append(QString::number(i));
 
-            m_addCoinTreeView->setModel(model);
+                labelItem = new QStandardItem(labelString);
+                valueItem = new QStandardItem(list[i]);
+
+                record.clear();
+                record << labelItem;
+                record << valueItem;
+
+                invisiableRoot->appendRow(record);
+            }
+
+            m_addCoinTreeView->setModel(m_addCoinTreeModel);
             m_addCoinTreeView->showNormal();
 
             return;
