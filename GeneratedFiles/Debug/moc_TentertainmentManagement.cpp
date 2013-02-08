@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'TentertainmentManagement.h'
 **
-** Created: Wed Feb 6 16:56:02 2013
+** Created: Thu Feb 7 23:02:18 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -35,20 +35,21 @@ static const uint qt_meta_data_YR2K__TentertainmentManagement[] = {
       39,   31,   31,   31, 0x08,
       47,   31,   31,   31, 0x08,
       54,   31,   31,   31, 0x08,
-      80,   62,   31,   31, 0x08,
-     135,  123,   31,   31, 0x08,
-     194,  182,   31,   31, 0x08,
-     254,  241,   31,   31, 0x08,
-     316,  302,   31,   31, 0x08,
-     375,  365,   31,   31, 0x08,
+      89,   62,   31,   31, 0x08,
+     149,  137,   31,   31, 0x08,
+     208,  196,   31,   31, 0x08,
+     268,  255,   31,   31, 0x08,
+     330,  316,   31,   31, 0x08,
+     389,  379,   31,   31, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_YR2K__TentertainmentManagement[] = {
     "YR2K::TentertainmentManagement\0\0save()\0"
-    "print()\0undo()\0about()\0menuType,category\0"
-    "onTreeMenuClicked(TEPanelIndex,TECategory)\0"
+    "print()\0undo()\0about()\0"
+    "menuType,category,itemData\0"
+    "onTreeMenuClicked(TEPanelIndex,TECategory,uint)\0"
     "cabinetItem\0onInitInventoryTreeCabinetNode(QStandardItem*)\0"
     "lotteryItem\0onInitInventoryTreeLotteryNode(QStandardItem*)\0"
     "simulateItem\0"
@@ -68,7 +69,7 @@ void YR2K::TentertainmentManagement::qt_static_metacall(QObject *_o, QMetaObject
         case 1: _t->print(); break;
         case 2: _t->undo(); break;
         case 3: _t->about(); break;
-        case 4: _t->onTreeMenuClicked((*reinterpret_cast< const TEPanelIndex(*)>(_a[1])),(*reinterpret_cast< const TECategory(*)>(_a[2]))); break;
+        case 4: _t->onTreeMenuClicked((*reinterpret_cast< const TEPanelIndex(*)>(_a[1])),(*reinterpret_cast< const TECategory(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3]))); break;
         case 5: _t->onInitInventoryTreeCabinetNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
         case 6: _t->onInitInventoryTreeLotteryNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
         case 7: _t->onInitInventoryTreeSimulateNode((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;

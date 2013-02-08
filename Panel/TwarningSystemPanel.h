@@ -13,7 +13,7 @@ namespace YR2K {
         TwarningSystemPanel(QWidget* parent = NULL);
         ~TwarningSystemPanel(void);
 
-        virtual void                            doInitPanel(const TECategory& category);
+        virtual void                            doInitPanel(const TECategory& category, unsigned int itemData);
 
     private:
         Ui::TwarningSystemViewItemTable*        m_pWarningSystemViewItemTable;

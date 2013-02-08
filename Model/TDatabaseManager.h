@@ -38,11 +38,13 @@ namespace YR2K {
 		bool updateInventoryPoint(const unsigned int point);
 
 		int addInventoryReport(const struct DBInventoryReportInfo &info);
-		bool findInventoryReportWithMachineId(const unsigned int machineId, struct DBInventoryReportInfo &outInfo);
+		bool findInventoryReportWithMachineId(const unsigned int machineId, std::vector<DBInventoryReportInfo>& outVecInfo);
+        bool findInventoryReportWithReportId(const unsigned int reportId, struct DBInventoryReportInfo &outInfo);
 		bool findInventoryReportWithTimerange(const unsigned int machineId, 
-											  const unsigned int startTime, 
-											  const unsigned int endTime, 
+											  const int startTime, 
+											  const int endTime, 
 											  std::vector<struct DBInventoryReportInfo> &infos);
+        bool updateInventoryReport(const DBInventoryReportInfo& inventoryReportInfo);
 
 	private:
 		void disconnect();

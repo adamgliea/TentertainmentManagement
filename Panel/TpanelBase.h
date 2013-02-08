@@ -13,11 +13,11 @@ namespace YR2K {
         virtual ~TpanelBase(void);
 
         TEPanelIndex        getType();
-        void                initPanel(const TECategory& category);
-
+        void                initPanel(const TECategory& category, unsigned int itemData);
+        virtual void        doHack();
 
     protected:
-        virtual void        doInitPanel(const TECategory& category);
+        virtual void        doInitPanel(const TECategory& category, unsigned int itemData);
 
     protected:
         TEPanelIndex        m_eType;

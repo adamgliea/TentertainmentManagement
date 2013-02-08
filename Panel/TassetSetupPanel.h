@@ -28,7 +28,7 @@ namespace YR2K {
         void                                    onRemoveActionTriggered();
 
     protected:
-        virtual void                            doInitPanel(const TECategory& category);
+        virtual void                            doInitPanel(const TECategory& category, unsigned int itemData);
 
     private:
         void                                    destroyAddWidgetPanel();

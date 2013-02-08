@@ -4,7 +4,7 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QDialogButtonBox>
 #include <QtGui/QMenu>
-
+#include <QtGui/QMessageBox>
 namespace YR2K {
 
     typedef std::vector<DBAssetsInfo>::iterator DBAssetIter;
@@ -111,25 +111,33 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TassetSetupPanel::onConfirmAddNewRecord()
     {
-        // Add new record into DB.
-        // 
-        DBAssetsInfo assetInfo = this->getInfo();
-        bool success = TDatabaseManager::getInstance()->addAsset(assetInfo);
 
-        // Close the window and destroy the panel object.
-        // 
-        this->destroyAddWidgetPanel();
-
-        if (assetInfo.assetType == m_eCurrentOperatingCategory)
+        QMessageBox msg(QMessageBox::Question, "", "您是否已经确定进行添加？", QMessageBox::Ok | QMessageBox::Cancel);
+        int result = msg.exec();
+        if (QMessageBox::Ok == result)
         {
-            Q_ASSERT_X(m_pAssetSetupTable->m_assetSetupTable != NULL, "", "");
-            QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
-            if (table)
+            // Add new record into DB.
+            // 
+            DBAssetsInfo assetInfo = this->getInfo();
+            bool success = TDatabaseManager::getInstance()->addAsset(assetInfo);
+
+            // Close the window and destroy the panel object.
+            // 
+            this->destroyAddWidgetPanel();
+
+            if (assetInfo.assetType == m_eCurrentOperatingCategory)
             {
-                int rowIndex = table->rowCount();
-                this->insertRecordToTable(rowIndex, assetInfo);
+                Q_ASSERT_X(m_pAssetSetupTable->m_assetSetupTable != NULL, "", "");
+                QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
+                if (table)
+                {
+                    int rowIndex = table->rowCount();
+                    this->insertRecordToTable(rowIndex, assetInfo);
+                }
             }
         }
+        
+        
     }
 
     //---------------------------------------------------------------------
@@ -152,7 +160,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TassetSetupPanel::doInitPanel(const TECategory& category)
+    void TassetSetupPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
         Q_ASSERT_X(m_pAssetSetupTable->m_assetSetupTable != NULL, "", "");
         QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
@@ -262,23 +270,28 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TassetSetupPanel::onRemoveActionTriggered()
     {
-        int row = m_contextMenuTriggeredIndex.row();
-        Q_ASSERT_X(m_pAssetSetupTable != NULL, "TassetSetupPanel::onCustomContextMenuRequested", "");
-        if (m_pAssetSetupTable)
+        QMessageBox msg(QMessageBox::Question, "", "您是否已经确定进行清除？", QMessageBox::Ok | QMessageBox::Cancel);
+        int result = msg.exec();
+        if (QMessageBox::Ok == result)
         {
-            QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
-            Q_ASSERT_X(table != NULL, "TassetSetupPanel::onCustomContextMenuRequested", "");
-
-            if (table)
+            int row = m_contextMenuTriggeredIndex.row();
+            Q_ASSERT_X(m_pAssetSetupTable != NULL, "TassetSetupPanel::onCustomContextMenuRequested", "");
+            if (m_pAssetSetupTable)
             {
-                QTableWidgetItem* item = table->item(row, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME);
-                Q_ASSERT_X(item != NULL, "TassetSetupPanel::onCustomContextMenuRequested", "");
-                if (item)
-                {
-                    int assetInfoId = item->data(Qt::UserRole).toInt();
-                    bool success = TDatabaseManager::getInstance()->removeAsset(assetInfoId);
-                    table->removeRow(row);
+                QTableWidget* table = m_pAssetSetupTable->m_assetSetupTable;
+                Q_ASSERT_X(table != NULL, "TassetSetupPanel::onCustomContextMenuRequested", "");
 
+                if (table)
+                {
+                    QTableWidgetItem* item = table->item(row, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME);
+                    Q_ASSERT_X(item != NULL, "TassetSetupPanel::onCustomContextMenuRequested", "");
+                    if (item)
+                    {
+                        int assetInfoId = item->data(Qt::UserRole).toInt();
+                        bool success = TDatabaseManager::getInstance()->removeAsset(assetInfoId);
+                        table->removeRow(row);
+
+                    }
                 }
             }
         }

@@ -53,7 +53,7 @@ namespace YR2K {
 		unsigned int machineId;
 		std::string addPointString;
 		std::string clearPointString;
-		unsigned int opTime;
+		int opTime;
 	};
 
 	struct DBReport1Info {

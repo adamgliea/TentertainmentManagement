@@ -13,7 +13,7 @@ namespace YR2K {
         TmachineGroupDifferenceReportPanel(QWidget* parent = NULL);
         ~TmachineGroupDifferenceReportPanel(void);
 
-        virtual void                                        doInitPanel(const TECategory& category);
+        virtual void                                        doInitPanel(const TECategory& category, unsigned int itemData);
 
     private:
         Ui::TmachineGroupDifferenceReportViewItemTable*     m_pMachineGroupDifferenceReportViewItemTable;

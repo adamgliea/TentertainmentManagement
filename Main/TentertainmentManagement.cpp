@@ -60,7 +60,7 @@ namespace YR2K {
         createTreeView();
         createSplitWindows();
 
-        connect(m_pOutlinerTreeView, SIGNAL(treeMenuClicked(const TEPanelIndex&, const TECategory&)), this, SLOT(onTreeMenuClicked(const TEPanelIndex&, const TECategory&)));
+        connect(m_pOutlinerTreeView, SIGNAL(treeMenuClicked(const TEPanelIndex&, const TECategory&, unsigned int)), this, SLOT(onTreeMenuClicked(const TEPanelIndex&, const TECategory&, unsigned int)));
         connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeCabinetNode(QStandardItem*)), this, SLOT(onInitInventoryTreeCabinetNode(QStandardItem*)));
         connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeLotteryNode(QStandardItem*)), this, SLOT(onInitInventoryTreeLotteryNode(QStandardItem*)));
         connect(m_pOutlinerTreeView, SIGNAL(initInventoryTreeSimulateNode(QStandardItem*)), this, SLOT(onInitInventoryTreeSimulateNode(QStandardItem*)));
@@ -71,6 +71,8 @@ namespace YR2K {
         connect(m_aryPanelWidgets[PANEL_MACHINE_GROUP_FUNC_BASE_SETUP], SIGNAL(machineBaseRecordRemoved(const DBMachineBaseInfo&)), m_pOutlinerTreeView, SLOT(onMachineBaseRecordRemoved(const DBMachineBaseInfo&)));
 
         m_pOutlinerTreeView->initInventoryTreeNode();
+
+//         m_aryPanelWidgets[PANEL_INVENTORY_REPORT]->doHack();
     }
 
     //---------------------------------------------------------------------
@@ -221,7 +223,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TentertainmentManagement::onTreeMenuClicked( const TEPanelIndex& menuType, const TECategory& category )
+    void TentertainmentManagement::onTreeMenuClicked( const TEPanelIndex& menuType, const TECategory& category, unsigned int itemData )
     {
         int index = menuType;
         if (menuType == PANEL_INVALID)
@@ -234,7 +236,7 @@ namespace YR2K {
 
         if (panel)
         {
-            panel->initPanel(category);
+            panel->initPanel(category, itemData);
         }
 
         m_pStackedWidget->setCurrentIndex(index);

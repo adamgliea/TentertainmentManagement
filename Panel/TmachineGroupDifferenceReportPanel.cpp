@@ -29,7 +29,7 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TmachineGroupDifferenceReportPanel::doInitPanel(const TECategory& category)
+    void TmachineGroupDifferenceReportPanel::doInitPanel(const TECategory& category, unsigned int itemData)
     {
 
     }

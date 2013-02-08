@@ -16,7 +16,7 @@ namespace YR2K {
         TmachineGroupFuncBaseSetupPanel(QWidget* parent = NULL);
         ~TmachineGroupFuncBaseSetupPanel(void);
 
-        virtual void                                    doInitPanel(const TECategory& category);
+        virtual void                                    doInitPanel(const TECategory& category, unsigned int itemData);
 
         DBMachineBaseInfo                               getInfo(void) const;
 

@@ -323,7 +323,7 @@ namespace YR2K {
 		return ret;
 	}
 		
-	bool TDatabaseManager::findInventoryReportWithMachineId(const unsigned int machineId, struct DBInventoryReportInfo &outInfo) {
+	bool TDatabaseManager::findInventoryReportWithMachineId(const unsigned int machineId, std::vector<DBInventoryReportInfo>& outVecInfo) {
 		bool ret = false;
 
 		mysqlpp::Query query = this->m_conn->query();
@@ -333,15 +333,18 @@ namespace YR2K {
 		mysqlpp::StoreQueryResult res = query.store(queryBuffer);
 		if (res) {
 			int i = 0;
+            DBInventoryReportInfo info = {0};
 			for (; i < res.num_rows(); ++i) {
-				outInfo.reportId = res[i]["id"];
-				outInfo.machineId = res[i]["machineId"];
-				outInfo.addPointString = res[i]["addPointString"];
-				outInfo.clearPointString = res[i]["clearPointString"];
-				outInfo.opTime = res[i]["opDate"];
+				info.reportId = res[i]["id"];
+				info.machineId = res[i]["machineId"];
+				info.addPointString = res[i]["addPointString"];
+				info.clearPointString = res[i]["clearPointString"];
+				info.opTime = res[i]["opDate"];
 
-				ret = true;
+                outVecInfo.push_back(info);
 			}
+
+            ret = true;
 		}
 		else {
 			printf("select inventory report error:%s\n", this->m_conn->error());
@@ -351,15 +354,15 @@ namespace YR2K {
 	}
 
     bool TDatabaseManager::findInventoryReportWithTimerange( const unsigned int machineId,
-                                                             const unsigned int startTime,
-                                                             const unsigned int endTime,
+                                                             const int startTime,
+                                                             const int endTime,
                                                              std::vector<struct DBInventoryReportInfo> &infos )
     {
         bool ret = false;
 
         mysqlpp::Query query = this->m_conn->query();
         char queryBuffer[512] = {0};
-        snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE machineId=%u AND (opDate >= %u AND opDate <= %u);",
+        snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE machineId=%u AND (opDate >= %d AND opDate <= %d);",
             machineId, startTime, endTime);
 
         mysqlpp::StoreQueryResult res = query.store(queryBuffer);
@@ -422,6 +425,52 @@ namespace YR2K {
         }
 
         return ret;
+    }
+
+
+    bool TDatabaseManager::findInventoryReportWithReportId( const unsigned int reportId, struct DBInventoryReportInfo &outInfo )
+    {
+        bool ret = false;
+
+        mysqlpp::Query query = this->m_conn->query();
+        char queryBuffer[512] = {0};
+        snprintf(queryBuffer, 512, "SELECT * FROM inventoryReport WHERE id=%u;", reportId);
+
+        mysqlpp::StoreQueryResult res = query.store(queryBuffer);
+        if (res) {
+            int i = 0;
+            for (; i < res.num_rows(); ++i) {
+                outInfo.reportId = res[i]["id"];
+                outInfo.machineId = res[i]["machineId"];
+                outInfo.addPointString = res[i]["addPointString"];
+                outInfo.clearPointString = res[i]["clearPointString"];
+                outInfo.opTime = res[i]["opDate"];
+
+                ret = true;
+            }
+        }
+        else {
+            printf("select inventory report error:%s\n", this->m_conn->error());
+        }
+
+        return ret;
+    }
+
+
+    bool TDatabaseManager::updateInventoryReport( const DBInventoryReportInfo& inventoryReportInfo )
+    {
+        mysqlpp::Query query = this->m_conn->query();
+        char queryBuffer[512] = {0};
+        snprintf(queryBuffer, 512, "UPDATE inventoryReport SET machineId=%u, addPointString=\'%s\', clearPointString=\'%s\', opDate=%d WHERE id=%u;", 
+            inventoryReportInfo.machineId, inventoryReportInfo.addPointString.c_str(), inventoryReportInfo.clearPointString.c_str(), inventoryReportInfo.opTime, inventoryReportInfo.reportId);
+
+        bool ret = query.execute(queryBuffer, 512);
+        if (!ret) {
+            printf("update inventoryReport info error:%s\n", this->m_conn->error());
+        }
+
+        return ret;
+        
     }
 
 #pragma mark -- Private Functions

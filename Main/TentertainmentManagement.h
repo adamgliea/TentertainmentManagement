@@ -32,7 +32,7 @@ namespace YR2K {
         void                        print();
         void                        undo();
         void                        about();
-        void                        onTreeMenuClicked(const TEPanelIndex& menuType, const TECategory& category);
+        void                        onTreeMenuClicked(const TEPanelIndex& menuType, const TECategory& category, unsigned int itemData);
 
         void                        onInitInventoryTreeCabinetNode(QStandardItem* cabinetItem);
         void                        onInitInventoryTreeLotteryNode(QStandardItem* lotteryItem);

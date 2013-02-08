@@ -24,7 +24,7 @@ namespace YR2K {
         void                    initInventoryTreeNode();
 
     signals:
-        void                    treeMenuClicked(const TEPanelIndex& type, const TECategory& category);
+        void                    treeMenuClicked(const TEPanelIndex& type, const TECategory& category, const unsigned int itemData);
         void                    initInventoryTreeCabinetNode(QStandardItem* cabinetItem);
         void                    initInventoryTreeLotteryNode(QStandardItem* lotteryItem);
         void                    initInventoryTreeSimulateNode(QStandardItem* simulateItem);
