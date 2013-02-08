@@ -7,6 +7,7 @@
 #include <QtGui/QStandardItem>
 #include <QtGui/QStandardItemModel>
 #include <QtGui/QPushButton>
+#include <QtGui/QInputDialog>
 
 class QCloseEven;
 
@@ -32,11 +33,11 @@ namespace YR2K {
         private slots:
         void                        onAddButtonClicked();
         void                        onRemoveButtonClicked();
-        void                        onAddValue(const QString& value);
         void                        onItemClicked(const QModelIndex& modelIndex);
 
     private:
         void                        updateValueList();
+        void                        addNewValue(const QString& value);
 
     private:
         QTreeView*                  m_pTreeView;
@@ -51,6 +52,8 @@ namespace YR2K {
         QPushButton*                m_pRemoveButton;
 
         QPushButton*                m_pApplyButton;
+
+        QInputDialog*               m_pInputDialog;
     };
 }
 

@@ -27,6 +27,10 @@ namespace YR2K {
         m_pAddButton->setFixedWidth(20);
         m_pRemoveButton->setFixedWidth(20);
 
+        m_pInputDialog = new QInputDialog(this);
+        m_pInputDialog->setLabelText("ÇëÊäÈëÊýÖµ");
+        m_pInputDialog->setInputMode(QInputDialog::IntInput);
+
         QHBoxLayout* buttonLayout = new QHBoxLayout();
         buttonLayout->addWidget(m_pAddButton, 0, Qt::AlignLeft);
         buttonLayout->addWidget(m_pRemoveButton, 0, Qt::AlignLeft);
@@ -118,6 +122,12 @@ namespace YR2K {
     void TkeyValueTreeView::onAddButtonClicked()
     {
 
+        int newRecordValue = 0;
+        if (m_pInputDialog->exec() == QDialog::Accepted)
+        {
+            newRecordValue = m_pInputDialog->intValue();
+            addNewValue(QString::number(newRecordValue));
+        }
     }
 
     //---------------------------------------------------------------------
@@ -141,9 +151,15 @@ namespace YR2K {
     }
 
     //---------------------------------------------------------------------
-    void TkeyValueTreeView::onAddValue( const QString& value )
+    void TkeyValueTreeView::onItemClicked( const QModelIndex& modelIndex)
     {
-        Q_ASSERT_X(m_pTreeModel != NULL, "TkeyValueTreeView::onCustomContextMenuRequested", "");
+        m_currentClickedModelIndex = modelIndex;
+    }
+
+    //---------------------------------------------------------------------
+    void TkeyValueTreeView::addNewValue(const QString& value)
+    {
+        Q_ASSERT_X(m_pTreeModel != NULL, "TkeyValueTreeView::addNewValue", "");
         if (m_pTreeModel)
         {
             int currentCount = m_strValueList.count();
@@ -164,12 +180,6 @@ namespace YR2K {
 
             updateValueList();
         }
-    }
-
-    //---------------------------------------------------------------------
-    void TkeyValueTreeView::onItemClicked( const QModelIndex& modelIndex)
-    {
-        m_currentClickedModelIndex = modelIndex;
     }
 
 

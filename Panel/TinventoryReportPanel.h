@@ -33,6 +33,11 @@ namespace YR2K {
         void                                    insertRecordToTable(const int rowIndex, const DBInventoryReportInfo& info);
         int                                     computeCoins(const QString& data);
         int                                     computeTotalBenifit(const QString& addCoinData, const QString& clearCoinData);
+        int                                     computeTotalInventory(unsigned int machineId);
+        void                                    updateTableByReportInfo(const DBInventoryReportInfo& reportInfo);
+        void                                    updateTotalInventoryInfo();
+
+
     private slots:
         void                                    onBeginDateClicked();
         void                                    onEndDateClicked();
@@ -57,7 +62,7 @@ namespace YR2K {
         std::vector<DBInventoryReportInfo>      m_vecInventoryReportInfoFoundResult;
         TECategory                              m_eCurrentOperatingCategory;
 
-        unsigned int                            m_uiCurrentOperatingId;
+        unsigned int                            m_uiCurrentOperatingMachineId;
         unsigned int                            m_uiCurrentOperatingReportId;
 
         QCalendarWidget*                        m_pBeginDateCalendar;

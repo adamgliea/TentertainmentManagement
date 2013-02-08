@@ -18,12 +18,13 @@ namespace YR2K {
     TinventoryReportPanel::TinventoryReportPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
         , m_eCurrentOperatingCategory(CATEGORY_INVALID)
-        , m_uiCurrentOperatingId(0xFFFFFFFF)
+        , m_uiCurrentOperatingMachineId(0xFFFFFFFF)
         , m_uiCurrentOperatingReportId(0xFFFFFFFF)
     {
         m_pTotalInventoryLabel = new QLabel();
         m_pTotalInventoryLineEdit = new QLineEdit();
         m_pTotalInventoryLineEdit->setFixedWidth(100);
+        m_pTotalInventoryLineEdit->setEnabled(false);
 
         m_pTotalInventoryLabel->setText(tr("¿â´æ×ÜÁ¿£º"));
 
@@ -78,7 +79,7 @@ namespace YR2K {
         connect(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget, SIGNAL(cellClicked (int, int)), this, SLOT(onCellClicked(int, int)));
 
         connect(m_addCoinTreeView, SIGNAL(valueUpdated()), this, SLOT(onAddCoinUpdated()));
-//         connect(m_clearCoinTreeView, SIGNAL(valueUpdated()), this, SLOT(onClearCoinUpdated()));
+        connect(m_clearCoinTreeView, SIGNAL(valueUpdated()), this, SLOT(onClearCoinUpdated()));
     }
 
     //---------------------------------------------------------------------
@@ -126,7 +127,7 @@ namespace YR2K {
 
         m_vecInventoryReportInfoFoundResult.clear();
 
-        m_uiCurrentOperatingId = itemData;
+        m_uiCurrentOperatingMachineId = itemData;
 
         m_eCurrentOperatingCategory = category;
 
@@ -136,6 +137,8 @@ namespace YR2K {
         QDate lastMonthCurrentDate(currentDate.addMonths(-1));
         dateString = lastMonthCurrentDate.toString("yyyy/MM/dd");
         m_pSearchWidget->m_dateBeginButton->setText(dateString);
+
+        updateTotalInventoryInfo();
 
     }
 
@@ -263,7 +266,7 @@ namespace YR2K {
 
         m_vecInventoryReportInfoFoundResult.clear();
 
-        int machineId = m_uiCurrentOperatingId;
+        int machineId = m_uiCurrentOperatingMachineId;
         int beginDate = m_selectedBeginDate.toJulianDay();
         int endDate = m_selectedEndDate.toJulianDay();
 
@@ -291,7 +294,7 @@ namespace YR2K {
             QTableWidgetItem* item = NULL;
 
             DBMachineBaseInfo machineInfo;
-            TDatabaseManager::getInstance()->findMachineBaseInfoWithMachineId(m_uiCurrentOperatingId, machineInfo);
+            TDatabaseManager::getInstance()->findMachineBaseInfoWithMachineId(m_uiCurrentOperatingMachineId, machineInfo);
 
             table->insertRow(rowIndex);
 
@@ -346,9 +349,66 @@ namespace YR2K {
     {
         int addCoins = computeCoins(addCoinData);
         int clearCoins = computeCoins(clearCoinData);
-        int benifit = addCoins - clearCoins;
+        int benifit = clearCoins - addCoins;
 
         return benifit;
+    }
+
+    //---------------------------------------------------------------------
+    int TinventoryReportPanel::computeTotalInventory( unsigned int machineId )
+    {
+        std::vector<DBInventoryReportInfo> vecInfo;
+        TDatabaseManager::getInstance()->findInventoryReportWithMachineId(machineId, vecInfo);
+
+        DBInventoryReportInfoIter iter = vecInfo.begin();
+        DBInventoryReportInfoIter end = vecInfo.end();
+
+        int benifit = 0;
+        int totalInventory = 0;
+        for (; iter != end; ++iter)
+        {
+            benifit = computeTotalBenifit((*iter).addPointString.c_str(), (*iter).clearPointString.c_str());
+            totalInventory += benifit;
+        }
+
+        return totalInventory;
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::updateTableByReportInfo( const DBInventoryReportInfo& reportInfo )
+    {
+        Q_ASSERT_X(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget!= NULL, "", "");
+        QTableWidget* table = m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget;
+        if (table)
+        {
+            int findRowIndex = -1;
+            int tableRows = table->rowCount();
+            QTableWidgetItem* item = NULL;
+
+            for (int i = 0; i < tableRows; i++)
+            {
+                item = table->item(i, INVENTORY_REPORT_TABLE_COLUMN_MANCHINE_NAME);
+                int id = item->data(Qt::UserRole).toUInt();
+                if (id == reportInfo.reportId)
+                {
+                    findRowIndex = i;
+                    break;
+                }
+            }
+
+            if (findRowIndex != -1)
+            {
+                table->removeRow(findRowIndex);
+                insertRecordToTable(findRowIndex, reportInfo);
+            }
+        }
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::updateTotalInventoryInfo()
+    {
+        int totalInventory = computeTotalInventory(m_uiCurrentOperatingMachineId);
+        m_pTotalInventoryLineEdit->setText(QString::number(totalInventory));
     }
 
     //---------------------------------------------------------------------
@@ -425,6 +485,8 @@ namespace YR2K {
 
             info.addPointString = recordString.toStdString();
             TDatabaseManager::getInstance()->updateInventoryReport(info);
+            updateTableByReportInfo(info);
+            updateTotalInventoryInfo();
         }
 
     }
@@ -432,7 +494,28 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TinventoryReportPanel::onClearCoinUpdated()
     {
+        QStringList newValueList = m_clearCoinTreeView->getValueList();
+        QString recordString = "";
 
+        int count = newValueList.count();
+        if (count > 0)
+        {
+            recordString.append(newValueList[0]);
+            for (int i = 1; i < count; i++)
+            {
+                recordString.append("|");
+                recordString.append(newValueList[i]);
+            }
+
+            DBInventoryReportInfo info;
+            TDatabaseManager::getInstance()->findInventoryReportWithReportId(m_uiCurrentOperatingReportId, info);
+
+            info.clearPointString = recordString.toStdString();
+            TDatabaseManager::getInstance()->updateInventoryReport(info);
+            updateTableByReportInfo(info);
+            updateTotalInventoryInfo();
+        }
     }
+
 
 }
