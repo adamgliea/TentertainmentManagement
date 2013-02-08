@@ -4,6 +4,7 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QMenu>
 #include <QtCore/QTextCodec>
+#include <QtGui/QMessageBox>
 
 namespace YR2K {
 
@@ -197,25 +198,29 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TmachineGroupFuncBaseSetupPanel::onConfirmAddNewRecord()
     {
-
-        std::vector<DBAssetsInfo> assets;
-        TDatabaseManager::getInstance()->findAssetsWithAssetType(m_eCurrentOperatingCategory, assets);
-        // Add new record into DB.
-        // 
-        DBMachineBaseInfo machineBaseInfo = this->getInfo();
-        bool success = TDatabaseManager::getInstance()->addMachine(machineBaseInfo, assets[0].clearCoinCycle);
-
-        emit machineBaseRecordAdded(machineBaseInfo);
-        // Close the window and destroy the panel object.
-        // 
-        this->destroyAddWidgetPanel();
-
-        Q_ASSERT_X(m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable != NULL, "", "");
-        QTableWidget* table = m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable;
-        if (table)
+        QMessageBox msg(QMessageBox::Question, "", "您是否已经确定进行添加？", QMessageBox::Ok | QMessageBox::Cancel);
+        int result = msg.exec();
+        if (QMessageBox::Ok == result)
         {
-            int rowIndex = table->rowCount();
-            this->insertRecordToTable(rowIndex, machineBaseInfo);
+            std::vector<DBAssetsInfo> assets;
+            TDatabaseManager::getInstance()->findAssetsWithAssetType(m_eCurrentOperatingCategory, assets);
+            // Add new record into DB.
+            // 
+            DBMachineBaseInfo machineBaseInfo = this->getInfo();
+            bool success = TDatabaseManager::getInstance()->addMachine(machineBaseInfo, assets[0].clearCoinCycle);
+
+            emit machineBaseRecordAdded(machineBaseInfo);
+            // Close the window and destroy the panel object.
+            // 
+            this->destroyAddWidgetPanel();
+
+            Q_ASSERT_X(m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable != NULL, "", "");
+            QTableWidget* table = m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable;
+            if (table)
+            {
+                int rowIndex = table->rowCount();
+                this->insertRecordToTable(rowIndex, machineBaseInfo);
+            }
         }
     }
 
@@ -253,26 +258,31 @@ namespace YR2K {
     //---------------------------------------------------------------------
     void TmachineGroupFuncBaseSetupPanel::onRemoveActionTriggered()
     {
-        int row = m_contextMenuTriggeredIndex.row();
-        Q_ASSERT_X(m_pMachineBaseSetupTable != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
-        if (m_pMachineBaseSetupTable)
+        QMessageBox msg(QMessageBox::Question, "", "您是否已经确定进行清除？", QMessageBox::Ok | QMessageBox::Cancel);
+        int result = msg.exec();
+        if (QMessageBox::Ok == result)
         {
-            QTableWidget* table = m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable;
-            Q_ASSERT_X(table != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
-
-            if (table)
+            int row = m_contextMenuTriggeredIndex.row();
+            Q_ASSERT_X(m_pMachineBaseSetupTable != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
+            if (m_pMachineBaseSetupTable)
             {
-                QTableWidgetItem* item = table->item(row, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME);
-                Q_ASSERT_X(item != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
-                if (item)
-                {
-                    DBMachineBaseInfo infoToBeRemoved;
-                    int machineBasiInfoId = item->data(Qt::UserRole).toInt();
-                    bool success = TDatabaseManager::getInstance()->findMachineBaseInfoWithMachineId(machineBasiInfoId, infoToBeRemoved);
-                    success = TDatabaseManager::getInstance()->removeMachine(machineBasiInfoId);
-                    table->removeRow(row);
+                QTableWidget* table = m_pMachineBaseSetupTable->m_machineGroupFuncBaseSetupTable;
+                Q_ASSERT_X(table != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
 
-                    emit machineBaseRecordRemoved(infoToBeRemoved);
+                if (table)
+                {
+                    QTableWidgetItem* item = table->item(row, ASSET_SETUP_TABLE_COLUMN_CATEGORY_NAME);
+                    Q_ASSERT_X(item != NULL, "TmachineGroupFuncBaseSetupPanel::onCustomContextMenuRequested", "");
+                    if (item)
+                    {
+                        DBMachineBaseInfo infoToBeRemoved;
+                        int machineBasiInfoId = item->data(Qt::UserRole).toInt();
+                        bool success = TDatabaseManager::getInstance()->findMachineBaseInfoWithMachineId(machineBasiInfoId, infoToBeRemoved);
+                        success = TDatabaseManager::getInstance()->removeMachine(machineBasiInfoId);
+                        table->removeRow(row);
+
+                        emit machineBaseRecordRemoved(infoToBeRemoved);
+                    }
                 }
             }
         }

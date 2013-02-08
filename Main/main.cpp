@@ -25,20 +25,8 @@ int main(int argc, char *argv[])
     bool connectRet = YR2K::TDatabaseManager::getInstance()->connect("test", "127.0.0.1", "root", "111111", 3306);
 
     QApplication a(argc, argv);
-    
     YR2K::TentertainmentManagement window;
-    int w = 0;
-    int h = 0;
-
     window.show();
-    YR2K::TinventoryReportPanel xx;
-    xx.show();
-//     window.show();
-
-//     YR2K::TmachineFuncSetupPanel xxx;
-//     xxx.show();
-//     YR2K::ToutlinerTreeView node;
-//     node.show();
 
     return a.exec();
 }
