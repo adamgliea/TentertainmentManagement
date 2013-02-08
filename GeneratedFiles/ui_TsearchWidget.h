@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'TsearchWidget.ui'
 **
-** Created: Thu Feb 7 23:02:19 2013
+** Created: Sat Feb 9 01:42:00 2013
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -28,12 +28,12 @@ class Ui_TsearchWidget
 public:
     QWidget *layoutWidget;
     QGridLayout *m_mainLayout;
-    QPushButton *m_searchButton;
-    QPushButton *m_dateBeginButton;
-    QPushButton *m_dateEndButton;
-    QLabel *m_accordingTodateUntilLabel;
     QLabel *m_accordingToDateLabel;
-    QSpacerItem *horizontalSpacer;
+    QLabel *m_accordingTodateUntilLabel;
+    QPushButton *m_dateEndButton;
+    QPushButton *m_dateBeginButton;
+    QPushButton *m_searchButton;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QWidget *TsearchWidget)
     {
@@ -42,20 +42,19 @@ public:
         TsearchWidget->resize(354, 80);
         layoutWidget = new QWidget(TsearchWidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 301, 79));
+        layoutWidget->setGeometry(QRect(0, 0, 351, 79));
         m_mainLayout = new QGridLayout(layoutWidget);
         m_mainLayout->setObjectName(QString::fromUtf8("m_mainLayout"));
         m_mainLayout->setContentsMargins(0, 0, 0, 0);
-        m_searchButton = new QPushButton(layoutWidget);
-        m_searchButton->setObjectName(QString::fromUtf8("m_searchButton"));
+        m_accordingToDateLabel = new QLabel(layoutWidget);
+        m_accordingToDateLabel->setObjectName(QString::fromUtf8("m_accordingToDateLabel"));
 
-        m_mainLayout->addWidget(m_searchButton, 0, 5, 1, 1);
+        m_mainLayout->addWidget(m_accordingToDateLabel, 0, 0, 1, 1);
 
-        m_dateBeginButton = new QPushButton(layoutWidget);
-        m_dateBeginButton->setObjectName(QString::fromUtf8("m_dateBeginButton"));
-        m_dateBeginButton->setEnabled(true);
+        m_accordingTodateUntilLabel = new QLabel(layoutWidget);
+        m_accordingTodateUntilLabel->setObjectName(QString::fromUtf8("m_accordingTodateUntilLabel"));
 
-        m_mainLayout->addWidget(m_dateBeginButton, 0, 1, 1, 1);
+        m_mainLayout->addWidget(m_accordingTodateUntilLabel, 0, 2, 1, 1);
 
         m_dateEndButton = new QPushButton(layoutWidget);
         m_dateEndButton->setObjectName(QString::fromUtf8("m_dateEndButton"));
@@ -63,19 +62,20 @@ public:
 
         m_mainLayout->addWidget(m_dateEndButton, 0, 3, 1, 1);
 
-        m_accordingTodateUntilLabel = new QLabel(layoutWidget);
-        m_accordingTodateUntilLabel->setObjectName(QString::fromUtf8("m_accordingTodateUntilLabel"));
+        m_dateBeginButton = new QPushButton(layoutWidget);
+        m_dateBeginButton->setObjectName(QString::fromUtf8("m_dateBeginButton"));
+        m_dateBeginButton->setEnabled(true);
 
-        m_mainLayout->addWidget(m_accordingTodateUntilLabel, 0, 2, 1, 1);
+        m_mainLayout->addWidget(m_dateBeginButton, 0, 1, 1, 1);
 
-        m_accordingToDateLabel = new QLabel(layoutWidget);
-        m_accordingToDateLabel->setObjectName(QString::fromUtf8("m_accordingToDateLabel"));
+        m_searchButton = new QPushButton(layoutWidget);
+        m_searchButton->setObjectName(QString::fromUtf8("m_searchButton"));
 
-        m_mainLayout->addWidget(m_accordingToDateLabel, 0, 0, 1, 1);
+        m_mainLayout->addWidget(m_searchButton, 0, 4, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(18, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        m_mainLayout->addItem(horizontalSpacer, 0, 4, 1, 1);
+        m_mainLayout->addItem(horizontalSpacer_2, 0, 5, 1, 1);
 
 
         retranslateUi(TsearchWidget);
@@ -86,11 +86,11 @@ public:
     void retranslateUi(QWidget *TsearchWidget)
     {
         TsearchWidget->setWindowTitle(QApplication::translate("TsearchWidget", "Form", 0, QApplication::UnicodeUTF8));
-        m_searchButton->setText(QApplication::translate("TsearchWidget", "\346\220\234\347\264\242", 0, QApplication::UnicodeUTF8));
-        m_dateBeginButton->setText(QString());
-        m_dateEndButton->setText(QString());
-        m_accordingTodateUntilLabel->setText(QApplication::translate("TsearchWidget", "\350\207\263", 0, QApplication::UnicodeUTF8));
         m_accordingToDateLabel->setText(QApplication::translate("TsearchWidget", "\346\214\211\347\205\247\346\227\245\346\234\237", 0, QApplication::UnicodeUTF8));
+        m_accordingTodateUntilLabel->setText(QApplication::translate("TsearchWidget", "\350\207\263", 0, QApplication::UnicodeUTF8));
+        m_dateEndButton->setText(QString());
+        m_dateBeginButton->setText(QString());
+        m_searchButton->setText(QApplication::translate("TsearchWidget", "\346\220\234\347\264\242", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

@@ -18,25 +18,22 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>301</width>
+     <width>351</width>
      <height>79</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="m_mainLayout">
-    <item row="0" column="5">
-     <widget class="QPushButton" name="m_searchButton">
+    <item row="0" column="0">
+     <widget class="QLabel" name="m_accordingToDateLabel">
       <property name="text">
-       <string>搜索</string>
+       <string>按照日期</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="m_dateBeginButton">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
+    <item row="0" column="2">
+     <widget class="QLabel" name="m_accordingTodateUntilLabel">
       <property name="text">
-       <string/>
+       <string>至</string>
       </property>
      </widget>
     </item>
@@ -50,28 +47,31 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
-     <widget class="QLabel" name="m_accordingTodateUntilLabel">
-      <property name="text">
-       <string>至</string>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="m_dateBeginButton">
+      <property name="enabled">
+       <bool>true</bool>
       </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="m_accordingToDateLabel">
       <property name="text">
-       <string>按照日期</string>
+       <string/>
       </property>
      </widget>
     </item>
     <item row="0" column="4">
-     <spacer name="horizontalSpacer">
+     <widget class="QPushButton" name="m_searchButton">
+      <property name="text">
+       <string>搜索</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>18</width>
+        <width>40</width>
         <height>20</height>
        </size>
       </property>

@@ -2,7 +2,7 @@
 #include <QtGui/QApplication>
 #include <QtCore/QTextCodec>
 #include "ToutlinerTreeView.h"
-#include "TmachineGroupFuncDetailSetupPanel.h"
+#include "TinventoryReportPanel.h"
 #include "TassetSetupPanel.h"
 #include "TDatabaseManager.h"
 
@@ -31,6 +31,8 @@ int main(int argc, char *argv[])
     int h = 0;
 
     window.show();
+    YR2K::TinventoryReportPanel xx;
+    xx.show();
 //     window.show();
 
 //     YR2K::TmachineFuncSetupPanel xxx;

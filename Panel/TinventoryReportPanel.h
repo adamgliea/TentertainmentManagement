@@ -47,10 +47,10 @@ namespace YR2K {
         void                                    onCellClicked(int row, int column);
         void                                    onAddCoinUpdated();
         void                                    onClearCoinUpdated();
+        void                                    onSaveClicked();
 
     private:
         QLabel*                                 m_pTotalInventoryLabel;
-        QLineEdit*                              m_pTotalInventoryLineEdit;
 
         Ui::TinventoryReportViewItemTable*      m_pIinventoryReportViewItemTable;
         Ui::TsearchWidget*                      m_pSearchWidget;
@@ -73,6 +73,8 @@ namespace YR2K {
 
         TkeyValueTreeView*                      m_addCoinTreeView;
         TkeyValueTreeView*                      m_clearCoinTreeView;
+
+        std::vector<DBInventoryReportInfo>      m_vecInventoryReportInfoChangeSet;
     };
 
 }

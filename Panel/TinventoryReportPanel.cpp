@@ -9,6 +9,7 @@
 
 #include <QtGui/QStandardItem>
 #include <QtGui/QStandardItemModel>
+#include <QtGui/QMessageBox>
 
 namespace YR2K {
 
@@ -22,19 +23,15 @@ namespace YR2K {
         , m_uiCurrentOperatingReportId(0xFFFFFFFF)
     {
         m_pTotalInventoryLabel = new QLabel();
-        m_pTotalInventoryLineEdit = new QLineEdit();
-        m_pTotalInventoryLineEdit->setFixedWidth(100);
-        m_pTotalInventoryLineEdit->setEnabled(false);
-
         m_pTotalInventoryLabel->setText(tr("库存总量："));
 
-        QWidget* table = new QWidget(/*this*/);
-        m_pIinventoryReportViewItemTable = new Ui::TinventoryReportViewItemTable();
-        m_pIinventoryReportViewItemTable->setupUi(table);
 
-        QWidget* searchWidget = new QWidget(/*this*/);
         m_pSearchWidget = new Ui::TsearchWidget();
-        m_pSearchWidget->setupUi(searchWidget);
+        m_pSearchWidget->setupUi(this);
+
+        m_pIinventoryReportViewItemTable = new Ui::TinventoryReportViewItemTable();
+        m_pIinventoryReportViewItemTable->setupUi(this);
+
 
         QDate currentDate = QDate::currentDate();
         QString dateString = currentDate.toString("yyyy/MM/dd");
@@ -45,30 +42,21 @@ namespace YR2K {
         m_selectedEndDate= currentDate;
         m_selectedBeginDate = lastMonthCurrentDate;
 
-
         m_pBeginDateCalendar = new QCalendarWidget();
         m_pEndDateCalendar = new QCalendarWidget();
 
-        QGridLayout* mainLayout = new QGridLayout(this);
-
         QSpacerItem *horizontalSpacerForTotalInventory = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
+        QGridLayout* mainLayout = new QGridLayout(this);
+
         mainLayout->addWidget(m_pTotalInventoryLabel, 0, 0);
-        mainLayout->addWidget(m_pTotalInventoryLineEdit, 0, 1);
-        mainLayout->addItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 2);
-        mainLayout->addItem(new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 3);
-        mainLayout->addWidget(searchWidget, 1, 0, 1, 3);
-        mainLayout->addWidget(table, 2, 0, 1, 4);
+        mainLayout->addWidget(m_pSearchWidget->layoutWidget, 1, 0, 1, 1);
+        mainLayout->addWidget(m_pIinventoryReportViewItemTable->gridLayoutWidget, 2, 0, 1, 3);
+        
         setLayout(mainLayout);
 
         m_addCoinTreeView = new TkeyValueTreeView(tr("加币"), QStringList());
         m_clearCoinTreeView = new TkeyValueTreeView(tr("清币"), QStringList());
-
-        int w = table->width();
-        int h = searchWidget->height() + table->height();
-
-        setFixedSize(w, h);
-
 
         connect(m_pSearchWidget->m_dateBeginButton, SIGNAL(clicked()), this, SLOT(onBeginDateClicked()));
         connect(m_pSearchWidget->m_dateEndButton, SIGNAL(clicked()), this, SLOT(onEndDateClicked()));
@@ -76,6 +64,7 @@ namespace YR2K {
         connect(m_pEndDateCalendar, SIGNAL(activated(const QDate&)), this, SLOT(onEndDateActived(const QDate&)));
 
         connect(m_pSearchWidget->m_searchButton, SIGNAL(clicked()), this, SLOT(onSearchClicked()));
+        connect(m_pIinventoryReportViewItemTable->m_saveButton, SIGNAL(clicked()), this, SLOT(onSaveClicked()));
         connect(m_pIinventoryReportViewItemTable->m_inventoryReportTableWidget, SIGNAL(cellClicked (int, int)), this, SLOT(onCellClicked(int, int)));
 
         connect(m_addCoinTreeView, SIGNAL(valueUpdated()), this, SLOT(onAddCoinUpdated()));
@@ -126,6 +115,7 @@ namespace YR2K {
         }
 
         m_vecInventoryReportInfoFoundResult.clear();
+        m_vecInventoryReportInfoChangeSet.clear();
 
         m_uiCurrentOperatingMachineId = itemData;
 
@@ -408,7 +398,9 @@ namespace YR2K {
     void TinventoryReportPanel::updateTotalInventoryInfo()
     {
         int totalInventory = computeTotalInventory(m_uiCurrentOperatingMachineId);
-        m_pTotalInventoryLineEdit->setText(QString::number(totalInventory));
+        QString label = tr("库存总量：");
+        label.append(QString::number(totalInventory));
+        m_pTotalInventoryLabel->setText(label);
     }
 
     //---------------------------------------------------------------------
@@ -484,7 +476,8 @@ namespace YR2K {
             TDatabaseManager::getInstance()->findInventoryReportWithReportId(m_uiCurrentOperatingReportId, info);
 
             info.addPointString = recordString.toStdString();
-            TDatabaseManager::getInstance()->updateInventoryReport(info);
+            m_vecInventoryReportInfoChangeSet.push_back(info);
+
             updateTableByReportInfo(info);
             updateTotalInventoryInfo();
         }
@@ -511,10 +504,27 @@ namespace YR2K {
             TDatabaseManager::getInstance()->findInventoryReportWithReportId(m_uiCurrentOperatingReportId, info);
 
             info.clearPointString = recordString.toStdString();
-            TDatabaseManager::getInstance()->updateInventoryReport(info);
+            m_vecInventoryReportInfoChangeSet.push_back(info);
+
             updateTableByReportInfo(info);
             updateTotalInventoryInfo();
         }
+    }
+
+    //---------------------------------------------------------------------
+    void TinventoryReportPanel::onSaveClicked()
+    {
+        DBInventoryReportInfoIter iter = m_vecInventoryReportInfoChangeSet.begin();
+        DBInventoryReportInfoIter end = m_vecInventoryReportInfoChangeSet.end();
+
+        for (; iter != end; ++iter)
+        {
+            TDatabaseManager::getInstance()->updateInventoryReport(*iter);
+        }
+
+        QMessageBox msg;
+        msg.setText("变更提交成功！");
+        msg.exec();
     }
 
 

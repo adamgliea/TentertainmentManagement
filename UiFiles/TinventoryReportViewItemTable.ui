@@ -6,24 +6,51 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>660</height>
+    <width>1031</width>
+    <height>751</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>-1</x>
-     <y>-1</y>
-     <width>1001</width>
-     <height>661</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1031</width>
+     <height>751</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="m_mainLayout">
-    <item>
+   <layout class="QGridLayout" name="m_mainLayout">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="m_printButton">
+      <property name="text">
+       <string>打印</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="m_saveButton">
+      <property name="text">
+       <string>保存</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0" colspan="3">
      <widget class="QTableWidget" name="m_inventoryReportTableWidget">
       <column>
        <property name="text">
