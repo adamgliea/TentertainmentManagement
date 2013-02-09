@@ -15,6 +15,8 @@ namespace YR2K {
 
     typedef std::vector<DBInventoryReportInfo>::iterator DBInventoryReportInfoIter;
 
+    static const QString dateFormat = "yyyy/MM/dd";
+
     //---------------------------------------------------------------------
     TinventoryReportPanel::TinventoryReportPanel(QWidget* parent /*= NULL*/)
         : TpanelBase(parent)
@@ -34,10 +36,10 @@ namespace YR2K {
 
 
         QDate currentDate = QDate::currentDate();
-        QString dateString = currentDate.toString("yyyy/MM/dd");
+        QString dateString = currentDate.toString(dateFormat);
         m_pSearchWidget->m_dateEndButton->setText(dateString);
         QDate lastMonthCurrentDate(currentDate.addMonths(-1));
-        dateString = lastMonthCurrentDate.toString("yyyy/MM/dd");
+        dateString = lastMonthCurrentDate.toString(dateFormat);
         m_pSearchWidget->m_dateBeginButton->setText(dateString);
         m_selectedEndDate= currentDate;
         m_selectedBeginDate = lastMonthCurrentDate;
@@ -122,10 +124,10 @@ namespace YR2K {
         m_eCurrentOperatingCategory = category;
 
         QDate currentDate = QDate::currentDate();
-        QString dateString = currentDate.toString("yyyy/MM/dd");
+        QString dateString = currentDate.toString(dateFormat);
         m_pSearchWidget->m_dateEndButton->setText(dateString);
         QDate lastMonthCurrentDate(currentDate.addMonths(-1));
-        dateString = lastMonthCurrentDate.toString("yyyy/MM/dd");
+        dateString = lastMonthCurrentDate.toString(dateFormat);
         m_pSearchWidget->m_dateBeginButton->setText(dateString);
 
         updateTotalInventoryInfo();
@@ -177,10 +179,17 @@ namespace YR2K {
     void TinventoryReportPanel::onBeginDateClicked()
     {
         Q_ASSERT_X (m_pBeginDateCalendar != NULL, "", "");
+        Q_ASSERT_X (m_pSearchWidget->m_dateBeginButton != NULL, "", "");
 
-        if (m_pBeginDateCalendar)
+        if (m_pSearchWidget->m_dateBeginButton)
         {
-            m_pBeginDateCalendar->showNormal();
+            QString beginDateText = m_pSearchWidget->m_dateBeginButton->text();
+            QDate beginDate = QDate::fromString(beginDateText, dateFormat);
+            if (m_pBeginDateCalendar)
+            {
+                m_pBeginDateCalendar->setSelectedDate(beginDate);
+                m_pBeginDateCalendar->showNormal();
+            }
         }
     }
 
@@ -188,11 +197,20 @@ namespace YR2K {
     void TinventoryReportPanel::onEndDateClicked()
     {
         Q_ASSERT_X (m_pEndDateCalendar != NULL, "", "");
+        Q_ASSERT_X (m_pSearchWidget->m_dateEndButton != NULL, "", "");
 
-        if (m_pEndDateCalendar)
+        if (m_pSearchWidget->m_dateEndButton)
         {
-            m_pEndDateCalendar->showNormal();
+            QString endDateText = m_pSearchWidget->m_dateEndButton->text();
+            QDate endDate = QDate::fromString(endDateText, dateFormat);
+
+            if (m_pEndDateCalendar)
+            {
+                m_pEndDateCalendar->setSelectedDate(endDate);
+                m_pEndDateCalendar->showNormal();
+            }
         }
+        
     }
 
     //---------------------------------------------------------------------
@@ -207,7 +225,7 @@ namespace YR2K {
 
             if (button)
             {
-                QString dateString = date.toString("yyyy/MM/dd");
+                QString dateString = date.toString(dateFormat);
                 button->setText(dateString);
             }
 
@@ -229,7 +247,7 @@ namespace YR2K {
 
             if (button)
             {
-                QString dateString = date.toString("yyyy/MM/dd");
+                QString dateString = date.toString(dateFormat);
                 button->setText(dateString);
             }
 

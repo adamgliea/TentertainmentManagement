@@ -206,6 +206,20 @@ namespace YR2K {
             TDatabaseManager::getInstance()->findAssetsWithAssetType(m_eCurrentOperatingCategory, assets);
             // Add new record into DB.
             // 
+            if (assets.size() == 0)
+            {
+                QString categoryString = CATEGORY_STRING[m_eCurrentOperatingCategory];
+                QString warning = "您想在大类：";
+                warning.append(categoryString);
+                warning.append("下添加机台记录，但该大类并未进行过设置，请添加该类别的记录后再进行机台记录的添加！");
+                QMessageBox warningMsg;
+                warningMsg.setText(warning);
+                warningMsg.exec();
+
+                destroyAddWidgetPanel();
+                return;
+            }
+            
             DBMachineBaseInfo machineBaseInfo = this->getInfo();
             bool success = TDatabaseManager::getInstance()->addMachine(machineBaseInfo, assets[0].clearCoinCycle);
 
