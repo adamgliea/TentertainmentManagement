@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TentertainmentManagement", "TentertainmentManagement.vcxproj", "{74E5977C-C3E9-4040-AC16-53DB838B5E1A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TenteratinmentManagementInstallShield", "TenteratinmentManagementInstallShield\TenteratinmentManagementInstallShield.vdproj", "{5B0535CF-E3B8-4F3B-A79C-F9A34BFDFC15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{74E5977C-C3E9-4040-AC16-53DB838B5E1A}.Release|Win32.Build.0 = Release|Win32
 		{74E5977C-C3E9-4040-AC16-53DB838B5E1A}.Release|x64.ActiveCfg = Release|x64
 		{74E5977C-C3E9-4040-AC16-53DB838B5E1A}.Release|x64.Build.0 = Release|x64
+		{5B0535CF-E3B8-4F3B-A79C-F9A34BFDFC15}.Debug|Win32.ActiveCfg = Debug
+		{5B0535CF-E3B8-4F3B-A79C-F9A34BFDFC15}.Debug|x64.ActiveCfg = Debug
+		{5B0535CF-E3B8-4F3B-A79C-F9A34BFDFC15}.Release|Win32.ActiveCfg = Release
+		{5B0535CF-E3B8-4F3B-A79C-F9A34BFDFC15}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
